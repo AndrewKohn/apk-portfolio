@@ -33,3 +33,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media (max-width: 1700px) {
+  :root {
+    --total-width: 120rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  :root {
+    --total-width: 90rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --total-width: 80rem;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --total-width: 100vw;
+  }
+}
