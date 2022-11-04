@@ -25,10 +25,6 @@
   gap: 2.4rem;
 }
 
-.nav-list li {
-  align-self: center;
-}
-
 .nav-list-link:link,
 .nav-list-link:visited {
   text-decoration: none;
@@ -48,6 +44,7 @@
 }
 
 .icon {
+  vertical-align: middle;
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;

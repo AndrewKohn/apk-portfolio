@@ -1,0 +1,83 @@
+.hero-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  border-bottom: 1px solid black;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.primary-header {
+  font-size: 10rem;
+  color: goldenrod;
+  text-align: right;
+  line-height: 6rem;
+}
+
+.primary-header span {
+  color: darkcyan;
+}
+
+.socials-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.socials-link:link,
+.socials-link:visited {
+  color: #ddd;
+}
+
+.socials-link:hover {
+  color: #fff;
+}
+
+.socials-link:active {
+  color: #aaa;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.description-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.description-list li {
+  /* background-color: red; */
+}
+
+.description-list li span {
+  /* background-color: purple; */
+}
+
+.description-list li span strong {
+  /* background-color: aqua; */
+}
+
+.checkmark {
+  vertical-align: middle;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
+}

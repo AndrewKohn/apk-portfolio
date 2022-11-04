@@ -1,5 +1,4 @@
 import classes from './NavBar.module.css';
-import githubIcon from '../../assets/svg/GitHubIcon';
 import GitHubIcon from '../../assets/svg/GitHubIcon';
 
 const NavBar = props => {
@@ -25,7 +24,7 @@ const NavBar = props => {
         </li>
         <li>
           <a href="#" className={classes[`nav-list-link`]}>
-            <GitHubIcon iconClass={classes.icon} />
+            <GitHubIcon class={classes.icon} />
           </a>
         </li>
       </ul>
