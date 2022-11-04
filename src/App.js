@@ -1,4 +1,5 @@
 import classes from './App.module.css';
+import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
@@ -11,6 +12,7 @@ const App = props => {
       <NavBar />
       <Header />
       <Skills />
+      <About />
       <Projects />
       <Contact />
     </main>
