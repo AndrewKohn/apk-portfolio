@@ -1,0 +1,107 @@
+.skills-section {
+  width: 100%;
+  padding: 6rem 0;
+  background-color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.secondary-heading {
+  font-size: 3.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.skills-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.6rem;
+}
+.skills-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem 1.2rem 2rem;
+  background-color: rgba(170, 170, 170, 0);
+}
+
+.skills-container:not(:first-child) {
+  border-left: 1px solid #fff;
+}
+
+.skills-container:hover {
+  background-color: #aaa;
+  animation: skill-bg-hover-in 0.25s ease;
+}
+
+.skills-container:not(:hover) {
+  background-color: rgba(170, 170, 170, 0);
+  animation: skill-bg-hover-out 2s ease-out;
+}
+
+.sub-heading--skills {
+  position: absolute;
+  cursor: default;
+  top: 0;
+  transform: translateY(0.2rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.skill-icon {
+  width: 4rem;
+  height: 4rem;
+  padding: 0 2rem;
+  filter: grayscale(1);
+}
+
+.skills-container:hover .skill-icon {
+  filter: grayscale(0);
+  animation: colorize 0.25s ease;
+}
+
+.skills-container:not(:hover) .skill-icon {
+  animation: greyscale 2s ease;
+}
+
+@keyframes skill-bg-hover-in {
+  0% {
+    background-color: rgba(170, 170, 170, 0);
+  }
+  100% {
+    background-color: #aaa;
+  }
+}
+
+@keyframes skill-bg-hover-out {
+  0% {
+    background-color: #aaa;
+  }
+  100% {
+    background-color: rgba(170, 170, 170, 0);
+  }
+}
+
+@keyframes colorize {
+  0% {
+    filter: grayscale(1);
+  }
+  100% {
+    filter: grayscale(0);
+  }
+}
+
+@keyframes greyscale {
+  0% {
+    filter: grayscale(0);
+  }
+  100% {
+    filter: grayscale(1);
+  }
+}

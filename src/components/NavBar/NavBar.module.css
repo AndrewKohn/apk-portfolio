@@ -7,13 +7,48 @@
   padding: 1.2rem 0;
   width: var(--total-width);
   background-color: rgba(0, 0, 0, 0.15);
+  z-index: 50;
 }
 
 .logo {
-  font-size: 3.2rem;
-  font-weight: 600;
-  letter-spacing: 4px;
+  position: relative;
+  font-family: 'Encode Sans';
+  font-size: 2.4rem;
+  color: var(--text-color-primary);
+  letter-spacing: 2px;
   margin-left: 6rem;
+  transition: content 0.5s ease;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 0.4rem 1.2rem;
+}
+
+.logo:active {
+  color: var(--text-color-active);
+}
+
+.logo::before {
+  content: '>';
+  margin-right: 0.4rem;
+}
+
+.logo::after {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(2px);
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.logo:hover::after {
+  width: 5.6rem;
+  background-color: #88d3ca;
 }
 
 .nav-list {

@@ -4,7 +4,7 @@ import GitHubIcon from '../../assets/svg/GitHubIcon';
 const NavBar = props => {
   return (
     <div className={classes[`nav-container`]}>
-      <span className={classes.logo}>LOGO</span>
+      <button className={classes.logo}>AK</button>
 
       <ul className={classes[`nav-list`]}>
         <li>

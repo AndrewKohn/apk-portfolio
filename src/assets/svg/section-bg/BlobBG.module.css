@@ -1,0 +1,47 @@
+@keyframes float1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-180px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.triangle-float1 {
+  animation: float1 20s infinite;
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-45px, -45px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.triangle-float2 {
+  animation: float2 16s infinite;
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -80px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.triangle-float3 {
+  animation: float3 12s infinite;
+}
