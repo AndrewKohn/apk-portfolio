@@ -19,12 +19,18 @@ const Header = props => {
           </h1>
           <ul className={classes[`socials-list`]}>
             <li>
-              <a href="#" className={classes[`socials-link`]}>
+              <a
+                href="https://github.com/AndrewKohn/apk-portfolio-v2"
+                className={classes[`socials-link`]}
+              >
                 <LinkedInIcon class={classes.icon} />
               </a>
             </li>
             <li>
-              <a href="#" className={classes[`socials-link`]}>
+              <a
+                href="https://github.com/AndrewKohn/apk-portfolio-v2"
+                className={classes[`socials-link`]}
+              >
                 <GitHubIcon class={classes.icon} />
               </a>
             </li>

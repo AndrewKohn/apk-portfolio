@@ -23,6 +23,7 @@
   cursor: pointer;
   border-radius: 7px;
   padding: 0.4rem 1.2rem;
+  text-decoration: none;
 }
 
 .logo:active {
