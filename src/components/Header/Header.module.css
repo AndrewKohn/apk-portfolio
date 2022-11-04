@@ -121,7 +121,13 @@
 }
 
 @media (max-width: 800px) {
-  .hero-container {
+  .hero-wrapper {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .primary-header {
+    font-size: 15rem;
   }
 }
