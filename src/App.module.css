@@ -1,4 +1,4 @@
-main {
+.main {
   width: var(--total-width);
   height: 190rem;
   display: flex;

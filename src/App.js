@@ -7,7 +7,7 @@ import Skills from './components/Skills/Skills';
 
 const App = props => {
   return (
-    <main>
+    <main className={classes.main}>
       <NavBar />
       <Header />
       <Skills />
