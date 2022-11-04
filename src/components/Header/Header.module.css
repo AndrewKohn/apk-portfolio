@@ -31,8 +31,8 @@
   gap: 4rem;
   backdrop-filter: blur(4px);
   padding: 3.2rem 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.05);
+  background-color: rgba(61, 62, 73, 0.8);
+  box-shadow: 0 0 10px 5px rgba(61, 62, 73, 0.75);
   border-radius: 13px;
 }
 
@@ -100,10 +100,11 @@
 
 .description-list li span {
   /* background-color: purple; */
+  color: var(--text-color-primary);
 }
 
 .description-list li span strong {
-  /* background-color: aqua; */
+  color: rgb(83, 130, 231);
 }
 
 .checkmark {
