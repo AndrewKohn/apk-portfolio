@@ -1,3 +1,9 @@
+:root {
+  --total-width: 160rem;
+  --text-color-primary: #eee;
+  --text-color-active: #ccc;
+}
+
 * {
   margin: 0;
   padding: 0;
