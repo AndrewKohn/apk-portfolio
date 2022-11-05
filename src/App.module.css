@@ -1,6 +1,6 @@
 .main {
   width: var(--total-width);
-  height: 190rem;
+  height: 400rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
