@@ -1,0 +1,117 @@
+.about-section {
+  position: relative;
+  width: var(--total-width);
+  padding: 12rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(158, 102, 0, 0.46);
+}
+
+.about-bg {
+  position: absolute;
+  top: 0;
+  transform: translateY(-15rem);
+  z-index: -1;
+}
+
+.about-wrapper {
+  width: 90rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  padding: 8rem 4rem;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.text {
+  line-height: 1.5;
+  letter-spacing: 1.7px;
+}
+
+.text strong {
+  color: rgb(83, 130, 231);
+  font-weight: 600;
+}
+
+.avatar-container {
+  width: 30rem;
+  height: 30rem;
+}
+
+.avatar {
+  width: 30rem;
+  height: 30rem;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.about-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.link-wrapper {
+  width: 100%;
+  margin: 4rem 4rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+.about-link:link,
+.about-link:visited {
+  padding: 0.8rem 1.2rem;
+  background-color: transparent;
+  box-shadow: 0 0 5px 1px inset #88d3ca;
+  border-radius: 9px;
+  color: var(--text-color-primary);
+  font-size: 2rem;
+  font-weight: 600rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  color: var(--text-color-active);
+}
+
+.about-link:active {
+  box-shadow: 0 0 2px 1px inset #88d3ca;
+}
+
+.about-btn--cta {
+  background-color: rgba(95, 123, 185, 1);
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 0 5px 1px inset #88d3ca;
+  border-radius: 9px;
+  color: var(--text-color-primary);
+  font-size: 2rem;
+  font-weight: 600rem;
+  letter-spacing: 2px;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.about-btn--cta:hover {
+  background-color: rgba(48, 76, 137, 1);
+}
+
+.about-btn--cta:active {
+  background-color: rgba(48, 76, 137, 0.5);
+}

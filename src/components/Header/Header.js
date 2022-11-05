@@ -4,14 +4,15 @@ import GitHubIcon from '../../assets/svg/GitHubIcon';
 import LinkedInIcon from '../../assets/svg/LinkedInIcon';
 import HeroBG from '../../assets/svg/section-bg/HeroBG';
 import BlobBG from '../../assets/svg/section-bg/BlobBG';
+import Card from '../UI/Card';
 
 const Header = props => {
   return (
-    <div className={classes[`hero-container`]}>
+    <section className={classes[`hero-container`]} ref={props.refProp}>
       <HeroBG class={classes[`hero-bg`]} />
       <BlobBG class={classes[`blob-bg`]} />
 
-      <div className={classes[`hero-wrapper`]}>
+      <Card>
         <div className={classes[`header-container`]}>
           <h1 className={classes[`primary-header`]}>
             Andrew <br />
@@ -57,8 +58,8 @@ const Header = props => {
             </span>
           </li>
         </ul>
-      </div>
-    </div>
+      </Card>
+    </section>
   );
 };
 
