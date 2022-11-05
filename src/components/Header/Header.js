@@ -4,7 +4,7 @@ import GitHubIcon from '../../assets/svg/GitHubIcon';
 import LinkedInIcon from '../../assets/svg/LinkedInIcon';
 import HeroBG from '../../assets/svg/section-bg/HeroBG';
 import BlobBG from '../../assets/svg/section-bg/BlobBG';
-import Card from '../UI/Card';
+import AlternateCard from '../UI/AlternateCard';
 
 const Header = props => {
   return (
@@ -12,7 +12,7 @@ const Header = props => {
       <HeroBG class={classes[`hero-bg`]} />
       <BlobBG class={classes[`blob-bg`]} />
 
-      <Card>
+      <AlternateCard>
         <div className={classes[`header-container`]}>
           <h1 className={classes[`primary-header`]}>
             Andrew <br />
@@ -58,7 +58,7 @@ const Header = props => {
             </span>
           </li>
         </ul>
-      </Card>
+      </AlternateCard>
     </section>
   );
 };
