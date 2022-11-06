@@ -1,0 +1,109 @@
+.grid-item-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 30rem;
+  height: 45rem;
+  padding-bottom: 6rem;
+}
+
+.grid-item-wrapper img {
+  width: 30rem;
+  height: 20rem;
+  border-radius: 11px 11px 0 0;
+}
+
+.text-container {
+  height: 23rem;
+  width: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(48, 77, 138) rgba(255, 255, 255, 0.25);
+}
+
+.text-container::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+.text-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.text-container::-webkit-scrollbar-thumb {
+  background: rgb(48, 77, 138);
+  border-radius: 10px;
+}
+
+.text-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(65, 91, 146);
+}
+
+.sub-heading {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.text {
+  padding: 0 1.2rem;
+  margin-top: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.links-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(1.2rem, 0.8rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.project-link:link,
+.project-link:visited {
+  color: #fff;
+}
+
+.project-link:hover {
+  color: var(--text-color-active);
+}
+
+.project-link:active {
+  color: #aaa;
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.4rem;
+  border-radius: 13px;
+  background-color: rgb(48, 77, 138);
+}
+
+.text-blur {
+  filter: blur(4px);
+  user-select: none;
+}
+
+.blur {
+  filter: blur(1.4px);
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.blurred-img-container {
+  width: 30rem;
+  height: 20rem;
+  border-radius: 11px 11px 0 0;
+  overflow: hidden;
+}
+
+.img-blur {
+  filter: blur(4px);
+}

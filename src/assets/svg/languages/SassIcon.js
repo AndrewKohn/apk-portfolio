@@ -1,6 +1,7 @@
 const SassIcon = props => {
   return (
     <svg viewBox="0 0 128 128" className={props.class}>
+      <title>Sass</title>
       <path
         fillRule="evenodd"
         clipRule="evenodd"

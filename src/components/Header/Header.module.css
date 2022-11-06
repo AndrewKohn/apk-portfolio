@@ -7,7 +7,7 @@
   align-items: center;
   overflow: hidden;
   box-sizing: border-box;
-  border-bottom: 3px solid rgba(158, 102, 0, 0.46);
+  border-bottom: 3px solid rgba(158, 102, 0, 1);
 }
 
 .hero-bg {

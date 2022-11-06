@@ -51,7 +51,7 @@ const About = props => {
               <p className={classes.text}>
                 A <strong>Web & Software Developer</strong> leveraging a
                 background in healthcare that taught me discipline, achieving
-                deadlines, and pursuing continuous growth, making me a strong
+                deadlines, and pursuing continuous growth making me a strong
                 addition to any development team.
               </p>
               <p className={classes.text}>

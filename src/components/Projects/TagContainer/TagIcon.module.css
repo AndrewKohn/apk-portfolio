@@ -1,0 +1,20 @@
+.icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-left: -1.4rem;
+  padding: 0.4rem;
+  border-radius: 9px;
+  background-color: rgb(38, 39, 44);
+  box-shadow: 0 0 2px 1px inset #88d3ca;
+  filter: contrast(0.8);
+  overflow: hidden;
+}
+
+.icon:hover {
+  z-index: 50;
+  filter: contrast(1.15);
+}
+
+.hidden {
+  display: none;
+}
