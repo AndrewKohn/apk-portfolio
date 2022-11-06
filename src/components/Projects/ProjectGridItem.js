@@ -9,7 +9,8 @@ const ProjectGridItem = props => {
   return (
     <AlternateCard>
       <div className={classes[`grid-item-wrapper`]}>
-        {props.liveSitePath ? (
+        {/* IMAGE */}
+        {props.liveSitePath && props.tags.length !== 0 ? (
           <img src={props.image} alt={props.altText} title={props.altText} />
         ) : (
           <div className={classes[`blurred-img-container`]}>
@@ -21,11 +22,29 @@ const ProjectGridItem = props => {
             />
           </div>
         )}
-        <h3>{props.title}</h3>
-        <p>{props.description}</p>
+
+        <div className={classes[`text-container`]}>
+          {/* TITLE */}
+          {props.tags.length !== 0 ? (
+            <h3 className={classes[`sub-heading`]}>{props.title}</h3>
+          ) : (
+            <h3 className={classes[`sub-heading`]}>Coming Soon</h3>
+          )}
+
+          {/* DESCRIPTION */}
+          {props.tags.length !== 0 ? (
+            <p className={classes.text}>{props.description}</p>
+          ) : (
+            <p className={`${classes.text} ${classes[`text-blur`]}`}>
+              {props.description}
+            </p>
+          )}
+        </div>
+
+        {/* LINKS */}
         <div className={classes[`links-wrapper`]}>
-          {props.gitHubPath ? (
-            <a href={props.gitHubPath} className={classes[`project-link`]}>
+          {props.liveSitePath ? (
+            <a href={props.liveSitePath} className={classes[`project-link`]}>
               <EyeFillIcon class={classes.icon} />
             </a>
           ) : (
@@ -34,8 +53,8 @@ const ProjectGridItem = props => {
             </div>
           )}
 
-          {props.liveSitePath ? (
-            <a href={props.liveSitePath} className={classes[`project-link`]}>
+          {props.gitHubPath ? (
+            <a href={props.gitHubPath} className={classes[`project-link`]}>
               <GitHubIcon class={classes.icon} />
             </a>
           ) : (
@@ -45,6 +64,7 @@ const ProjectGridItem = props => {
           )}
         </div>
 
+        {/* TAGS */}
         <TagContainer tags={props.tags} />
       </div>
     </AlternateCard>

@@ -1,6 +1,7 @@
 import SecondaryHeading from '../UI/SecondaryHeading';
 import ProjectGridItem from './ProjectGridItem';
 import exImg from '../../assets/img/ex-img.png';
+import ProjectBG from '../../assets/svg/section-bg/ProjectBG';
 import classes from './Projects.module.css';
 
 const Projects = props => {
@@ -19,56 +20,64 @@ const Projects = props => {
 
   return (
     <section className={classes[`project-section`]} ref={props.refProp}>
+      <ProjectBG class={classes[`project-bg`]} />
+
       <SecondaryHeading>Projects</SecondaryHeading>
       <div className={classes.grid}>{projectGridItem}</div>
     </section>
   );
 };
 
+/* 
+    Proper tags to input into array:
+      HtmlIcon, CssIcon, JavaScriptIcon, ReactIcon, 
+      NodeJSIcon, MySQLIcon, JavaIcon, PythonIcon, 
+      SassIcon, NpmIcon, GitIcon,
+*/
+
 const PROJECTS_DATA = [
   {
     id: 0,
     image: exImg,
     altText: 'alt text here',
-    title: 'Project 1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['HTMLIcon', 'CssIcon', 'JavaScriptIcon', 'ReactIcon'],
-    gitHubPath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
-    liveSitePath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
+    title: 'Payroll Report Sorter',
+    description: 'test',
+    tags: ['JavaIcon'],
+    gitHubPath: 'https://github.com/AndrewKohn/PayrollReportSorter',
+    liveSitePath: '',
   },
   {
     id: 1,
     image: exImg,
     altText: 'alt text here',
-    title: 'Project 2',
+    title: 'PDF/Word Converter',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['HTMLIcon', 'CssIcon', 'JavaScriptIcon', 'ReactIcon'],
-    gitHubPath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
-    liveSitePath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
+      'Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
+    tags: ['JavaIcon'],
+    gitHubPath: 'https://github.com/AndrewKohn/PDFWordConverter',
+    liveSitePath: '',
   },
   {
     id: 2,
     image: exImg,
     altText: 'alt text here',
-    title: 'Project 3',
+    title: 'MGH Menu',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['HTMLIcon', 'CssIcon', 'JavaScriptIcon', 'ReactIcon'],
-    gitHubPath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
-    liveSitePath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
+    tags: ['HtmlIcon', 'CssIcon', 'JavaScriptIcon'],
+    gitHubPath: 'https://github.com/AndrewKohn/MGH-menu',
+    liveSitePath: 'https://mghmenu.netlify.app/',
   },
   {
     id: 3,
     image: exImg,
     altText: 'alt text here',
-    title: 'Project 4',
+    title: 'My Coding Tracker',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['HTMLIcon', 'CssIcon', 'JavaScriptIcon', 'ReactIcon'],
-    gitHubPath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
-    liveSitePath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
+    tags: ['JavaIcon'],
+    gitHubPath: 'https://github.com/AndrewKohn/MyCodingTracker',
+    liveSitePath: '',
   },
   {
     id: 4,
@@ -77,7 +86,7 @@ const PROJECTS_DATA = [
     title: 'Project 5',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['HTMLIcon', 'CssIcon', 'JavaScriptIcon', 'ReactIcon'],
+    tags: [],
     gitHubPath: '',
     liveSitePath: '',
   },
@@ -88,9 +97,9 @@ const PROJECTS_DATA = [
     title: 'Project 6',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['HTMLIcon', 'CssIcon', 'JavaScriptIcon', 'ReactIcon'],
-    gitHubPath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
-    liveSitePath: 'https://github.com/AndrewKohn/apk-portfolio-v2',
+    tags: [],
+    gitHubPath: '',
+    liveSitePath: '',
   },
 ];
 

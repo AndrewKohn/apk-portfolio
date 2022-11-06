@@ -2,7 +2,9 @@ import classes from './TagContainer.module.css';
 import TagIcon from './TagIcon';
 
 const TagContainer = props => {
-  const tags = props.tags.map(tag => <TagIcon tags={tag} />);
+  const tags = props.tags.map((tag, index) => (
+    <TagIcon key={index} tag={tag} />
+  ));
 
   return <div className={classes[`tag-container`]}>{tags}</div>;
 };
