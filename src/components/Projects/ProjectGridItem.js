@@ -1,4 +1,4 @@
-import AlternateCard from '../UI/AlternateCard';
+import Card from '../UI/Card';
 import EyeFillIcon from '../../assets/svg/EyeFillIcon';
 import EyeSlashFillIcon from '../../assets/svg/EyeSlashFillIcon';
 import GitHubIcon from '../../assets/svg/GitHubIcon';
@@ -7,7 +7,7 @@ import TagContainer from './TagContainer/TagContainer';
 
 const ProjectGridItem = props => {
   return (
-    <AlternateCard>
+    <Card>
       <div className={classes[`grid-item-wrapper`]}>
         {/* IMAGE */}
         {props.liveSitePath && props.tags.length !== 0 ? (
@@ -67,7 +67,7 @@ const ProjectGridItem = props => {
         {/* TAGS */}
         <TagContainer tags={props.tags} />
       </div>
-    </AlternateCard>
+    </Card>
   );
 };
 
