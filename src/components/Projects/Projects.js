@@ -3,6 +3,8 @@ import ProjectGridItem from './ProjectGridItem';
 import exImg from '../../assets/img/ex-img.png';
 import ProjectBG from '../../assets/svg/section-bg/ProjectBG';
 import classes from './Projects.module.css';
+
+// Icons
 import HtmlIcon from '../../assets/svg/languages/HtmlIcon';
 import CssIcon from '../../assets/svg/languages/CssIcon';
 import JavaScriptIcon from '../../assets/svg/languages/JavaScriptIcon';
@@ -14,6 +16,12 @@ import PythonIcon from '../../assets/svg/languages/PythonIcon';
 import SassIcon from '../../assets/svg/languages/SassIcon';
 import NpmIcon from '../../assets/svg/languages/NpmIcon';
 import GitIcon from '../../assets/svg/languages/GitIcon';
+
+// Project Images
+import projectImage1 from '../../assets/img/payroll-sorter-image.webp';
+import projectImage2 from '../../assets/img/pdf-word-converter-image.webp';
+import projectImage3 from '../../assets/img/mgh-menu-image.webp';
+import projectImage4 from '../../assets/img/my-coding-tracker-image.webp';
 
 const Projects = props => {
   const projectGridItem = PROJECTS_DATA.map(project => (
@@ -49,7 +57,7 @@ const Projects = props => {
 const PROJECTS_DATA = [
   {
     id: 0,
-    image: exImg,
+    image: projectImage1,
     altText: 'alt text here',
     title: 'Payroll Report Sorter',
     description: 'test',
@@ -59,7 +67,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 1,
-    image: exImg,
+    image: projectImage2,
     altText: 'alt text here',
     title: 'PDF/Word Converter',
     description:
@@ -70,7 +78,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 2,
-    image: exImg,
+    image: projectImage3,
     altText: 'alt text here',
     title: 'MGH Menu',
     description:
@@ -81,7 +89,7 @@ const PROJECTS_DATA = [
   },
   {
     id: 3,
-    image: exImg,
+    image: projectImage4,
     altText: 'alt text here',
     title: 'My Coding Tracker',
     description:

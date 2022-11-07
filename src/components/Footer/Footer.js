@@ -12,17 +12,29 @@ const Footer = props => {
       <Logo heroRefProp={props.heroRefProp} />
       <ul className={classes[`social-links`]}>
         <li>
-          <a href="#top" className={classes[`social-link`]}>
+          <a
+            href="#top"
+            aria-label="LinkedIn url"
+            className={classes[`social-link`]}
+          >
             <LinkedInIcon class={classes[`social-link-icon`]} />
           </a>
         </li>
         <li>
-          <a href="#top" className={classes[`social-link`]}>
+          <a
+            href="#top"
+            aria-label="GitHub url"
+            className={classes[`social-link`]}
+          >
             <GitHubIcon class={classes[`social-link-icon`]} />
           </a>
         </li>
         <li>
-          <a href="#top" className={classes[`social-link`]}>
+          <a
+            href="#top"
+            aria-label="Twitter url"
+            className={classes[`social-link`]}
+          >
             <TwitterIcon class={classes[`social-link-icon`]} />
           </a>
         </li>

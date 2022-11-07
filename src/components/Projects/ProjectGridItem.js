@@ -10,7 +10,7 @@ const ProjectGridItem = props => {
     <Card>
       <div className={classes[`grid-item-wrapper`]}>
         {/* IMAGE */}
-        {props.liveSitePath && props.tags.length !== 0 ? (
+        {props.tags.length !== 0 ? (
           <img src={props.image} alt={props.altText} title={props.altText} />
         ) : (
           <div className={classes[`blurred-img-container`]}>

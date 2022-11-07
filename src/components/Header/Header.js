@@ -22,6 +22,7 @@ const Header = props => {
             <li>
               <a
                 href="https://github.com/AndrewKohn/apk-portfolio-v2"
+                aria-label="LinkedIn url"
                 className={classes[`socials-link`]}
               >
                 <LinkedInIcon class={classes.icon} />
@@ -30,6 +31,7 @@ const Header = props => {
             <li>
               <a
                 href="https://github.com/AndrewKohn/apk-portfolio-v2"
+                aria-label="GitHub url"
                 className={classes[`socials-link`]}
               >
                 <GitHubIcon class={classes.icon} />

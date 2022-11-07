@@ -41,6 +41,7 @@ const NavBar = props => {
             href="https://github.com/AndrewKohn"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub url"
             className={classes[`nav-list-link`]}
           >
             <GitHubIcon class={classes.icon} />
