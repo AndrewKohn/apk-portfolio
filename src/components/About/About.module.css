@@ -73,31 +73,12 @@
   gap: 3.6rem;
 }
 
-.about-link:link,
-.about-link:visited {
-  padding: 0.8rem 1.2rem;
-  background-color: transparent;
-  box-shadow: 0 0 5px 1px inset #88d3ca;
-  border-radius: 9px;
-  color: var(--text-color-primary);
-  font-size: 2rem;
-  font-weight: 600rem;
-  letter-spacing: 2px;
+.resume-link:link,
+.resume-link:visited {
   text-decoration: none;
-}
-
-.about-link:hover {
-  color: var(--text-color-active);
-}
-
-.about-link:active {
-  box-shadow: 0 0 2px 1px inset #88d3ca;
-}
-
-.about-btn--cta {
-  background-color: rgba(95, 123, 185, 1);
+  background-color: transparent;
   padding: 0.8rem 1.2rem;
-  box-shadow: 0 0 5px 1px inset #88d3ca;
+  border: 2px solid white;
   border-radius: 9px;
   color: var(--text-color-primary);
   font-size: 2rem;
@@ -108,10 +89,81 @@
   cursor: pointer;
 }
 
+.resume-link:hover {
+  background-color: white;
+  color: #333;
+  animation: on-hover--resume 0.5s ease;
+}
+
+.resume-link:not(:hover) {
+  animation: off-hover--resume 0.25s ease;
+}
+
+.resume-link:active {
+  transform: translate(1px, 1px);
+}
+
+.about-btn--cta {
+  background-color: transparent;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 9px;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600rem;
+  letter-spacing: 2px;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .about-btn--cta:hover {
-  background-color: rgba(48, 76, 137, 1);
+  background-color: transparent;
+  color: var(--text-color-primary);
+  animation: on-hover--cta 0.5s ease;
+}
+
+.about-btn--cta:not(:hover) {
+  animation: off-hover--cta 0.25s ease;
 }
 
 .about-btn--cta:active {
-  background-color: rgba(48, 76, 137, 0.5);
+  transform: translate(1px, 1px);
+}
+
+@keyframes on-hover--resume {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes off-hover--resume {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes on-hover--cta {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes off-hover--cta {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: white;
+  }
 }

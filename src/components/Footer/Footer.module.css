@@ -1,6 +1,6 @@
 .footer {
   width: var(--total-width);
-  padding: 12rem 0;
+  padding: 8rem 0 6rem 0;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -5,6 +5,7 @@ import AvatarSide from '../../assets/svg/avatars/AvatarSide';
 import AboutBG from '../../assets/svg/section-bg/AboutBG';
 import Card from '../UI/Card';
 import SecondaryHeading from '../UI/SecondaryHeading';
+import resumeFile from '../../assets/Andrew-Kohn-Resume.pdf';
 import classes from './About.module.css';
 
 const About = props => {
@@ -65,7 +66,11 @@ const About = props => {
           </Card>
 
           <div className={classes[`link-wrapper`]}>
-            <a href="#top" className={classes[`about-link`]}>
+            <a
+              href={resumeFile}
+              target="_blank"
+              className={classes[`resume-link`]}
+            >
               Résumé
             </a>
             <button

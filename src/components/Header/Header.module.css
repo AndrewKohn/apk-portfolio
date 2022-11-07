@@ -83,12 +83,7 @@
   gap: 1.8rem;
 }
 
-.description-list li {
-  /* background-color: red; */
-}
-
 .description-list li span {
-  /* background-color: purple; */
   color: var(--text-color-primary);
 }
 

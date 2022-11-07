@@ -49,7 +49,7 @@ const ProjectGridItem = props => {
             </a>
           ) : (
             <div className={classes.disabled}>
-              <EyeSlashFillIcon class={classes.icon} />
+              <EyeSlashFillIcon class={`${classes.icon} ${classes.blur}`} />
             </div>
           )}
 
