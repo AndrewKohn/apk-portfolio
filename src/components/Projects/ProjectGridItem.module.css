@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem;
+  gap: 1rem;
 }
 
 .project-link:link,
@@ -69,19 +69,30 @@
 }
 
 .project-link:hover {
-  color: var(--text-color-active);
+  color: #333;
+  animation: on-hover--project-link 0.5s ease;
 }
 
 .project-link:active {
-  color: #aaa;
+  transform: translate(1px, 1px);
 }
 
 .icon {
   width: 4rem;
   height: 4rem;
   padding: 0.4rem;
-  border-radius: 13px;
-  background-color: rgb(48, 77, 138);
+  border-radius: 19px;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.project-link:hover .icon {
+  background-color: white;
+  animation: on-hover--icon 0.5s ease;
+}
+
+.project-link:not(:hover) .icon {
+  animation: off-hover--icon 0.25s ease;
 }
 
 .text-blur {
@@ -106,4 +117,40 @@
 
 .img-blur {
   filter: blur(4px);
+}
+
+@keyframes on-hover--project-link {
+  0% {
+    color: var(--text-color-primary);
+  }
+  100% {
+    color: #333;
+  }
+}
+
+@keyframes off-hover--project-link {
+  0% {
+    color: #333;
+  }
+  100% {
+    color: var(--text-color-primary);
+  }
+}
+
+@keyframes on-hover--icon {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes off-hover--icon {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
 }

@@ -46,9 +46,9 @@
 
 .submit-btn {
   margin-top: 3.2rem;
-  background-color: rgba(95, 123, 185, 1);
+  background-color: transparent;
   padding: 0.8rem 1.2rem;
-  box-shadow: 0 0 5px 1px inset #88d3ca;
+  border: 2px solid white;
   border-radius: 9px;
   color: var(--text-color-primary);
   font-size: 2rem;
@@ -57,16 +57,22 @@
   font-family: inherit;
   text-decoration: none;
   cursor: pointer;
-  border: none;
   align-self: center;
 }
 
 .submit-btn:hover {
-  background-color: rgba(48, 76, 137, 1);
+  background-color: white;
+  color: #333;
+  animation: on-hover--submit-btn 0.5s ease;
+}
+
+.submit-btn:not(:hover) {
+  animation: off-hover--submit-btn 0.25s ease;
+  color: white;
 }
 
 .submit-btn:active {
-  background-color: rgba(48, 76, 137, 0.5);
+  transform: translate(1px, 1px);
 }
 
 .cta-avatar {
@@ -150,15 +156,13 @@
 
 /* HELPER CLASSES */
 .invalid {
-  box-shadow: 0 0 5px 1px red;
-  border: 2px solid red;
+  box-shadow: 0 0 5px 1px #c1121f;
+  border: 2px solid #c1121f;
 }
 
 .disabled {
-  color: #333;
-  background-color: #777;
+  filter: opacity(0.25);
   pointer-events: none;
-  box-shadow: none;
 }
 
 .hidden {
@@ -186,5 +190,23 @@
   }
   100% {
     transform: translate(0.4rem, 0);
+  }
+}
+
+@keyframes on-hover--submit-btn {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes off-hover--submit-btn {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
   }
 }
