@@ -1,18 +1,33 @@
+import { useRef } from 'react';
 import classes from './App.module.css';
+import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 
 const App = props => {
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const ctaRef = useRef(null);
+
   return (
-    <main>
-      <NavBar />
-      <Header />
+    <main className={classes.main}>
+      <NavBar
+        heroRefProp={heroRef}
+        aboutRefProp={aboutRef}
+        projectsRefProp={projectsRef}
+        ctaRefProp={ctaRef}
+      />
+      <Header refProp={heroRef} />
       <Skills />
-      <Projects />
-      <Contact />
+      <About refProp={aboutRef} ctaRefProp={ctaRef} />
+      <Projects refProp={projectsRef} />
+      <Contact refProp={ctaRef} />
+      <Footer heroRefProp={heroRef} />
     </main>
   );
 };

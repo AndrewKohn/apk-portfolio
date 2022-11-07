@@ -11,11 +11,12 @@ import NpmIcon from '../../assets/svg/languages/NpmIcon';
 import GitIcon from '../../assets/svg/languages/GitIcon';
 import classes from './Skills.module.css';
 import SkillBanner from './SkillBanner';
+import SecondaryHeading from '../UI/SecondaryHeading';
 
 const Skills = props => {
   return (
     <section className={classes[`skills-section`]}>
-      <h2 className={classes[`secondary-heading`]}>Skills</h2>
+      <SecondaryHeading>Skills</SecondaryHeading>
       <div className={classes[`skills-wrapper`]}>
         <div className={classes[`skills-container`]}>
           <span className={classes[`sub-heading--skills`]}>Front-End</span>

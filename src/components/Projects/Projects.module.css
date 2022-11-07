@@ -1,0 +1,30 @@
+.project-section {
+  position: relative;
+  width: var(--total-width);
+  padding: 12rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(158, 102, 0, 1);
+}
+
+.project-bg {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 6rem;
+  column-gap: 4.4rem;
+  margin-top: 8rem;
+}

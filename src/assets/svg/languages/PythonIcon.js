@@ -1,6 +1,7 @@
 const PythonIcon = props => {
   return (
     <svg viewBox="0 0 128 128" className={props.class}>
+      <title>Python</title>
       <linearGradient
         id="python-original-a"
         gradientUnits="userSpaceOnUse"

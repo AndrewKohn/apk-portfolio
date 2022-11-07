@@ -4,14 +4,15 @@ import GitHubIcon from '../../assets/svg/GitHubIcon';
 import LinkedInIcon from '../../assets/svg/LinkedInIcon';
 import HeroBG from '../../assets/svg/section-bg/HeroBG';
 import BlobBG from '../../assets/svg/section-bg/BlobBG';
+import AlternateCard from '../UI/AlternateCard';
 
 const Header = props => {
   return (
-    <div className={classes[`hero-container`]}>
+    <section className={classes[`hero-container`]} ref={props.refProp}>
       <HeroBG class={classes[`hero-bg`]} />
       <BlobBG class={classes[`blob-bg`]} />
 
-      <div className={classes[`hero-wrapper`]}>
+      <AlternateCard>
         <div className={classes[`header-container`]}>
           <h1 className={classes[`primary-header`]}>
             Andrew <br />
@@ -19,12 +20,18 @@ const Header = props => {
           </h1>
           <ul className={classes[`socials-list`]}>
             <li>
-              <a href="#" className={classes[`socials-link`]}>
+              <a
+                href="https://github.com/AndrewKohn/apk-portfolio-v2"
+                className={classes[`socials-link`]}
+              >
                 <LinkedInIcon class={classes.icon} />
               </a>
             </li>
             <li>
-              <a href="#" className={classes[`socials-link`]}>
+              <a
+                href="https://github.com/AndrewKohn/apk-portfolio-v2"
+                className={classes[`socials-link`]}
+              >
                 <GitHubIcon class={classes.icon} />
               </a>
             </li>
@@ -51,8 +58,8 @@ const Header = props => {
             </span>
           </li>
         </ul>
-      </div>
-    </div>
+      </AlternateCard>
+    </section>
   );
 };
 

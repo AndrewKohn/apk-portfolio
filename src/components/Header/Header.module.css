@@ -5,8 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
   overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(158, 102, 0, 1);
 }
 
 .hero-bg {
@@ -22,18 +23,6 @@
   transform: translateY(-15rem);
   z-index: -2;
   filter: blur(10px);
-}
-
-.hero-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  backdrop-filter: blur(4px);
-  padding: 3.2rem 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.05);
-  border-radius: 13px;
 }
 
 .header-container {
@@ -94,16 +83,12 @@
   gap: 1.8rem;
 }
 
-.description-list li {
-  /* background-color: red; */
-}
-
 .description-list li span {
-  /* background-color: purple; */
+  color: var(--text-color-primary);
 }
 
 .description-list li span strong {
-  /* background-color: aqua; */
+  color: rgb(83, 130, 231);
 }
 
 .checkmark {

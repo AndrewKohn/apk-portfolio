@@ -1,29 +1,48 @@
 import classes from './NavBar.module.css';
 import GitHubIcon from '../../assets/svg/GitHubIcon';
+import Logo from '../Logo/Logo';
 
 const NavBar = props => {
+  function clickLinkHandler(ref) {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <div className={classes[`nav-container`]}>
-      <button className={classes.logo}>AK</button>
+      <Logo class={classes[`mar-left--logo`]} heroRefProp={props.heroRefProp} />
 
       <ul className={classes[`nav-list`]}>
         <li>
-          <a href="#" className={classes[`nav-list-link`]}>
+          <button
+            className={classes[`nav-list-btn`]}
+            onClick={() => clickLinkHandler(props.aboutRefProp)}
+          >
             About
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#" className={classes[`nav-list-link`]}>
+          <button
+            className={classes[`nav-list-btn`]}
+            onClick={() => clickLinkHandler(props.projectsRefProp)}
+          >
             Projects
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#" className={classes[`nav-list-link`]}>
+          <button
+            className={classes[`nav-list-btn`]}
+            onClick={() => clickLinkHandler(props.ctaRefProp)}
+          >
             Contact
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#" className={classes[`nav-list-link`]}>
+          <a
+            href="https://github.com/AndrewKohn"
+            target="_blank"
+            rel="noreferrer"
+            className={classes[`nav-list-link`]}
+          >
             <GitHubIcon class={classes.icon} />
           </a>
         </li>
