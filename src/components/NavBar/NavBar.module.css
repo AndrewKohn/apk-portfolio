@@ -68,3 +68,13 @@
 .nav-list-link .icon:hover {
   box-shadow: 0 0 4px 1px var(--text-color-primary);
 }
+
+@media (max-width: 800px) {
+  .mar-left--logo {
+    margin-left: 1.6rem;
+  }
+
+  .nav-list li:not(:last-child) {
+    display: none;
+  }
+}

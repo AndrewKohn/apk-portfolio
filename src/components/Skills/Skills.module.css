@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 3.6rem;
 }
 .skills-container {
@@ -96,5 +97,34 @@
   }
   100% {
     filter: grayscale(1);
+  }
+}
+
+@media (max-width: 1700px) {
+}
+
+@media (max-width: 1300px) {
+  .skills-container:last-child {
+    border-left: none;
+  }
+
+  .skills-container:not(:last-child) {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 800px) {
+  .skills-wrapper {
+    flex-direction: column;
+  }
+  .skills-container:first-child {
+    border: none;
+  }
+  .skills-container:not(:last-child) {
+    border: none;
+    border-bottom: 1px solid #fff;
   }
 }

@@ -98,3 +98,22 @@
   margin-right: 0.8rem;
   color: #78c091;
 }
+
+@media (max-width: 1300px) {
+  .card-query {
+    margin: 0 4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .primary-header {
+    margin-left: -3.2rem;
+    font-size: 15rem;
+    text-align: center;
+  }
+
+  .card-query {
+    width: 34rem;
+    flex-direction: column;
+  }
+}

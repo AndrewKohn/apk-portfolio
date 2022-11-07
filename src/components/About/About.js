@@ -47,7 +47,7 @@ const About = props => {
           </div>
         )}
         <div className={classes[`about-column`]}>
-          <Card>
+          <Card class={classes[`card-query`]}>
             <div className={classes[`text-wrapper`]}>
               <p className={classes.text}>
                 A <strong>Web & Software Developer</strong> leveraging a

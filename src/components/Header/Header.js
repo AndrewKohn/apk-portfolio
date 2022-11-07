@@ -12,7 +12,7 @@ const Header = props => {
       <HeroBG class={classes[`hero-bg`]} />
       <BlobBG class={classes[`blob-bg`]} />
 
-      <AlternateCard>
+      <AlternateCard class={classes[`card-query`]}>
         <div className={classes[`header-container`]}>
           <h1 className={classes[`primary-header`]}>
             Andrew <br />

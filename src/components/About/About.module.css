@@ -167,3 +167,30 @@
     background-color: white;
   }
 }
+
+@media (max-width: 1300px) {
+  .about-wrapper {
+    flex-direction: column;
+  }
+
+  .card-query {
+    margin: 0 4rem;
+  }
+
+  .link-wrapper {
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card-query {
+    width: 60rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .card-query {
+    width: 34rem;
+  }
+}
