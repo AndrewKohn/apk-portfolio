@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import classes from './App.module.css';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import Projects from './components/Projects/Projects';
@@ -26,6 +27,7 @@ const App = props => {
       <About refProp={aboutRef} ctaRefProp={ctaRef} />
       <Projects refProp={projectsRef} />
       <Contact refProp={ctaRef} />
+      <Footer heroRefProp={heroRef} />
     </main>
   );
 };
