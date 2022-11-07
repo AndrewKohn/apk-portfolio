@@ -60,7 +60,8 @@ const PROJECTS_DATA = [
     image: projectImage1,
     altText: 'alt text here',
     title: 'Payroll Report Sorter',
-    description: 'test',
+    description:
+      "A personal program to sort staff's time-clocks in payroll reports between multiple facilities.",
     tags: [JavaIcon],
     gitHubPath: 'https://github.com/AndrewKohn/PayrollReportSorter',
     liveSitePath: '',
@@ -71,7 +72,7 @@ const PROJECTS_DATA = [
     altText: 'alt text here',
     title: 'PDF/Word Converter',
     description:
-      'Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
+      'Simple program that converts pdf <-> docx while maintaining proper formatting.  Used to help with my work involving editing .pdf files from time-to-time.',
     tags: [JavaIcon],
     gitHubPath: 'https://github.com/AndrewKohn/PDFWordConverter',
     liveSitePath: '',
@@ -81,8 +82,7 @@ const PROJECTS_DATA = [
     image: projectImage3,
     altText: 'alt text here',
     title: 'MGH Menu',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
+    description: 'This project allows the user to view/submit weekly menus.',
     tags: [HtmlIcon, CssIcon, JavaScriptIcon],
     gitHubPath: 'https://github.com/AndrewKohn/MGH-menu',
     liveSitePath: 'https://mghmenu.netlify.app/',
@@ -93,7 +93,7 @@ const PROJECTS_DATA = [
     altText: 'alt text here',
     title: 'My Coding Tracker',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
+      "Simple timer to count the amount of time spent actively coding. This timer should not be spent on solely browsing videos, podcasts, books, & etc even if they're related.",
     tags: [JavaIcon],
     gitHubPath: 'https://github.com/AndrewKohn/MyCodingTracker',
     liveSitePath: '',
