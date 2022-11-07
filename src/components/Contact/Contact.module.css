@@ -210,3 +210,15 @@
     background-color: transparent;
   }
 }
+
+@media (max-width: 800px) {
+  .form {
+    width: 34rem;
+  }
+
+  .cta-avatar {
+    width: 33.4rem;
+    transform: translateY(8rem);
+    padding: 0 2rem;
+  }
+}

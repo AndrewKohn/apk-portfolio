@@ -70,11 +70,11 @@
 }
 
 @media (max-width: 800px) {
-  .logo {
+  .mar-left--logo {
     margin-left: 1.6rem;
   }
 
-  .nav-list {
-    margin-right: 1.6rem;
+  .nav-list li:not(:last-child) {
+    display: none;
   }
 }
