@@ -220,5 +220,6 @@
     width: 33.4rem;
     transform: translateY(8rem);
     padding: 0 2rem;
+    margin-top: 0;
   }
 }
