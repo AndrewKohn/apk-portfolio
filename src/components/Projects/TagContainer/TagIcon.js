@@ -19,8 +19,7 @@ const TagIcon = props => {
   let hasTag = false;
 
   for (const icon of iconArray) {
-    if (props.tag.toString().toUpperCase() === icon.name.toUpperCase())
-      TagIcon = icon;
+    if (props.tag.toString() === icon.name) TagIcon = icon;
   }
 
   if (TagIcon !== '') hasTag = true;
