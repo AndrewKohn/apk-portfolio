@@ -65,7 +65,7 @@ const ProjectGridItem = props => {
         </div>
 
         {/* TAGS */}
-        <TagContainer tags={props.tags} />
+        {props.tags.length > 0 ? <TagContainer tags={props.tags} /> : <div />}
       </div>
     </Card>
   );

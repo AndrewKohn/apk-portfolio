@@ -3,6 +3,17 @@ import ProjectGridItem from './ProjectGridItem';
 import exImg from '../../assets/img/ex-img.png';
 import ProjectBG from '../../assets/svg/section-bg/ProjectBG';
 import classes from './Projects.module.css';
+import HtmlIcon from '../../assets/svg/languages/HtmlIcon';
+import CssIcon from '../../assets/svg/languages/CssIcon';
+import JavaScriptIcon from '../../assets/svg/languages/JavaScriptIcon';
+import ReactIcon from '../../assets/svg/languages/ReactIcon';
+import NodeJSIcon from '../../assets/svg/languages/NodeJSIcon';
+import MySQLIcon from '../../assets/svg/languages/MySQLIcon';
+import JavaIcon from '../../assets/svg/languages/JavaIcon';
+import PythonIcon from '../../assets/svg/languages/PythonIcon';
+import SassIcon from '../../assets/svg/languages/SassIcon';
+import NpmIcon from '../../assets/svg/languages/NpmIcon';
+import GitIcon from '../../assets/svg/languages/GitIcon';
 
 const Projects = props => {
   const projectGridItem = PROJECTS_DATA.map(project => (
@@ -42,7 +53,7 @@ const PROJECTS_DATA = [
     altText: 'alt text here',
     title: 'Payroll Report Sorter',
     description: 'test',
-    tags: ['JavaIcon'],
+    tags: [JavaIcon],
     gitHubPath: 'https://github.com/AndrewKohn/PayrollReportSorter',
     liveSitePath: '',
   },
@@ -53,7 +64,7 @@ const PROJECTS_DATA = [
     title: 'PDF/Word Converter',
     description:
       'Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['JavaIcon'],
+    tags: [JavaIcon],
     gitHubPath: 'https://github.com/AndrewKohn/PDFWordConverter',
     liveSitePath: '',
   },
@@ -64,7 +75,7 @@ const PROJECTS_DATA = [
     title: 'MGH Menu',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['HtmlIcon', 'CssIcon', 'JavaScriptIcon'],
+    tags: [HtmlIcon, CssIcon, JavaScriptIcon],
     gitHubPath: 'https://github.com/AndrewKohn/MGH-menu',
     liveSitePath: 'https://mghmenu.netlify.app/',
   },
@@ -75,7 +86,7 @@ const PROJECTS_DATA = [
     title: 'My Coding Tracker',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: ['JavaIcon'],
+    tags: [JavaIcon],
     gitHubPath: 'https://github.com/AndrewKohn/MyCodingTracker',
     liveSitePath: '',
   },
