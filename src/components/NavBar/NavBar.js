@@ -1,5 +1,6 @@
 import classes from './NavBar.module.css';
 import GitHubIcon from '../../assets/svg/GitHubIcon';
+import Logo from '../Logo/Logo';
 
 const NavBar = props => {
   function clickLinkHandler(ref) {
@@ -8,12 +9,7 @@ const NavBar = props => {
 
   return (
     <div className={classes[`nav-container`]}>
-      <button
-        className={classes.logo}
-        onClick={() => clickLinkHandler(props.heroRefProp)}
-      >
-        AK
-      </button>
+      <Logo class={classes[`mar-left--logo`]} heroRefProp={props.heroRefProp} />
 
       <ul className={classes[`nav-list`]}>
         <li>
