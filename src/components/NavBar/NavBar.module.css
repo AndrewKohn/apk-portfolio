@@ -27,34 +27,34 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: var(--text-color-primary);
+  color: var(--text-color);
   font-family: inherit;
   font-weight: 400;
   letter-spacing: 2px;
   font-size: 2rem;
 }
 .nav-list-btn:hover {
-  text-shadow: 0 0 2px var(--text-color-primary);
+  text-shadow: 0 0 2px var(--text-color);
 }
 .nav-list-btn:active {
-  text-shadow: 0 0 2px var(--text-color-active);
-  color: var(--text-color-active);
+  text-shadow: 0 0 2px var(--text-color--dark);
+  color: var(--text-color--dark);
 }
 
 .nav-list-link:link,
 .nav-list-link:visited {
   text-decoration: none;
-  color: var(--text-color-primary);
+  color: var(--text-color);
   font-weight: 400;
   letter-spacing: 2px;
   font-size: 2rem;
 }
 .nav-list-link:hover {
-  text-shadow: 0 0 2px var(--text-color-primary);
+  text-shadow: 0 0 2px var(--text-color);
 }
 .nav-list-link:active {
-  text-shadow: 0 0 2px var(--text-color-active);
-  color: var(--text-color-active);
+  text-shadow: 0 0 2px var(--text-color--dark);
+  color: var(--text-color--dark);
 }
 
 .icon {
@@ -66,7 +66,7 @@
 }
 
 .nav-list-link .icon:hover {
-  box-shadow: 0 0 4px 1px var(--text-color-primary);
+  box-shadow: 0 0 4px 1px var(--text-color);
 }
 
 @media (max-width: 800px) {
