@@ -7,7 +7,7 @@
   align-items: center;
   overflow: hidden;
   box-sizing: border-box;
-  border-bottom: 3px solid rgba(158, 102, 0, 1);
+  border-bottom: 3px solid rgba(var(--tertiary), 0.65);
 }
 
 .hero-bg {
@@ -34,17 +34,17 @@
 
 .primary-header {
   font-size: 24rem;
-  color: #ddd;
+  color: var(--secondary-color);
   text-align: right;
   line-height: 9.8rem;
   font-family: 'Kolker Brush', sans-serif;
   padding: 2.4rem 0 0 4rem;
-  text-shadow: 0 0 8px #dee2e6;
+  text-shadow: 0 0 8px rgba(var(--secondary), 0.5);
 }
 
 .primary-header span {
-  color: rgb(83, 130, 231);
-  text-shadow: 0 0 8px rgb(83, 130, 231);
+  color: var(--tertiary-color);
+  text-shadow: 0 0 8px rgba(var(--tertiary), 0.5);
 }
 
 .socials-list {
@@ -58,15 +58,15 @@
 
 .socials-link:link,
 .socials-link:visited {
-  color: #ddd;
+  color: var(--text-color);
 }
 
 .socials-link:hover {
-  color: #fff;
+  color: var(--text-color--dark);
 }
 
 .socials-link:active {
-  color: #aaa;
+  color: var(--tertiary-color);
 }
 
 .icon {
@@ -84,11 +84,11 @@
 }
 
 .description-list li span {
-  color: var(--text-color-primary);
+  color: var(--text-color);
 }
 
 .description-list li span strong {
-  color: rgb(83, 130, 231);
+  color: var(--text-color--accent);
 }
 
 .checkmark {
@@ -96,7 +96,7 @@
   width: 2rem;
   height: 2rem;
   margin-right: 0.8rem;
-  color: #78c091;
+  color: var(--quinary-color);
 }
 
 @media (max-width: 1300px) {

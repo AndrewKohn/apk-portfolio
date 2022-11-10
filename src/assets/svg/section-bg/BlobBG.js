@@ -1,8 +1,8 @@
 import classes from './BlobBG.module.css';
 
 const BlobBG = props => {
-  const circleColor1 = 'rgba(21, 50, 67, 0.35)';
-  const circleColor2 = 'rgba(21, 50, 67, 0.65)';
+  const circleColor1 = 'rgba(var(--quarternary), 0.3)';
+  const circleColor2 = 'rgba(var(--tertiary), 0.08)';
 
   return (
     <svg

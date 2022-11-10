@@ -6,7 +6,7 @@
   align-items: center;
   padding: 1.2rem 0;
   width: var(--total-width);
-  background-color: rgba(21, 21, 21, 0.75);
+  background-color: rgba(var(--quarternary), 0.75);
   z-index: 50;
 }
 

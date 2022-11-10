@@ -4,8 +4,8 @@
   margin-left: -1.4rem;
   padding: 0.4rem;
   border-radius: 9px;
-  background-color: rgb(38, 39, 44);
-  box-shadow: 0 0 2px 1px inset #88d3ca;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 2px 1px inset var(--quarternary-color);
   filter: contrast(0.8);
   overflow: hidden;
 }

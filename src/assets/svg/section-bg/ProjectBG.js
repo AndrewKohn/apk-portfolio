@@ -1,4 +1,7 @@
 const ProjectBG = props => {
+  const color1 = 'rgba(var(--tertiary), 0.05)';
+  const color2 = 'rgba(var(--quinary), 0.05)';
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -541,8 +544,8 @@ const ProjectBG = props => {
           y2="0%"
           id="SvgjsLinearGradient1052"
         >
-          <stop stopColor="rgba(28, 83, 142, 0)" offset="0"></stop>
-          <stop stopColor="rgba(255, 255, 255, 0.25)" offset="1"></stop>
+          <stop stopColor={color1} offset="0"></stop>
+          <stop stopColor={color2} offset="1"></stop>
         </linearGradient>
         <linearGradient
           x1="100%"
@@ -551,8 +554,8 @@ const ProjectBG = props => {
           y2="100%"
           id="SvgjsLinearGradient1053"
         >
-          <stop stopColor="rgba(28, 83, 142, 0)" offset="0"></stop>
-          <stop stopColor="rgba(255, 255, 255, 0.25)" offset="1"></stop>
+          <stop stopColor={color1} offset="0"></stop>
+          <stop stopColor={color2} offset="1"></stop>
         </linearGradient>
       </defs>
     </svg>

@@ -2,7 +2,7 @@
   position: relative;
   font-family: 'Encode Sans';
   font-size: 2.4rem;
-  color: var(--text-color-primary);
+  color: var(--text-color);
   letter-spacing: 2px;
   transition: content 0.5s ease;
   background-color: transparent;
@@ -14,7 +14,7 @@
 }
 
 .logo:active {
-  color: var(--text-color-active);
+  color: var(--text-color--dark);
 }
 
 .logo::before {
@@ -36,5 +36,5 @@
 
 .logo:hover::after {
   width: 5.6rem;
-  background-color: #88d3ca;
+  background-color: var(--tertiary-color);
 }

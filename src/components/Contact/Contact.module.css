@@ -8,7 +8,7 @@
   flex-direction: column;
   box-sizing: border-box;
   overflow: hidden;
-  border-bottom: 3px solid rgba(158, 102, 0, 1);
+  border-bottom: 3px solid rgba(var(--tertiary), 0.65);
 }
 
 .cta-bg {
@@ -19,7 +19,7 @@
 }
 
 .cta-card {
-  background-color: rgba(61, 62, 73, 1);
+  background-color: rgba(var(--quarternary), 1);
 }
 
 .form {
@@ -48,9 +48,9 @@
   margin-top: 3.2rem;
   background-color: transparent;
   padding: 0.8rem 1.2rem;
-  border: 2px solid white;
+  border: 2px solid var(--tertiary-color);
   border-radius: 9px;
-  color: var(--text-color-primary);
+  color: var(--tertiary-color);
   font-size: 2rem;
   font-weight: 600rem;
   letter-spacing: 2px;
@@ -61,14 +61,14 @@
 }
 
 .submit-btn:hover {
-  background-color: white;
-  color: #333;
+  background-color: rgba(var(--tertiary), 0.25);
+  color: var(--text-color);
   animation: on-hover--submit-btn 0.5s ease;
 }
 
 .submit-btn:not(:hover) {
   animation: off-hover--submit-btn 0.25s ease;
-  color: white;
+  color: var(--tertiary-color);
 }
 
 .submit-btn:active {
@@ -83,8 +83,8 @@
   border-radius: 50px 50px 0 0;
   padding: 2rem;
   padding-bottom: 0;
-  border: 3px solid rgba(61, 62, 73, 0.8);
-  box-shadow: 0 0 10px 5px inset rgba(61, 62, 73, 0.75);
+  border: 3px solid rgba(var(--quarternary), 0.8);
+  box-shadow: 0 0 10px 5px inset rgba(var(--quarternary), 0.75);
 }
 
 /* INPUT STYLING */
@@ -103,8 +103,8 @@
   font-size: 2rem;
   padding: 0.4rem 0.8rem;
   border-radius: 7px;
-  border: 2px solid #88d3ca;
-  background-color: #333;
+  border: 2px solid var(--quinary-color);
+  background-color: var(--primary-color);
   color: var(--text-color-primary);
   box-sizing: border-box;
 }
@@ -121,14 +121,14 @@
   margin-top: 0.8rem;
   font-size: 1.5rem;
   border-radius: 7px;
-  border: 2px solid #88d3ca;
-  background-color: #333;
-  color: var(--text-color-primary);
+  border: 2px solid var(--quinary-color);
+  background-color: var(--primary-color);
+  color: var(--text-color);
   box-sizing: border-box;
   resize: none;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--text-color-primary) rgba(255, 255, 255, 0.25);
+  scrollbar-color: var(--text-color) rgba(255, 255, 255, 0.25);
 }
 
 .text-box:focus {
@@ -196,18 +196,22 @@
 @keyframes on-hover--submit-btn {
   0% {
     background-color: transparent;
+    color: var(--tertiary-color);
   }
   100% {
-    background-color: white;
+    background-color: rgba(var(--tertiary), 0.25);
+    color: var(--text-color);
   }
 }
 
 @keyframes off-hover--submit-btn {
   0% {
-    background-color: white;
+    background-color: rgba(var(--tertiary), 0.25);
+    color: var(--text-color);
   }
   100% {
     background-color: transparent;
+    color: var(--tertiary-color);
   }
 }
 

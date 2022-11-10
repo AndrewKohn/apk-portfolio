@@ -2,8 +2,36 @@
 
 :root {
   --total-width: 160rem;
-  --text-color-primary: #eee;
-  --text-color-active: #ccc;
+
+  /* ////////////////// */
+  /* Main color palette */
+  /* ////////////////// */
+
+  /* smoky-black: #111111; */
+  --primary: 17, 17, 17;
+
+  /* platinum: #e3e3e3; */
+  --secondary: 227, 227, 227;
+
+  /* dark-orange: #fe8a01; */
+  --tertiary: 254, 138, 1;
+
+  /* black-coffee: #403734; */
+  --quarternary: 64, 55, 52;
+
+  /* star-command-blue: #2274a5; */
+  --quinary: 34, 116, 165;
+
+  --primary-color: rgb(var(--primary));
+  --secondary-color: rgb(var(--secondary));
+  --tertiary-color: rgb(var(--tertiary));
+  --quarternary-color: rgb(var(--quarternary));
+  --quinary-color: rgb(var(--quinary));
+
+  /* /////// */
+  --text-color: var(--secondary-color);
+  --text-color--dark: #b3b3b3;
+  --text-color--accent: var(--quinary-color);
 }
 
 * {
@@ -28,7 +56,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222;
+  background-color: var(--primary-color);
 }
 
 code {

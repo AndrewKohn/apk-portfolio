@@ -1,4 +1,8 @@
 const AboutBG = props => {
+  const color1 = 'rgba(var(--tertiary), 0.46)';
+  const color2 = 'rgba(var(--quinary), 0.25)';
+  const color3 = 'rgba(var(--primary), 1)';
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +50,8 @@ const AboutBG = props => {
           gradientUnits="userSpaceOnUse"
           id="SvgjsLinearGradient2556"
         >
-          <stop stopColor="rgba(14, 42, 71, 1)" offset="0.35"></stop>
-          <stop stopColor="rgba(158, 102, 0, 0.46)" offset="1"></stop>
+          <stop stopColor={color3} offset="0.5"></stop>
+          <stop stopColor={color1} offset="1"></stop>
         </linearGradient>
         <linearGradient
           x1="1280"
@@ -57,8 +61,8 @@ const AboutBG = props => {
           gradientUnits="userSpaceOnUse"
           id="SvgjsLinearGradient2557"
         >
-          <stop stopColor="rgba(14, 42, 71, 1)" offset="0.12"></stop>
-          <stop stopColor="rgba(0, 69, 158, 0.6)" offset="1"></stop>
+          <stop stopColor={color3} offset="0.3"></stop>
+          <stop stopColor={color2} offset="1"></stop>
         </linearGradient>
       </defs>
     </svg>
