@@ -105,7 +105,7 @@
   border-radius: 7px;
   border: 2px solid var(--quinary-color);
   background-color: var(--primary-color);
-  color: var(--text-color-primary);
+  color: var(--text-color);
   box-sizing: border-box;
 }
 
@@ -146,12 +146,12 @@
 }
 
 .text-box::-webkit-scrollbar-thumb {
-  background: var(--text-color-primary);
+  background: var(--text-color);
   border-radius: 10px;
 }
 
 .text-box::-webkit-scrollbar-thumb:hover {
-  background: var(--text-color-active);
+  background: var(--text-color--dark);
 }
 
 /* HELPER CLASSES */

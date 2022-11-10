@@ -30,7 +30,7 @@
 }
 
 .skills-container:hover {
-  background-color: var(--quarternary-color);
+  background-color: rgba(var(--quarternary), 0.4);
   animation: skill-bg-hover-in 0.25s ease;
 }
 
@@ -69,13 +69,13 @@
     background-color: rgba(170, 170, 170, 0);
   }
   100% {
-    background-color: var(--quarternary-color);
+    background-color: rgba(var(--quarternary), 0.4);
   }
 }
 
 @keyframes skill-bg-hover-out {
   0% {
-    background-color: var(--quarternary-color);
+    background-color: rgba(var(--quarternary), 0.4);
   }
   100% {
     background-color: rgba(170, 170, 170, 0);
