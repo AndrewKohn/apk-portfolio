@@ -10,8 +10,7 @@
 
 ## To-do:
 
-- [ ] Adjust Color scheme
-- [ ] Tweak height media queries
+- [x] Adjust Color scheme
 
 Chrome Lighthouse:
 
