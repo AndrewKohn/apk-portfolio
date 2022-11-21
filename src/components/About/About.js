@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Avatar from '../../assets/svg/avatars/Avatar';
 import AvatarClosed from '../../assets/svg/avatars/AvatarClosed';
-import AvatarSide from '../../assets/svg/avatars/AvatarSide';
+// import AvatarSide from '../../assets/svg/avatars/AvatarSide';
 import AboutBG from '../../assets/svg/section-bg/AboutBG';
 import Card from '../UI/Card';
 import SecondaryHeading from '../UI/SecondaryHeading';
-import resumeFile from '../../assets/Andrew-Kohn-Resume.pdf';
+import resumeFile from '../../assets/andrew-kohn-resume.pdf';
 import classes from './About.module.css';
 
 const About = props => {
@@ -69,6 +69,7 @@ const About = props => {
             <a
               href={resumeFile}
               target="_blank"
+              rel="noreferrer"
               className={classes[`resume-link`]}
             >
               Résumé

@@ -38,7 +38,7 @@ const NavBar = props => {
         </li>
         <li>
           <a
-            href="https://github.com/AndrewKohn"
+            href="https://github.com/AndrewKohn/"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub url"

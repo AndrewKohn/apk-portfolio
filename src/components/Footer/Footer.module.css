@@ -48,7 +48,6 @@
   width: 2rem;
   height: 2rem;
   color: white;
-  border-radius: 50%;
 }
 
 .social-links li:hover .social-link .social-link-icon {
