@@ -5,7 +5,7 @@ import AvatarClosed from '../../assets/svg/avatars/AvatarClosed';
 import AboutBG from '../../assets/svg/section-bg/AboutBG';
 import Card from '../UI/Card';
 import SecondaryHeading from '../UI/SecondaryHeading';
-import resumeFile from '../../assets/andrew-kohn-resume.pdf';
+import resumeFile from '../../assets/apk-resume.pdf';
 import classes from './About.module.css';
 
 const About = props => {
