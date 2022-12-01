@@ -29,7 +29,7 @@ const Projects = props => {
     <ProjectGridItem
       key={project.id}
       image={project.image}
-      altText={project.altText + (project.id + 1)}
+      altText={project.altText}
       title={project.title}
       description={project.description}
       tags={project.tags}
