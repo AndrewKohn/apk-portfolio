@@ -44,7 +44,11 @@ const ProjectGridItem = props => {
         {/* LINKS */}
         <div className={classes[`links-wrapper`]}>
           {props.liveSitePath ? (
-            <a href={props.liveSitePath} className={classes[`project-link`]}>
+            <a
+              href={props.liveSitePath}
+              className={classes[`project-link`]}
+              target="_blank"
+            >
               <EyeFillIcon class={classes.icon} />
             </a>
           ) : (
@@ -54,7 +58,11 @@ const ProjectGridItem = props => {
           )}
 
           {props.gitHubPath ? (
-            <a href={props.gitHubPath} className={classes[`project-link`]}>
+            <a
+              href={props.gitHubPath}
+              className={classes[`project-link`]}
+              target="_blank"
+            >
               <GitHubIcon class={classes.icon} />
             </a>
           ) : (
