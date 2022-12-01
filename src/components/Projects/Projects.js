@@ -113,7 +113,7 @@ const PROJECTS_DATA = [
   {
     id: 5,
     image: exImg,
-    altText: 'alt text here',
+    altText: 'Coming Soon!',
     title: 'Project 5',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
