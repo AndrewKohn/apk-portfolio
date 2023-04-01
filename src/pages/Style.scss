@@ -1,0 +1,15 @@
+@use '../styles/mixins';
+
+.container {
+  @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+  @include mixins.AnimateFadeIn();
+  filter: opacity(1);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.home-container {
+  gap: 16rem;
+}
