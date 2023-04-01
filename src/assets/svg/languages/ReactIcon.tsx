@@ -1,6 +1,10 @@
-const ReactIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const ReactIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>React</title>
       <g fill="#61DAFB">
         <circle cx="64" cy="64" r="11.4"></circle>

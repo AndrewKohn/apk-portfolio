@@ -1,6 +1,10 @@
-const JavaScriptIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const JavaScriptIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>JavaScript</title>
       <path
         fill="#F0DB4F"

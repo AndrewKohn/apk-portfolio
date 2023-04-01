@@ -1,6 +1,10 @@
-const SassIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const SassIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>Sass</title>
       <path
         fillRule="evenodd"

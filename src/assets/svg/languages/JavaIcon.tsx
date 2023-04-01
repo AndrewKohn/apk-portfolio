@@ -1,6 +1,10 @@
-const JavaIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const JavaIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>Java</title>
       <path
         fill="#0074BD"

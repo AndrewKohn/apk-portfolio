@@ -1,6 +1,10 @@
-const GitIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const GitIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>Git</title>
       <path
         fill="#F34F29"

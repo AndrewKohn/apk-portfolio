@@ -1,6 +1,10 @@
-const MySQLIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const MySQLIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>mySQL</title>
       <path
         fill="#00618A"

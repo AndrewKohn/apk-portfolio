@@ -1,6 +1,10 @@
-const PythonIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const PythonIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>Python</title>
       <linearGradient
         id="python-original-a"

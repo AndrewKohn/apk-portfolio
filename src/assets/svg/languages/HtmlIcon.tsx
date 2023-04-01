@@ -1,6 +1,10 @@
-const HtmlIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const HtmlIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>HTML5</title>
       <path
         fill="#E44D26"

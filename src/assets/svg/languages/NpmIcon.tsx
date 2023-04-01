@@ -1,6 +1,10 @@
-const NpmIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const NpmIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>npm</title>
       <path
         fill="#cb3837"

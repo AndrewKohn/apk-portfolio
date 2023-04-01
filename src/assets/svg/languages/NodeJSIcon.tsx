@@ -1,6 +1,10 @@
-const NodeJSIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const NodeJSIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>NodeJS</title>
       <path
         fill="#83CD29"

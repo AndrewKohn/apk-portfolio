@@ -1,6 +1,10 @@
-const CssIcon = props => {
+interface Props {
+  className?: string;
+}
+
+const CssIcon = ({ className }: Props) => {
   return (
-    <svg viewBox="0 0 128 128" className={props.class}>
+    <svg viewBox="0 0 128 128" className={className}>
       <title>CSS3</title>
       <path
         fill="#1572B6"
