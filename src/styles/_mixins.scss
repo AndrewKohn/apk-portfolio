@@ -5,3 +5,16 @@
   flex-direction: $direction;
   flex-wrap: $wrap;
 }
+
+@mixin AnimateFadeIn() {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}
