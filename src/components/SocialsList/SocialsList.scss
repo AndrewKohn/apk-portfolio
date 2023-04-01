@@ -1,0 +1,23 @@
+@use '../../styles/mixins';
+
+.socials {
+  @include mixins.DisplayFlex(flex-end, center, row, nowrap);
+  list-style: none;
+  gap: 0.8rem;
+  margin-top: 2.8rem;
+
+  .social {
+    .social-link {
+      .icon--sm {
+        width: 2rem;
+        height: 2rem;
+        color: aqua;
+      }
+      .icon--lg {
+        width: 4rem;
+        height: 4rem;
+        color: aqua;
+      }
+    }
+  }
+}
