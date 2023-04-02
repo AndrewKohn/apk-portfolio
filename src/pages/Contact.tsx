@@ -1,16 +1,18 @@
+import ContactAvatars from '../assets/svg/avatars/ContactAvatars';
+import ContactForm from '../components/ContactForm/ContactForm';
+import Card from '../components/UI/Card';
 import './Style.scss';
-
-interface Props {}
 
 const Contact = ({}) => {
   return (
     <div className="container">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
-        expedita minima maxime eum deserunt voluptatum nesciunt, reprehenderit
-        doloremque, exercitationem sunt odio, sint explicabo dolorum error
-        velit. Facilis aliquam quidem aperiam.
-      </p>
+      <h2>CONTACT</h2>
+      <Card classes="form-container">
+        <ContactAvatars className="contact-avatars" />
+        <div className="form-wrapper">
+          <ContactForm />
+        </div>
+      </Card>
     </div>
   );
 };
