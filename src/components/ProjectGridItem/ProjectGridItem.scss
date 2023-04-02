@@ -1,0 +1,40 @@
+@use '../../styles/mixins';
+
+.project-card {
+  @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+  border-radius: 5px;
+  box-shadow: none;
+  background-color: #efefef;
+  color: #333;
+  max-width: 35rem;
+  min-height: 45rem;
+  filter: opacity(1) blur(0);
+  transition: filter 0.25s ease-in-out;
+
+  &:not(:hover) {
+    filter: opacity(0.15) blur(1px);
+  }
+
+  .project-image {
+  }
+
+  .project-info-container {
+    .description {
+    }
+  }
+
+  // HELPER CLASSES
+  .blurred-container {
+    overflow: hidden;
+
+    .blurred-img {
+      filter: blur(3px);
+      pointer-events: none;
+    }
+  }
+
+  .disabled-text {
+    filter: blur(3px);
+    user-select: none;
+  }
+}
