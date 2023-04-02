@@ -13,3 +13,11 @@
 .home-container {
   gap: 16rem;
 }
+
+.projects-grid {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
