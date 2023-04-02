@@ -1,4 +1,8 @@
-const AvatarClosed = props => {
+interface Props {
+  className: string;
+}
+
+const AvatarClosed = ({ className }: Props) => {
   return (
     <svg
       width="264px"
@@ -7,7 +11,7 @@ const AvatarClosed = props => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className={props.class}
+      className={className}
     >
       <desc>Created with getavataaars.com</desc>
       <defs>

@@ -1,4 +1,8 @@
-const ContactAvatars = props => {
+interface Props {
+  className: string;
+}
+
+const ContactAvatars = ({ className }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +10,7 @@ const ContactAvatars = props => {
       height="367.92049"
       viewBox="0 0 552.94084 367.92049"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className={props.class}
+      className={className}
     >
       <path
         d="M213.77996,33.23929h-67.08496c-2.30142,0-4.17392-1.87249-4.17392-4.17392s1.8725-4.17392,4.17392-4.17392h67.08496c2.30142,0,4.17392,1.87249,4.17392,4.17392s-1.8725,4.17392-4.17392,4.17392Z"

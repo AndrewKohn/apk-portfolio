@@ -1,4 +1,8 @@
-const Avatar = props => {
+interface Props {
+  className: string;
+}
+
+const Avatar = ({ className }: Props) => {
   return (
     <svg
       width="264px"
@@ -6,7 +10,7 @@ const Avatar = props => {
       viewBox="0 0 264 280"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className={props.class}
+      className={className}
     >
       <desc>Created with getavataaars.com</desc>
       <defs>
