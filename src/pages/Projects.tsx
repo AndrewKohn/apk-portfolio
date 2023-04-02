@@ -1,16 +1,28 @@
 import './Style.scss';
-
-interface Props {}
+import PROJECTS_DATA from '../data/ProjectsData';
+import ProjectGridItem from '../components/ProjectGridItem/ProjectGridItem';
 
 const Projects = ({}) => {
+  const projectGridItems = PROJECTS_DATA.map((project, index: number) => {
+    return (
+      <ProjectGridItem
+        key={index}
+        image={project.image}
+        altText={project.altText}
+        title={project.title}
+        description={project.description}
+        tags={project.tags}
+        githubPath={project.gitHubPath}
+        liveSitePath={project.liveSitePath}
+      />
+    );
+  });
+
   return (
     <div className="container">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
-        expedita minima maxime eum deserunt voluptatum nesciunt, reprehenderit
-        doloremque, exercitationem sunt odio, sint explicabo dolorum error
-        velit. Facilis aliquam quidem aperiam.
-      </p>
+      <h2>PROJECTS</h2>
+
+      <div className="projects-grid">{projectGridItems}</div>
     </div>
   );
 };
