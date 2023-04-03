@@ -1,4 +1,8 @@
-const EyeFillIcon = props => {
+interface Props {
+  className: string;
+}
+
+const EyeFillIcon = ({ className }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +10,7 @@ const EyeFillIcon = props => {
       height="16"
       fill="currentColor"
       viewBox="0 0 16 16"
-      className={props.class}
+      className={className}
     >
       <title>Live Demo</title>
       <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />

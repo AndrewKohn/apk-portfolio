@@ -1,7 +1,11 @@
-const CtaBG = props => {
-  const color1 = 'var(--quinary-color)';
-  const color2 = 'var(--tertiary-color)';
-  const color3 = 'var(--quarternary-color)';
+interface Props {
+  className: string;
+}
+
+const CtaBG = ({ className }: Props) => {
+  const color1 = 'red';
+  const color2 = 'green';
+  const color3 = 'gold';
 
   return (
     <svg
@@ -12,7 +16,7 @@ const CtaBG = props => {
       height="1440"
       preserveAspectRatio="none"
       viewBox="0 0 2560 1440"
-      className={props.class}
+      className={className}
     >
       <g mask='url("#SvgjsMask1177")' fill="none">
         <path

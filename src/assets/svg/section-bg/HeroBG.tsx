@@ -1,7 +1,11 @@
-const HeroBG = props => {
-  const color1 = 'var(--tertiary-color)';
-  const color2 = 'var(--secondary-color)';
-  const color3 = 'var(--quarternary-color)';
+interface Props {
+  className: string;
+}
+
+const HeroBG = ({ className }: Props) => {
+  const color1 = '#3838';
+  const color2 = '#954';
+  const color3 = '#511';
 
   return (
     <svg
@@ -11,7 +15,7 @@ const HeroBG = props => {
       height="1440"
       preserveAspectRatio="none"
       viewBox="0 0 1600 1440"
-      className={props.class}
+      className={className}
     >
       <g mask='url("#SvgjsMask1063")' fill="none">
         <rect

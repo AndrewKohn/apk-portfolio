@@ -1,6 +1,10 @@
-const ProjectBG = props => {
-  const color1 = 'rgba(var(--tertiary), 0.05)';
-  const color2 = 'rgba(var(--quinary), 0.05)';
+interface Props {
+  className: string;
+}
+
+const ProjectBG = ({ className }: Props) => {
+  const color1 = 'rgba(255,255,255, 0.05)';
+  const color2 = 'rgba(255,2,53, 0.05)';
 
   return (
     <svg
@@ -11,7 +15,7 @@ const ProjectBG = props => {
       height="1440"
       preserveAspectRatio="none"
       viewBox="0 0 2560 1440"
-      className={props.class}
+      className={className}
     >
       <g mask='url("#SvgjsMask1051")' fill="none">
         <path
