@@ -14,8 +14,6 @@ import TypeScriptIcon from '../../assets/svg/languages/TypeScriptIcon';
 import ViteIcon from '../../assets/svg/languages/ViteIcon';
 import './Skills.scss';
 
-interface Props {}
-
 const Skills = ({}) => {
   const frontEndSkills = [
     {
