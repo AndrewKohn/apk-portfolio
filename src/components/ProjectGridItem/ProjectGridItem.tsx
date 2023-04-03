@@ -1,5 +1,9 @@
+import EyeFillIcon from '../../assets/svg/EyeFillIcon';
+import EyeSlashFillIcon from '../../assets/svg/EyeSlashFillIcon';
+import GitHubIcon from '../../assets/svg/GitHubIcon';
 import Card from '../UI/Card';
 import './ProjectGridItem.scss';
+import Tags from './Tags';
 
 interface Props {
   image: any;
@@ -33,7 +37,7 @@ const ProjectGridItem = ({
       ) : (
         <div className="blurred-container">
           <img
-            className="project-image blurred-img"
+            className="project-image blurred--heavy"
             src={image}
             alt={altText}
             title={title}
@@ -49,8 +53,37 @@ const ProjectGridItem = ({
         {tags.length !== 0 ? (
           <p className="description">{description}</p>
         ) : (
-          <p className="description disabled-text">{description}</p>
+          <p className="description blurred--heavy disabled-text">
+            {description}
+          </p>
         )}
+
+        <div className="bottom-row">
+          {/* LINKS */}
+          <div className="links-wrapper">
+            {liveSitePath ? (
+              <a href={liveSitePath} className="project-link" target="_blank">
+                <EyeFillIcon className="link-icon" />
+              </a>
+            ) : (
+              <EyeSlashFillIcon className={`link-icon blurred--light`} />
+            )}
+
+            {githubPath ? (
+              <a href={githubPath} className="project-link" target="_blank">
+                <GitHubIcon className="link-icon" />
+              </a>
+            ) : (
+              <GitHubIcon
+                className={`link-icon blurred--light`}
+                isDisabled={true}
+              />
+            )}
+          </div>
+
+          {/* TAGS */}
+          <Tags projectTags={tags} />
+        </div>
       </div>
     </Card>
   );
