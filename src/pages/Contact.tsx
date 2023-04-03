@@ -5,13 +5,11 @@ import './Style.scss';
 
 const Contact = ({}) => {
   return (
-    <div className="container">
+    <div className="container contact-container">
       <h2>CONTACT</h2>
-      <Card classes="form-container">
+      <Card idSelector="contact-card">
         <ContactAvatars className="contact-avatars" />
-        <div className="form-wrapper">
-          <ContactForm />
-        </div>
+        <ContactForm />
       </Card>
     </div>
   );

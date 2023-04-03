@@ -19,7 +19,7 @@ const Projects = ({}) => {
   });
 
   return (
-    <div className="container">
+    <div className="container projects-container">
       <h2>PROJECTS</h2>
 
       <div className="projects-grid">{projectGridItems}</div>

@@ -10,14 +10,83 @@
   overflow-x: hidden;
 }
 
+// HOME PAGE
 .home-container {
   gap: 16rem;
 }
 
-.projects-grid {
-  display: grid;
-  justify-content: center;
-  align-items: start;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+// ABOUT PAGE
+.about-container {
+  .about-wrapper {
+    @include mixins.DisplayFlex(center, center, column, nowrap);
+    position: relative;
+
+    .about-info-wrapper {
+      @include mixins.DisplayFlex(center, center, row, nowrap);
+      width: 90rem;
+      gap: 8rem;
+
+      .avatar-container {
+        width: 30rem;
+        height: 30rem;
+
+        .avatar {
+          width: 30rem;
+          height: 30rem;
+          background-color: #222;
+          border-radius: 50%;
+          border: 5px solid purple;
+        }
+      }
+
+      .text-container {
+        @include mixins.DisplayFlex(center, center, column, nowrap);
+        gap: 2rem;
+
+        .about-text {
+          line-height: 1.5;
+          letter-spacing: 1.7px;
+
+          strong {
+            color: aqua;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .link-wrapper {
+      @include mixins.DisplayFlex(center, center, row, nowrap);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      gap: 3.2rem;
+      transform: translate(-2rem, 10rem);
+    }
+  }
+}
+
+// PROJECTS PAGE
+.projects-container {
+  .projects-grid {
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 4rem;
+    margin-bottom: 12rem;
+  }
+}
+
+// CONTACT PAGE
+.contact-container {
+  #contact-card {
+    @include mixins.DisplayFlex(center, center, row, nowrap);
+
+    .contact-avatars {
+      height: 40rem;
+      background-color: red;
+    }
+  }
 }
