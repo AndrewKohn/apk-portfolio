@@ -1,8 +1,125 @@
-.disabled {
-  filter: opacity(0.25);
-  pointer-events: none;
-}
+@use '../../styles/mixins';
 
-.invalid {
-  box-shadow: 0 0 2px 2px red;
+.form {
+  @include mixins.DisplayFlex(center, center, column, nowrap);
+  height: 100%;
+  gap: 2rem;
+  background-color: #333;
+
+  h4 {
+    position: relative;
+    .emoji {
+      position: absolute;
+      top: 0;
+      right: 0;
+      user-select: none;
+      transform: translate(3.2rem, 0);
+      animation: bounce 1s infinite;
+
+      @keyframes bounce {
+        0% {
+          transform: translate(3.2rem, 0);
+        }
+        25% {
+          transform: translate(3.2rem, 4px);
+        }
+        50% {
+          transform: translate(3.2rem, 2px);
+        }
+        75% {
+          transform: translate(3.2rem, 4px);
+        }
+        100% {
+          transform: translate(3.2rem, 0);
+        }
+      }
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+    .label {
+      position: absolute;
+      color: white;
+      background-color: #333;
+      // padding: 0 0.8rem;
+      top: 0;
+      left: 0;
+      transform: translate(2rem, -1.2rem);
+      letter-spacing: 1.5px;
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        transform: translateX(-1.6rem);
+        background: linear-gradient(to right, rgba(0, 0, 255, 0), #333 55%);
+        z-index: -1;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        transform: translateX(1.6rem);
+        background: linear-gradient(to right, #333 55%, rgba(0, 0, 255, 0));
+        z-index: -1;
+      }
+    }
+
+    .label--message {
+      &::before {
+        transform: translateX(-2rem);
+        background: linear-gradient(to right, rgba(0, 0, 255, 0), #333 45%);
+      }
+      &::after {
+        transform: translateX(2rem);
+      }
+    }
+
+    .input {
+      width: 40rem;
+      height: 3.2rem;
+      padding: 0.4rem;
+      background: none;
+      border: 2px solid greenyellow;
+      color: #efefef;
+      font-family: inherit;
+      font-size: inherit;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 2px 1px #efefef !important;
+      }
+    }
+    .input--message {
+      min-height: 10rem;
+      padding-top: 1.2rem;
+      resize: none;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+  }
+
+  // HELPERS
+  .disabled {
+    filter: opacity(0.25);
+    pointer-events: none;
+  }
+
+  .invalid {
+    box-shadow: 0 0 2px 2px red !important;
+    border: 2px solid red !important;
+  }
+
+  #invalid-text {
+    color: red;
+    font-style: italic;
+  }
 }

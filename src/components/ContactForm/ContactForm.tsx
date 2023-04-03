@@ -33,7 +33,9 @@ const ContactForm = ({}) => {
     e: React.FocusEvent<HTMLInputElement, Element>
   ) => {
     setIsEmailValid(
-      e.target.value.includes('@') && e.target.value.includes('.')
+      e.target.value.includes('@') &&
+        e.target.value.includes('.') &&
+        emailInput.length > 5
     );
   };
 
@@ -54,6 +56,7 @@ const ContactForm = ({}) => {
       nameInput.trim().length > 0 &&
         emailInput.includes('@') &&
         emailInput.includes('.') &&
+        emailInput.length > 5 &&
         message.trim().length > 0
     );
   }, [nameInput, emailInput, message]);
@@ -64,49 +67,78 @@ const ContactForm = ({}) => {
   };
 
   return (
-    <form action="" className="form" onSubmit={e => formSubmitHandler(e)}>
-      <h4 className="form-heading">
-        Send me a message
+    <form
+      action="https://formsubmit.co/contact@kohnandrew.com"
+      method="POST"
+      className="form"
+      // onSubmit={e => formSubmitHandler(e)}
+    >
+      <h4>
+        Send me a message!
         <span className="emoji">👇</span>
       </h4>
+
+      {/* NAME */}
       <div className="input-wrapper">
-        <label htmlFor="name" className="label">
-          Your Name
+        <label
+          htmlFor="name"
+          className="label"
+          id={`${isNameValid === false ? 'invalid-text' : ''}`}
+        >
+          Name
         </label>
         <input
           required
           type="text"
+          id="name"
           name="name"
-          className={`input--name ${isNameValid === false ? 'invalid' : ''}`}
+          className={`input ${isNameValid === false ? 'invalid' : ''}`}
           onChange={e => nameChangeHandler(e)}
           onBlur={e => validateNameHandler(e)}
         />
       </div>
+
+      {/* EMAIL */}
       <div className="input-wrapper">
-        <label htmlFor="email" className="label">
-          Your e-mail
+        <label
+          htmlFor="email"
+          className="label"
+          id={`${isEmailValid === false ? 'invalid-text' : ''}`}
+        >
+          Email
         </label>
         <input
           required
           type="text"
+          id="email"
           name="email"
-          className={`input--email ${isEmailValid === false ? 'invalid' : ''}`}
+          className={`input ${isEmailValid === false ? 'invalid' : ''}`}
           onChange={e => emailChangeHandler(e)}
           onBlur={e => validateEmailHandler(e)}
         />
       </div>
+
+      {/* MESSAGE */}
       <div className="input-wrapper">
-        <label htmlFor="message" className="label">
+        <label
+          htmlFor="message"
+          className="label label--message"
+          id={`${hasMessage === false ? 'invalid-text' : ''}`}
+        >
           Message
         </label>
         <textarea
           required
+          id="message"
           name="message"
-          className={`input--message ${hasMessage === false ? 'invalid' : ''}`}
+          className={`input input--message ${
+            hasMessage === false ? 'invalid' : ''
+          }`}
           onChange={e => textAreaChangeHandler(e)}
           onBlur={e => validateTextAreaHandler(e)}
         />
       </div>
+      <input type="hidden" name="_captcha" value="false" />
       <Button type="submit" classes={!isFormValid ? 'disabled' : ''}>
         Send
       </Button>
