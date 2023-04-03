@@ -1,0 +1,23 @@
+.button {
+  border: none;
+  background-color: paleturquoise;
+  cursor: pointer;
+  padding: 1.2rem 3.2rem;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    background-color: rgba(127, 255, 212, 0.2);
+    border: 2px solid aquamarine;
+    color: white;
+  }
+
+  &:active {
+    background-color: rgba(0, 255, 255, 0.2);
+    border: 2px solid aqua;
+  }
+}

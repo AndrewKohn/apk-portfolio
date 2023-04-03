@@ -3,9 +3,8 @@
 .card {
   @include mixins.DisplayFlex(center, center, row, nowrap);
   gap: 4rem;
-  backdrop-filter: blur(6px);
   padding: 3.2rem 2rem;
-  background-color: rgba(yellow, 0.3);
-  box-shadow: 0 0 10px 5px rgba(yellow, 0.25);
-  border-radius: 13px;
+  background-color: #222;
+  box-shadow: 0 0 10px 5px rgba(51, 51, 51, 0.25);
+  border-radius: 5px;
 }
