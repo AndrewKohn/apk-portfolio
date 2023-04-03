@@ -1,8 +1,8 @@
 @use '../../styles/mixins';
 
 .intro-card {
-  background-color: rgba(red, 0.3);
   margin-top: 24rem;
+
   .heading-wrapper {
     @include mixins.DisplayFlex(center, flex-end, column, nowrap);
   }

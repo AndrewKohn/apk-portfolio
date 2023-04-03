@@ -5,10 +5,10 @@ import TwitterIcon from '../../assets/svg/TwitterIcon';
 import InstagramIcon from '../../assets/svg/InstagramIcon';
 
 interface Props {
-  iconSize: string;
+  iconType: string;
 }
 
-const SocialsList = ({ iconSize }: Props) => {
+const SocialsList = ({ iconType: iconSize }: Props) => {
   const socials = [
     {
       name: 'LinkedIn',
@@ -39,7 +39,9 @@ const SocialsList = ({ iconSize }: Props) => {
           <a
             href={social.link}
             aria-label={`${social.name} url`}
-            className="social-link"
+            className={`social-link ${
+              iconSize === 'bordered' ? 'icon-border' : ''
+            }`}
             target="_blank"
             rel="noreferrer"
           >
