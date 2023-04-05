@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin DisplayFlex($justify, $align, $direction, $wrap) {
   display: flex;
   justify-content: $justify;
@@ -6,6 +8,19 @@
   flex-wrap: $wrap;
 }
 
+// MEDIA QUERIES
+
+// COLORS
+@mixin Colors($selected-value, $user-value, $transparency: 1) {
+  $selected-color: map-get($colors, $user-value);
+  @if $selected-color {
+    #{$selected-value}: rgba($selected-color, $transparency);
+  } @else {
+    @error "There is an issue with the inputs.  Double-check your $selected-color and/or $selected-value values...";
+  }
+}
+
+// ANIMATION
 @mixin AnimateFadeIn() {
   animation: fadeIn 0.3s ease-in-out;
 }
