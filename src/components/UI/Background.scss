@@ -4,7 +4,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-5deg);
+  transform: translate(-50%, -50%) rotate(-4deg);
   width: 100%;
   height: 60%;
   background-color: rgba($accent2, 0.6);
@@ -43,10 +43,10 @@
 
   @keyframes slide-right {
     0% {
-      transform: translate(-200%, 0%) rotate(-5deg);
+      transform: translate(-200%, 0%) rotate(-4deg);
     }
     100% {
-      transform: translate(-50%, -50%) rotate(-5deg);
+      transform: translate(-50%, -50%) rotate(-4deg);
     }
   }
 }
