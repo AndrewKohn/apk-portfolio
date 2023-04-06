@@ -7,7 +7,7 @@
   filter: opacity(1);
   height: 100%;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   background-color: $primary;
   position: relative;
@@ -125,12 +125,13 @@
 
 // PROJECTS PAGE
 .projects-container {
+  overflow-y: auto;
   .projects-bg {
-    height: 80rem;
+    height: 55rem;
     width: 75%;
     transform: translate(-50%, -50%) rotate(4deg);
-    background-color: rgba($secondary, 0.2);
-    animation: slide-up 1.5s ease;
+    background-color: rgba($accent1, 0.2);
+    animation: slide-down-to-left 1.5s ease;
 
     &::before {
       content: '';
@@ -138,8 +139,8 @@
       height: 50%;
       background: linear-gradient(
         to bottom,
-        rgba($secondary, 0),
-        rgba($secondary, 0.2)
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
       );
       position: absolute;
       top: 0;
@@ -153,8 +154,8 @@
       height: 50%;
       background: linear-gradient(
         to top,
-        rgba($secondary, 0),
-        rgba($secondary, 0.2)
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
       );
       position: absolute;
       top: 50%;
@@ -162,9 +163,9 @@
       transform: translateY(100%);
     }
 
-    @keyframes slide-up {
+    @keyframes slide-down-to-left {
       0% {
-        transform: translate(-55%, 200%) rotate(4deg);
+        transform: translate(-45%, -200%) rotate(4deg);
       }
       100% {
         transform: translate(-50%, -50%) rotate(4deg);
@@ -190,7 +191,7 @@
     width: 15%;
     transform: translate(-35%, -50%) rotate(-7deg);
     background-color: rgba($accent2, 0.6);
-    animation: slide-down 1.5s ease;
+    animation: slide-down-to-right 1.5s ease;
 
     &::before {
       content: '';
@@ -222,7 +223,7 @@
       transform: translateY(100%);
     }
 
-    @keyframes slide-down {
+    @keyframes slide-down-to-right {
       0% {
         transform: translate(-55%, -100%) rotate(-7deg);
       }
