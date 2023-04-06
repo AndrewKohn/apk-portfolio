@@ -1,5 +1,5 @@
 @use '../styles/mixins';
-@use '../styles/variables';
+@import '../styles/variables';
 
 .container {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
@@ -9,12 +9,13 @@
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  @include mixins.Colors('background-color', 'tertiary');
+  background-color: $primary;
+  position: relative;
 
   .content {
     @include mixins.DisplayFlex(center, center, column, nowrap);
     height: 100%;
-    margin-bottom: 20rem;
+    // margin-bottom: 20rem;
   }
 }
 
@@ -28,6 +29,51 @@
 
 // ABOUT PAGE
 .about-container {
+  .about-bg {
+    transform: translate(-50%, -50%) rotate(4deg);
+    background-color: rgba($accent1, 0.2);
+    animation: slide-left 1.5s ease;
+
+    &::before {
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+    }
+
+    &::after {
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+    }
+
+    @keyframes slide-left {
+      0% {
+        transform: translate(200%, 0%) rotate(4deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(4deg);
+      }
+    }
+  }
+
   .about-wrapper {
     @include mixins.DisplayFlex(center, center, column, nowrap);
     position: relative;
@@ -45,8 +91,8 @@
           width: 30rem;
           height: 30rem;
           border-radius: 50%;
-          @include mixins.Colors('background-color', 'tertiary');
-          border: 5px solid rgba(map-get(variables.$colors, 'accent1'), 1);
+          background-color: $tertiary;
+          border: 5px solid rgba($accent2, 1);
         }
       }
 
@@ -59,7 +105,7 @@
           letter-spacing: 1.7px;
 
           strong {
-            @include mixins.Colors('color', 'accent1');
+            color: $accent2;
             font-weight: 600;
           }
         }
@@ -79,6 +125,53 @@
 
 // PROJECTS PAGE
 .projects-container {
+  .projects-bg {
+    height: 80rem;
+    width: 75%;
+    transform: translate(-50%, -50%) rotate(4deg);
+    background-color: rgba($secondary, 0.2);
+    animation: slide-up 1.5s ease;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to bottom,
+        rgba($secondary, 0),
+        rgba($secondary, 0.2)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to top,
+        rgba($secondary, 0),
+        rgba($secondary, 0.2)
+      );
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(100%);
+    }
+
+    @keyframes slide-up {
+      0% {
+        transform: translate(-55%, 200%) rotate(4deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(4deg);
+      }
+    }
+  }
+
   .projects-grid {
     display: grid;
     justify-content: center;
@@ -92,6 +185,53 @@
 
 // CONTACT PAGE
 .contact-container {
+  .contact-bg {
+    height: 45%;
+    width: 15%;
+    transform: translate(-35%, -50%) rotate(-7deg);
+    background-color: rgba($accent2, 0.6);
+    animation: slide-down 1.5s ease;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to bottom,
+        rgba($accent2, 0),
+        rgba($accent2, 0.6)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to top,
+        rgba($accent2, 0),
+        rgba($accent2, 0.6)
+      );
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(100%);
+    }
+
+    @keyframes slide-down {
+      0% {
+        transform: translate(-55%, -100%) rotate(-7deg);
+      }
+      100% {
+        transform: translate(-35%, -50%) rotate(-7deg);
+      }
+    }
+  }
+
   #contact-card {
     @include mixins.DisplayFlex(center, center, row, nowrap);
 

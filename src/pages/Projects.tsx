@@ -1,6 +1,7 @@
 import './Style.scss';
 import PROJECTS_DATA from '../data/ProjectsData';
 import ProjectGridItem from '../components/ProjectGridItem/ProjectGridItem';
+import Background from '../components/UI/Background';
 
 const Projects = ({}) => {
   const projectGridItems = PROJECTS_DATA.map((project, index: number) => {
@@ -20,6 +21,8 @@ const Projects = ({}) => {
 
   return (
     <div className="container projects-container">
+      <Background className="projects-bg" />
+
       <h2>PROJECTS</h2>
       <div className="content">
         <div className="projects-grid">{projectGridItems}</div>

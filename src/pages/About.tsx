@@ -6,6 +6,7 @@ import './Style.scss';
 import Button from '../components/UI/Button';
 import resumeFile from '../assets/apk-resume.pdf';
 import { Link } from 'react-router-dom';
+import Background from '../components/UI/Background';
 
 const About = ({}) => {
   const [isEyesClosed, setIsEyesClosed] = useState<boolean>(false);
@@ -26,6 +27,8 @@ const About = ({}) => {
 
   return (
     <div className="container about-container">
+      <Background className="about-bg" />
+
       <h2>ABOUT</h2>
 
       <div className="content">
