@@ -112,7 +112,12 @@ const ContactForm = ({}) => {
           type="text"
           id="email"
           name="email"
-          className={`input ${isEmailValid === false ? 'invalid' : ''}`}
+          placeholder={
+            isEmailValid === false ? 'Please enter a valid email...' : ''
+          }
+          className={`input input--email ${
+            isEmailValid === false ? 'invalid' : ''
+          }`}
           onChange={e => emailChangeHandler(e)}
           onBlur={e => validateEmailHandler(e)}
         />

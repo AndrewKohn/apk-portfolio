@@ -38,14 +38,16 @@
 
   .input-wrapper {
     position: relative;
+
     .label {
       position: absolute;
       color: $secondary;
-      background-color: $tertiary; // padding: 0 0.8rem;
+      background-color: $tertiary;
       top: 0;
       left: 0;
       transform: translate(2rem, -1.2rem);
       letter-spacing: 1.5px;
+      z-index: 5;
 
       &::before {
         position: absolute;
@@ -127,6 +129,23 @@
   .invalid {
     box-shadow: 0 0 2px 2px red !important;
     border: 2px solid red !important;
+    transform: translateX(0);
+    animation: shake 0.15s ease-in-out;
+
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+      33% {
+        transform: translateX(-0.4rem);
+      }
+      66% {
+        transform: translateX(0.4rem);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
 
   #invalid-text {
