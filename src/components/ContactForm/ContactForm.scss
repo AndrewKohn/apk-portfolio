@@ -40,9 +40,8 @@
     position: relative;
     .label {
       position: absolute;
-      @include mixins.Colors('color', 'primary');
-      @include mixins.Colors('background-color', 'secondary');
-      // padding: 0 0.8rem;
+      color: $secondary;
+      background-color: $tertiary; // padding: 0 0.8rem;
       top: 0;
       left: 0;
       transform: translate(2rem, -1.2rem);
@@ -58,8 +57,8 @@
         transform: translateX(-1.6rem);
         background: linear-gradient(
           to right,
-          rgba(map-get($colors, 'secondary'), 0),
-          rgba(map-get($colors, 'secondary'), 1) 55%
+          rgba($tertiary, 0),
+          rgba($tertiary, 1) 55%
         );
         z-index: -1;
       }
@@ -74,8 +73,8 @@
         transform: translateX(1.6rem);
         background: linear-gradient(
           to right,
-          rgba(map-get($colors, 'secondary'), 1) 55%,
-          rgba(map-get($colors, 'secondary'), 0)
+          rgba($tertiary, 1) 55%,
+          rgba($tertiary, 0)
         );
         z-index: -1;
       }
@@ -86,8 +85,8 @@
         transform: translateX(-2rem);
         background: linear-gradient(
           to right,
-          rgba(map-get($colors, 'secondary'), 0),
-          rgba(map-get($colors, 'secondary'), 1) 45%
+          rgba($tertiary, 0),
+          rgba($tertiary, 1) 45%
         );
       }
       &::after {
@@ -100,7 +99,7 @@
       height: 3.2rem;
       padding: 0.4rem;
       background: none;
-      border: 2px solid rgba(map-get($colors, 'accent1'), 1);
+      border: 2px solid rgba($accent2, 1);
       color: #efefef;
       font-family: inherit;
       font-size: inherit;

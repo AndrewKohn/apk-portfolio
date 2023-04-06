@@ -4,7 +4,7 @@
 .nav-bar {
   @include mixins.DisplayFlex(space-between, center, row, nowrap);
   width: 100%;
-  @include mixins.Colors('background-color', 'secondary');
+  background-color: $tertiary;
   padding: 1.2rem 0;
   z-index: 100;
 
@@ -12,7 +12,7 @@
     position: relative;
     font-family: 'Encode Sans';
     font-size: 2.4rem;
-    @include mixins.Colors('color', 'primary');
+    color: $secondary;
     letter-spacing: 2px;
     padding: 0.4rem 1.2rem;
     text-decoration: none;
@@ -20,11 +20,7 @@
     transition: color 0.5s ease;
 
     &:hover {
-      @include mixins.Colors('color', 'accent2');
-    }
-
-    &:active {
-      @include mixins.Colors('color', 'accent1');
+      color: $accent1;
     }
 
     &::before {
@@ -46,12 +42,7 @@
 
     &:hover::after {
       width: 5.6rem;
-      @include mixins.Colors('background-color', 'accent2');
-    }
-
-    &:active::after {
-      width: 5.6rem;
-      @include mixins.Colors('background-color', 'accent1');
+      background-color: $accent1;
     }
   }
 
@@ -66,7 +57,7 @@
       padding: 0.4rem 0;
 
       &:link {
-        @include mixins.Colors('color', 'primary');
+        color: $secondary;
         text-decoration: none;
         font-size: 2rem;
         font-weight: 400;
@@ -75,15 +66,11 @@
       }
 
       &:visited {
-        @include mixins.Colors('color', 'primary');
+        color: $secondary;
       }
 
       &:hover {
-        @include mixins.Colors('color', 'accent2');
-      }
-
-      &:active {
-        @include mixins.Colors('color', 'accent1');
+        color: $accent1;
       }
 
       &::after {
@@ -100,18 +87,13 @@
 
       &:hover::after {
         width: 100%;
-        @include mixins.Colors('background-color', 'accent2');
-      }
-
-      &:active::after {
-        width: 100%;
-        @include mixins.Colors('background-color', 'accent1');
+        background-color: $accent1;
       }
     }
   }
 
   .nav-link--github {
-    @include mixins.Colors('color', 'primary');
+    color: $secondary;
     margin-right: 1.2rem;
     vertical-align: middle;
     width: 3.2rem;
@@ -121,11 +103,11 @@
     transition: color 0.25s ease-in;
 
     &:hover {
-      @include mixins.Colors('color', 'accent2');
+      color: $accent1;
     }
 
     &:active {
-      @include mixins.Colors('color', 'accent1');
+      color: $accent1;
     }
   }
 }

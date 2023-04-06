@@ -5,8 +5,8 @@ main {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
   width: 100vw;
   height: 100vh;
-  @include mixins.Colors('color', 'primary');
-  @include mixins.Colors('background-color', 'tertiary');
+  color: $secondary;
+  background-color: $primary;
 }
 
 h1 {
@@ -15,17 +15,17 @@ h1 {
   line-height: 9.8rem;
   font-family: 'Kolker Brush', sans-serif;
   padding: 2.4rem 0 0 4rem;
-  @include mixins.Colors('color', 'primary');
-  text-shadow: 0 0 12px rgba(map-get($colors, 'primary'), 0.5);
+  color: $secondary;
+  text-shadow: 0 0 12px rgba($secondary, 0.5);
 
   span {
-    @include mixins.Colors('color', 'accent2');
-    text-shadow: 0 0 8px rgba(map-get($colors, 'tertiary'), 0.5);
+    color: $accent1;
+    text-shadow: 0 0 8px rgba($accent1, 0.5);
   }
 }
 
 h2 {
-  @include mixins.Colors('color', 'secondary');
+  color: $secondary;
   font-size: 3.6rem;
   font-weight: 400;
   letter-spacing: 2px;
@@ -35,7 +35,7 @@ h2 {
 }
 
 h3 {
-  @include mixins.Colors('color', 'secondary');
+  color: $secondary;
   font-size: 2.8rem;
   font-weight: 400;
   letter-spacing: 2px;

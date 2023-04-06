@@ -1,4 +1,5 @@
 @use '../../styles/mixins';
+@import '../../styles/variables';
 
 .skills-container {
   @include mixins.DisplayFlex(center, center, column, nowrap);
@@ -13,7 +14,7 @@
 
     .skill-section {
       @include mixins.DisplayFlex(center, center, column, nowrap);
-      background-color: rgba(46, 46, 46, 1);
+      background-color: $tertiary;
       box-shadow: 0 0 20px 1px rgba(255, 0, 0, 0);
       z-index: 1;
       transition: box-shadow 0.25s ease, z-index 0.25s ease;
@@ -39,7 +40,7 @@
             height: 4rem;
             padding: 1.2rem 3rem;
             z-index: 5;
-            background-color: rgba(46, 46, 46, 1);
+            background-color: $tertiary;
             filter: grayscale(1) blur(0.6px);
             transition: filter 0.25s ease;
           }
@@ -57,7 +58,7 @@
       }
 
       &:hover {
-        box-shadow: 0 0 2px 1px #efefef;
+        box-shadow: 0 0 2px 1px $secondary;
         z-index: 5;
       }
 

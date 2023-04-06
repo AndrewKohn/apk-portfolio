@@ -16,11 +16,7 @@
     bottom: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(
-      to left,
-      map-get($colors, 'secondary') 5%,
-      rgba(map-get($colors, 'secondary'), 0.05)
-    );
+    background: linear-gradient(to left, $primary 5%, rgba($primary, 0.05));
     z-index: -1;
   }
 
@@ -31,11 +27,7 @@
     bottom: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(
-      to right,
-      map-get($colors, 'secondary') 5%,
-      rgba(map-get($colors, 'secondary'), 0.05)
-    );
+    background: linear-gradient(to right, $primary 5%, rgba($primary, 0.05));
     z-index: -1;
   }
 

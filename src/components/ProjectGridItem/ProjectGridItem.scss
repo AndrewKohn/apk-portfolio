@@ -10,10 +10,16 @@
   transition: background-color 0.25s ease-in-out;
 
   &:not(:hover) {
-    @include mixins.Colors('background-color', 'secondary', 0.8);
+    background-color: rgba($tertiary, 0.7);
   }
 
   .project-image {
+    transform: scale(1.15);
+    transition: transform 0.5s ease;
+  }
+
+  &:not(:hover) .project-image {
+    transform: scale(1);
   }
 
   .project-info-container {
@@ -38,24 +44,15 @@
         .project-link {
           &:visited,
           &:link {
-            @include mixins.Colors('color', 'primary');
+            color: $secondary;
             transition: color 0.25s ease-in-out;
           }
           &:hover {
-            @include mixins.Colors('color', 'accent2');
+            color: $accent1;
           }
 
           &:hover .link-icon {
-            border: 1px solid map-get($colors, 'accent2');
-          }
-
-          &:active {
-            transform: translate(1px, 1px);
-            @include mixins.Colors('color', 'accent1');
-          }
-
-          &:active .link-icon {
-            border: 1px solid map-get($colors, 'accent1');
+            border: 1px solid $accent1;
           }
         }
         .link-icon {
@@ -64,7 +61,7 @@
           padding: 0.4rem;
           border-radius: 19px;
           background-color: transparent;
-          border: 1px solid map-get($colors, 'primary');
+          border: 1px solid $secondary;
           transition: border-color 0.25s ease-in-out;
         }
       }
@@ -73,7 +70,7 @@
 
   // HELPER CLASSES
   .blurred-container {
-    overflow: hidden;
+    // overflow: hidden;
 
     .project-image {
       pointer-events: none;

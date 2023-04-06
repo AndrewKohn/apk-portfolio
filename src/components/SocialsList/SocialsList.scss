@@ -13,23 +13,19 @@
       .icon--sm {
         width: 2rem;
         height: 2rem;
-        @include mixins.Colors('color', 'primary');
+        color: $secondary;
         margin-top: 3.2rem;
         transition: color 0.15s ease-in-out;
 
         &:hover {
-          @include mixins.Colors('color', 'accent2');
-        }
-
-        &:active {
-          @include mixins.Colors('color', 'accent1');
+          color: $accent1;
         }
       }
 
       .icon--bordered {
         width: 1.4rem;
         height: 1.4rem;
-        @include mixins.Colors('color', 'primary');
+        color: $secondary;
         transition: all 0.25s ease;
       }
     }
@@ -38,24 +34,15 @@
       padding: 0.6rem;
       background-color: transparent;
       border-radius: 50%;
-      border: 1px solid map-get($colors, 'primary');
+      border: 1px solid $secondary;
       transition: all 0.25s ease;
 
       &:hover {
-        border: 1px solid map-get($colors, 'accent2');
+        border: 1px solid $accent1;
       }
 
       &:hover .icon--bordered {
-        @include mixins.Colors('color', 'accent2');
-      }
-
-      &:active {
-        @include mixins.Colors('background-color', 'accent1');
-        border: 1px solid map-get($colors, 'accent1');
-      }
-
-      &:active .icon--bordered {
-        @include mixins.Colors('color', 'primary');
+        color: $accent1;
       }
     }
   }

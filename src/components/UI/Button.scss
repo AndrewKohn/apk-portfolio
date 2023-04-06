@@ -3,7 +3,7 @@
 
 .button {
   border: none;
-  @include mixins.Colors('background-color', 'accent2');
+  color: $tertiary;
   cursor: pointer;
   padding: 1.2rem 3.2rem;
   font-family: inherit;
@@ -14,13 +14,13 @@
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    background-color: rgba(map-get($colors, 'accent2'), 0.55);
-    border: 2px solid map-get($colors, 'accent2');
+    background-color: rgba($accent1, 0.55);
+    border: 2px solid $accent1;
     color: black;
   }
 
   &:active {
-    background-color: rgba(map-get($colors, 'accent2'), 0.2);
-    border: 2px solid map-get($colors, 'accent2');
+    background-color: rgba($accent1, 0.2);
+    border: 2px solid $accent1;
   }
 }
