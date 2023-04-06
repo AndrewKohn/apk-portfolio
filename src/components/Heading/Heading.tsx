@@ -7,7 +7,11 @@ const Heading = ({}) => {
   return (
     <Card classes="intro-card">
       <div className="heading-wrapper">
-        <h1>Andrew Kohn</h1>
+        <h1>
+          Andrew
+          <br />
+          <span>Kohn</span>
+        </h1>
         <SocialsList iconType="sm" />
       </div>
 

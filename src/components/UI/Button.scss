@@ -1,6 +1,9 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
 .button {
   border: none;
-  background-color: paleturquoise;
+  @include mixins.Colors('background-color', 'accent2');
   cursor: pointer;
   padding: 1.2rem 3.2rem;
   font-family: inherit;
@@ -11,13 +14,13 @@
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    background-color: rgba(127, 255, 212, 0.2);
-    border: 2px solid aquamarine;
-    color: white;
+    background-color: rgba(map-get($colors, 'accent2'), 0.55);
+    border: 2px solid map-get($colors, 'accent2');
+    color: black;
   }
 
   &:active {
-    background-color: rgba(0, 255, 255, 0.2);
-    border: 2px solid aqua;
+    background-color: rgba(map-get($colors, 'accent2'), 0.2);
+    border: 2px solid map-get($colors, 'accent2');
   }
 }

@@ -1,8 +1,6 @@
 @use '../../styles/mixins';
 
 .intro-card {
-  margin-top: 24rem;
-
   .heading-wrapper {
     @include mixins.DisplayFlex(center, flex-end, column, nowrap);
   }
@@ -10,7 +8,7 @@
   .descriptions {
     @include mixins.DisplayFlex(center, flex-start, column, nowrap);
     list-style-type: none;
-    gap: 1.8rem;
+    gap: 2.4rem;
 
     .description {
       @include mixins.DisplayFlex(center, center, row, nowrap);
@@ -19,7 +17,11 @@
         width: 2rem;
         height: 2rem;
         margin-right: 0.8rem;
-        color: rgb(25, 196, 90);
+        @include mixins.Colors('color', 'accent2');
+      }
+
+      strong {
+        @include mixins.Colors('color', 'accent2');
       }
     }
   }

@@ -1,17 +1,16 @@
 @use '../../styles/mixins';
+@import '../../styles/variables';
 
 .project-card {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
   position: relative;
   box-shadow: none;
-  background-color: #efefef;
-  color: #333;
   max-width: 35rem;
   min-height: 45rem;
   transition: background-color 0.25s ease-in-out;
 
   &:not(:hover) {
-    background-color: rgba(239, 239, 239, 0.65);
+    @include mixins.Colors('background-color', 'secondary', 0.8);
   }
 
   .project-image {
@@ -39,18 +38,24 @@
         .project-link {
           &:visited,
           &:link {
-            color: red;
+            @include mixins.Colors('color', 'primary');
             transition: color 0.25s ease-in-out;
           }
           &:hover {
-            color: blue;
-          }
-          &:active {
-            transform: translate(1px, 1px);
+            @include mixins.Colors('color', 'accent2');
           }
 
           &:hover .link-icon {
-            border: 1px solid blue;
+            border: 1px solid map-get($colors, 'accent2');
+          }
+
+          &:active {
+            transform: translate(1px, 1px);
+            @include mixins.Colors('color', 'accent1');
+          }
+
+          &:active .link-icon {
+            border: 1px solid map-get($colors, 'accent1');
           }
         }
         .link-icon {
@@ -59,7 +64,7 @@
           padding: 0.4rem;
           border-radius: 19px;
           background-color: transparent;
-          border: 1px solid red;
+          border: 1px solid map-get($colors, 'primary');
           transition: border-color 0.25s ease-in-out;
         }
       }

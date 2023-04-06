@@ -1,10 +1,10 @@
 @use '../../styles/mixins';
+@import '../../styles/variables';
 
 .form {
   @include mixins.DisplayFlex(center, center, column, nowrap);
   height: 100%;
   gap: 2rem;
-  background-color: #333;
 
   h4 {
     position: relative;
@@ -40,8 +40,8 @@
     position: relative;
     .label {
       position: absolute;
-      color: white;
-      background-color: #333;
+      @include mixins.Colors('color', 'primary');
+      @include mixins.Colors('background-color', 'secondary');
       // padding: 0 0.8rem;
       top: 0;
       left: 0;
@@ -56,7 +56,11 @@
         width: 50%;
         height: 100%;
         transform: translateX(-1.6rem);
-        background: linear-gradient(to right, rgba(0, 0, 255, 0), #333 55%);
+        background: linear-gradient(
+          to right,
+          rgba(map-get($colors, 'secondary'), 0),
+          rgba(map-get($colors, 'secondary'), 1) 55%
+        );
         z-index: -1;
       }
 
@@ -68,7 +72,11 @@
         width: 50%;
         height: 100%;
         transform: translateX(1.6rem);
-        background: linear-gradient(to right, #333 55%, rgba(0, 0, 255, 0));
+        background: linear-gradient(
+          to right,
+          rgba(map-get($colors, 'secondary'), 1) 55%,
+          rgba(map-get($colors, 'secondary'), 0)
+        );
         z-index: -1;
       }
     }
@@ -76,7 +84,11 @@
     .label--message {
       &::before {
         transform: translateX(-2rem);
-        background: linear-gradient(to right, rgba(0, 0, 255, 0), #333 45%);
+        background: linear-gradient(
+          to right,
+          rgba(map-get($colors, 'secondary'), 0),
+          rgba(map-get($colors, 'secondary'), 1) 45%
+        );
       }
       &::after {
         transform: translateX(2rem);
@@ -88,7 +100,7 @@
       height: 3.2rem;
       padding: 0.4rem;
       background: none;
-      border: 2px solid greenyellow;
+      border: 2px solid rgba(map-get($colors, 'accent1'), 1);
       color: #efefef;
       font-family: inherit;
       font-size: inherit;

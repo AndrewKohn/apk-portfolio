@@ -5,8 +5,10 @@ import Skills from '../components/Skills/Skills';
 const Home = ({}) => {
   return (
     <section className="container home-container">
-      <Heading />
-      <Skills />
+      <div className="content">
+        <Heading />
+        <Skills />
+      </div>
     </section>
   );
 };

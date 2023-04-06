@@ -7,10 +7,13 @@ const Contact = ({}) => {
   return (
     <div className="container contact-container">
       <h2>CONTACT</h2>
-      <Card idSelector="contact-card">
-        <ContactAvatars className="contact-avatars" />
-        <ContactForm />
-      </Card>
+
+      <div className="content">
+        <Card idSelector="contact-card">
+          <ContactAvatars className="contact-avatars" />
+          <ContactForm />
+        </Card>
+      </div>
     </div>
   );
 };
