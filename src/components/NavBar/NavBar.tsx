@@ -68,6 +68,7 @@ const NavBar = ({}) => {
                     target="_blank"
                     rel="noreferrer"
                     aria-label="GitHub url"
+                    className="nav-link--github-container"
                   >
                     <GitHubIcon className="nav-link--github" />
                   </a>
