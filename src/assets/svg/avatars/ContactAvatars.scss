@@ -1,0 +1,24 @@
+.invalid-input {
+  transform: translate(0, 0);
+  transition: fill 0.5s ease-out;
+  animation: shake-element 0.15s ease-in-out;
+
+  @keyframes shake-element {
+    0% {
+      transform: translate(0, 0);
+    }
+    33% {
+      transform: translate(0.4rem, 0.8rem);
+    }
+    66% {
+      transform: translate(-0.4rem, -0.8rem);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.valid-input {
+  transition: fill 0.5s ease-out;
+}

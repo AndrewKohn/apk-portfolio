@@ -2,7 +2,19 @@ import { useEffect, useState } from 'react';
 import Button from '../UI/Button';
 import './ContactForm.scss';
 
-const ContactForm = ({}) => {
+interface Props {
+  validateNameForAvatar: (isNamePresent: boolean | undefined | null) => void;
+  validateEmailForAvatar: (isEmailPresent: boolean | undefined | null) => void;
+  validateMessageForAvatar: (
+    isMessagePresent: boolean | undefined | null
+  ) => void;
+}
+
+const ContactForm = ({
+  validateNameForAvatar,
+  validateEmailForAvatar,
+  validateMessageForAvatar,
+}: Props) => {
   const [nameInput, setNameInput] = useState<string>('');
   const [isNameValid, setIsNameValid] = useState<boolean | undefined | null>();
   const [emailInput, setEmailInput] = useState<string>('');
@@ -65,6 +77,13 @@ const ContactForm = ({}) => {
   const formSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
+
+  // AVATAR
+  useEffect(() => {
+    validateNameForAvatar(isNameValid);
+    validateEmailForAvatar(isEmailValid);
+    validateMessageForAvatar(hasMessage);
+  }, [isNameValid, isEmailValid, hasMessage]);
 
   return (
     <form
