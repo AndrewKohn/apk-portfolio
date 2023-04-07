@@ -4,6 +4,8 @@
 .intro-card {
   .heading-wrapper {
     @include mixins.DisplayFlex(center, flex-end, column, nowrap);
+    padding: 2rem;
+    padding-right: 8rem;
   }
 
   .descriptions {
@@ -24,6 +26,18 @@
       strong {
         color: $accent2;
       }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'phone-sm')}) {
+        font-size: 1.4rem;
+      }
     }
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+    @include mixins.DisplayFlex(center, center, column, nowrap);
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+    width: 100%;
   }
 }

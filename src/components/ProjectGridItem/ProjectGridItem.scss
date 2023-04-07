@@ -8,6 +8,12 @@
   min-height: 45rem;
   transition: background-color 0.25s ease-in-out;
 
+  @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
   &:not(:hover) {
     background-color: rgba($tertiary, 0.7);
   }
@@ -32,8 +38,12 @@
 
     .bottom-row {
       @include mixins.DisplayFlex(space-between, center, row, nowrap);
-      width: 100%;
       margin-top: 3.2rem;
+
+      @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
 
       .links-wrapper {
         @include mixins.DisplayFlex(flex-start, center, row, nowrap);
@@ -80,6 +90,7 @@
 
   .blurred--light {
     filter: blur(1.4px);
+    cursor: not-allowed;
   }
 
   .disabled-text {

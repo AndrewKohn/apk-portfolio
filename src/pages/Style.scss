@@ -7,15 +7,18 @@
   filter: opacity(1);
   height: 100%;
   width: 100%;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
   background-color: $primary;
   position: relative;
 
   .content {
     @include mixins.DisplayFlex(center, center, column, nowrap);
-    height: 100%;
-    // margin-bottom: 20rem;
+    height: auto;
+
+    @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+      justify-content: flex-start;
+    }
   }
 }
 
@@ -23,12 +26,18 @@
 
 .home-container {
   .content {
+    height: calc(100% - 6.7rem);
+    margin: 18rem 0;
     gap: 15%;
   }
 }
 
 // ABOUT PAGE
 .about-container {
+  .content {
+    height: calc(100% - 21.5rem);
+  }
+
   .about-bg {
     transform: translate(-50%, -50%) rotate(4deg);
     background-color: rgba($accent1, 0.2);
@@ -78,10 +87,17 @@
     @include mixins.DisplayFlex(center, center, column, nowrap);
     position: relative;
 
+    @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+      margin-top: 8rem;
+    }
+
     .about-info-wrapper {
       @include mixins.DisplayFlex(center, center, row, nowrap);
-      width: 90rem;
       gap: 8rem;
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        flex-wrap: wrap;
+      }
 
       .avatar-container {
         width: 30rem;
@@ -99,6 +115,11 @@
       .text-container {
         @include mixins.DisplayFlex(center, center, column, nowrap);
         gap: 2rem;
+        width: 55rem;
+
+        @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+          width: 100%;
+        }
 
         .about-text {
           line-height: 1.5;
@@ -119,6 +140,13 @@
       right: 0;
       gap: 3.2rem;
       transform: translate(-2rem, 10rem);
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        position: initial;
+        transform: translate(0, 0);
+        margin-top: 6rem;
+        margin-bottom: 18rem;
+      }
     }
   }
 }
@@ -126,6 +154,11 @@
 // PROJECTS PAGE
 .projects-container {
   overflow-y: auto;
+
+  .content {
+    height: auto;
+  }
+
   .projects-bg {
     height: 55rem;
     width: 75%;
@@ -180,7 +213,26 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
     row-gap: 4rem;
-    margin: 12rem auto;
+    margin: 12rem auto 24rem auto;
+
+    @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 12rem auto 20rem auto;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: 8rem;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      column-gap: 1rem;
+      row-gap: 6rem;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-sm')}) {
+      margin: 2rem auto;
+    }
   }
 }
 
@@ -233,11 +285,37 @@
     }
   }
 
-  #contact-card {
-    @include mixins.DisplayFlex(center, center, row, nowrap);
+  .content {
+    height: calc(100% - 21.5rem);
 
-    .contact-avatars {
-      height: 40rem;
+    @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+      justify-content: flex-start;
+    }
+    .contact-container {
+      @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+        padding: 12rem 0 18rem 0;
+      }
+
+      #contact-card {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+
+        .contact-avatars {
+          height: 40rem;
+          width: 100%;
+          padding: 1.4rem;
+          padding-bottom: 0;
+          z-index: 1;
+          border: 3px solid $accent2;
+          @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+          flex-direction: column;
+        }
+      }
     }
   }
 }

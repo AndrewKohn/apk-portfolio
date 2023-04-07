@@ -41,19 +41,21 @@ const Contact = ({}) => {
       <h2>CONTACT</h2>
 
       <div className="content">
-        <Card idSelector="contact-card">
-          <ContactAvatars
-            className="contact-avatars"
-            isNameValid={isNameValid}
-            isEmailValid={isEmailValid}
-            hasMessage={hasMessage}
-          />
-          <ContactForm
-            validateNameForAvatar={validateNameForAvatar}
-            validateEmailForAvatar={validateEmailForAvatar}
-            validateMessageForAvatar={validateMessageForAvatar}
-          />
-        </Card>
+        <div className="contact-container">
+          <Card idSelector="contact-card">
+            <ContactAvatars
+              className="contact-avatars"
+              isNameValid={isNameValid}
+              isEmailValid={isEmailValid}
+              hasMessage={hasMessage}
+            />
+            <ContactForm
+              validateNameForAvatar={validateNameForAvatar}
+              validateEmailForAvatar={validateEmailForAvatar}
+              validateMessageForAvatar={validateMessageForAvatar}
+            />
+          </Card>
+        </div>
       </div>
     </div>
   );

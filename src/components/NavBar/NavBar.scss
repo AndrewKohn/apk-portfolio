@@ -44,6 +44,10 @@
       width: 5.6rem;
       background-color: $accent1;
     }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      margin-left: 2rem;
+    }
   }
 
   .nav-links {
@@ -108,6 +112,121 @@
 
     &:active {
       color: $accent1;
+    }
+  }
+
+  .hamburger-menu {
+    @include mixins.DisplayFlex(space-between, flex-end, column, nowrap);
+    display: none;
+    width: 2.4rem;
+    height: 2rem;
+    margin-right: 6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .hamburger-bar {
+      width: 100%;
+      height: 3px;
+      border-radius: 5px;
+      background-color: $secondary;
+      transition: width 0.2s ease-in-out;
+    }
+
+    &:hover .hamburger-bar:nth-child(2) {
+      width: 45%;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      margin-right: 2rem;
+    }
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger-menu {
+      display: flex;
+    }
+  }
+
+  .selected {
+    width: 2.4rem;
+    height: 100%;
+    margin-right: 6rem;
+
+    .hamburger-bar {
+      display: none;
+    }
+
+    .close-button {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin: auto 0;
+      z-index: 20;
+    }
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      margin-right: 2rem;
+    }
+
+    .backdrop {
+      position: absolute;
+      cursor: default;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .modal {
+      background-color: aqua;
+      position: absolute;
+      cursor: default;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 5px 10px 50px 5px rgba(0, 0, 0, 0.5);
+      height: 40rem;
+      width: 75%;
+      z-index: 10;
+
+      .modal-links {
+        @include mixins.DisplayFlex(center, space-between, column, nowrap);
+        background-color: $primary;
+        height: 100%;
+        gap: 4rem;
+
+        .nav-link {
+          position: relative;
+          transition: content 0.5s ease;
+          padding: 0.4rem 0;
+
+          &:link {
+            color: $secondary;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transition: color 0.5s ease;
+          }
+
+          &:visited {
+            color: $secondary;
+          }
+
+          &:hover {
+            color: $accent1;
+          }
+        }
+
+        .nav-link--github {
+          margin-right: 0;
+        }
+      }
     }
   }
 }

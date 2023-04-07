@@ -17,10 +17,19 @@ h1 {
   padding: 2.4rem 0 0 4rem;
   color: $secondary;
   text-shadow: 0 0 12px rgba($secondary, 0.5);
+  transition: font-size 1s ease;
 
   span {
     color: $accent1;
     text-shadow: 0 0 8px rgba($accent1, 0.5);
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+    font-size: 20rem;
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+    font-size: 14rem;
   }
 }
 

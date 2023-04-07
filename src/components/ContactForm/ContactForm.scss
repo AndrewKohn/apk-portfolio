@@ -4,6 +4,7 @@
 .form {
   @include mixins.DisplayFlex(center, center, column, nowrap);
   height: 100%;
+  width: 100%;
   gap: 2rem;
 
   h4 {
@@ -38,6 +39,9 @@
 
   .input-wrapper {
     position: relative;
+    @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+      width: 95%;
+    }
 
     .label {
       position: absolute;
@@ -109,6 +113,10 @@
       &:focus {
         outline: none;
         box-shadow: 0 0 2px 1px #efefef !important;
+      }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+        width: 100%;
       }
     }
     .input--message {

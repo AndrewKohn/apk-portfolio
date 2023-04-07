@@ -3,14 +3,16 @@
 
 .skills-container {
   @include mixins.DisplayFlex(center, center, column, nowrap);
-  cursor: default;
 
   .skills-heading {
     margin-bottom: 3.6rem;
   }
 
   .skills-wrapper {
-    @include mixins.DisplayFlex(center, center, row, nowrap);
+    @include mixins.DisplayFlex(center, center, row, wrap);
+    cursor: default;
+    background-color: $tertiary;
+    margin-bottom: 20rem;
 
     .skill-section {
       @include mixins.DisplayFlex(center, center, column, nowrap);
@@ -26,7 +28,7 @@
       }
 
       .skill-section-wrapper {
-        @include mixins.DisplayFlex(center, center, row, nowrap);
+        @include mixins.DisplayFlex(center, center, row, wrap);
         margin-bottom: 0.8rem;
         // gap: 2rem;
 
@@ -55,6 +57,14 @@
             transition: transform 0.25s ease, filter 0.25s ease-out;
           }
         }
+
+        @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+          width: 40rem;
+        }
+
+        @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+          width: 36rem;
+        }
       }
 
       &:hover {
@@ -69,6 +79,17 @@
       &:hover .skill-section-wrapper .skill-text {
         transform: translateY(5%);
         filter: opacity(1) blur(0);
+      }
+
+      &:hover .skill-title {
+        color: $accent1;
+        letter-spacing: 4px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:not(:hover) .skill-title {
+        letter-spacing: 2px;
+        transition: letter-spacing 0.2s ease-in-out;
       }
     }
   }
