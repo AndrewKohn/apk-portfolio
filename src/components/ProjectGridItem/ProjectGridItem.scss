@@ -3,9 +3,8 @@
 
 .project-card {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
-  position: relative;
   box-shadow: none;
-  max-width: 35rem;
+  width: 35rem;
   min-height: 45rem;
   transition: background-color 0.25s ease-in-out;
 
@@ -27,16 +26,14 @@
       padding: 0 1.2rem;
       margin-top: 2rem;
       letter-spacing: 0.5px;
-      height: 10rem;
+      height: 12rem;
       overflow-y: auto;
     }
 
     .bottom-row {
       @include mixins.DisplayFlex(space-between, center, row, nowrap);
-      position: absolute;
-      width: 90%;
-      bottom: 0;
-      transform: translateY(-2rem);
+      width: 100%;
+      margin-top: 3.2rem;
 
       .links-wrapper {
         @include mixins.DisplayFlex(flex-start, center, row, nowrap);
