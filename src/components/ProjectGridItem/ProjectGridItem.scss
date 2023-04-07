@@ -5,7 +5,6 @@
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
   box-shadow: none;
   width: 35rem;
-  min-height: 45rem;
   transition: background-color 0.25s ease-in-out;
 
   @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
@@ -39,6 +38,7 @@
     .bottom-row {
       @include mixins.DisplayFlex(space-between, center, row, nowrap);
       margin-top: 3.2rem;
+      min-height: 8rem;
 
       @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
         margin-left: 2rem;
