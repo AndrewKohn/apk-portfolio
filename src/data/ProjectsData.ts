@@ -20,9 +20,39 @@ import projectImage5 from '../assets/img/my-coding-tracker-image.webp';
 // import projectImage6 from '../assets/img/';
 import projectImagePlaceholder from '../assets/img/ex-img.png';
 
+// EXAMPLE DATA
+// {
+//   id: 5,
+//   image: projectImagePlaceholder,
+//   altText: 'title',
+//   title: 'title',
+//   description: '',
+//   tags: [],
+//   gitHubPath: '',
+//   liveSitePath: '',
+// },
+
 const PROJECTS_DATA = [
   {
     id: 0,
+    image: projectImagePlaceholder,
+    altText: 'MGH Daily Schedule',
+    title: 'MGH Daily Schedule',
+    description:
+      'Shows night/day shift daily schedules as well as the monthly schedule.  Information is gathered through a MySQL DB and allowed users can post and/or update both daily and monthly schedules.',
+    tags: [
+      JavaScriptIcon,
+      TypeScriptIcon,
+      ReactIcon,
+      SassIcon,
+      NodeJSIcon,
+      MySQLIcon,
+    ],
+    gitHubPath: 'https://github.com/AndrewKohn/mgh-daily-schedule',
+    liveSitePath: '',
+  },
+  {
+    id: 1,
     image: projectImage1,
     altText: 'Payroll Report Sorter App',
     title: 'Payroll Report Sorter',
@@ -32,17 +62,7 @@ const PROJECTS_DATA = [
     gitHubPath: 'https://github.com/AndrewKohn/PayrollReportSorter',
     liveSitePath: '',
   },
-  {
-    id: 1,
-    image: projectImage2,
-    altText: 'PDF to Word Converter App',
-    title: 'PDF/Word Converter',
-    description:
-      'Simple program that converts pdf <-> docx while maintaining proper formatting.  Used to help with my work involving editing .pdf files from time-to-time.',
-    tags: [JavaIcon],
-    gitHubPath: 'https://github.com/AndrewKohn/PDFWordConverter',
-    liveSitePath: '',
-  },
+
   {
     id: 2,
     image: projectImage3,
@@ -56,6 +76,17 @@ const PROJECTS_DATA = [
   },
   {
     id: 3,
+    image: projectImage2,
+    altText: 'PDF to Word Converter App',
+    title: 'PDF/Word Converter',
+    description:
+      'Simple program that converts pdf <-> docx while maintaining proper formatting.  Used to help with my work involving editing .pdf files from time-to-time.',
+    tags: [JavaIcon],
+    gitHubPath: 'https://github.com/AndrewKohn/PDFWordConverter',
+    liveSitePath: '',
+  },
+  {
+    id: 4,
     image: projectImage4,
     altText: 'Morning Glory Homes menu site',
     title: 'MGH Menu',
@@ -65,7 +96,7 @@ const PROJECTS_DATA = [
     liveSitePath: 'https://mghmenu.netlify.app/',
   },
   {
-    id: 4,
+    id: 5,
     image: projectImage5,
     altText: 'My Coding Tracker App',
     title: 'My Coding Tracker',
@@ -73,17 +104,6 @@ const PROJECTS_DATA = [
       "Simple timer to count the amount of time spent actively coding. This timer should not be spent on solely browsing videos, podcasts, books, & etc even if they're related.",
     tags: [JavaIcon],
     gitHubPath: 'https://github.com/AndrewKohn/MyCodingTracker',
-    liveSitePath: '',
-  },
-  {
-    id: 5,
-    image: projectImagePlaceholder,
-    altText: 'Coming Soon!',
-    title: 'Project 5',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?',
-    tags: [],
-    gitHubPath: '',
     liveSitePath: '',
   },
 ];
