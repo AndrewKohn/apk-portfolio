@@ -7,6 +7,7 @@ import Button from '../components/UI/Button';
 import resumeFile from '../assets/apk-resume.pdf';
 import { Link } from 'react-router-dom';
 import Background from '../components/UI/Background';
+import { BsBoxArrowUpRight } from 'react-icons/bs';
 
 const About = ({}) => {
   const [isEyesClosed, setIsEyesClosed] = useState<boolean>(false);
@@ -60,7 +61,10 @@ const About = ({}) => {
           </div>
           <div className="link-wrapper">
             <a href={resumeFile} target="_blank" rel="noreferrer">
-              <Button>RESUME</Button>
+              <Button>
+                RESUME{'    '}
+                <BsBoxArrowUpRight />
+              </Button>
             </a>
             <Link to="/contact">
               <Button>CONTACT ME</Button>
