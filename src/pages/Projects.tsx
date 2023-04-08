@@ -8,6 +8,7 @@ const Projects = ({}) => {
     return (
       <ProjectGridItem
         key={index}
+        projectId={project.id}
         image={project.image}
         altText={project.altText}
         title={project.title}
