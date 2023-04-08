@@ -27,7 +27,7 @@
 .home-container {
   .content {
     height: calc(100% - 6.7rem);
-    margin: 12rem auto 18rem auto;
+    margin: 17.2rem auto 18rem auto;
     gap: 15%;
 
     @media screen and (max-width: #{map-get($breakpoints, 'desktop')}) {
