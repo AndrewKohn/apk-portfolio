@@ -25,7 +25,7 @@ const Heading = ({}) => {
         <li className="description">
           <CheckMark className="checkmark" />
           <p>
-            Back-end <strong>Java Developer</strong>
+            Back-end <strong>Nodejs & Java Developer</strong>
           </p>
         </li>
         <li className="description">
