@@ -1,0 +1,147 @@
+@use '../styles/mixins';
+@import '../styles/variables';
+
+.project-page-container {
+  @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+  @include mixins.AnimateFadeIn();
+  filter: opacity(1);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $primary;
+  position: relative;
+
+  .return-button {
+    position: absolute;
+    top: 7.2rem;
+    left: 5%;
+    transform: translate(50%, 75%);
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .return-button-icon {
+      width: 4rem;
+      height: 4rem;
+      color: $secondary;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: $accent1;
+      }
+    }
+  }
+
+  .project-page-bg {
+    transform: translate(-50%, -50%) rotate(0);
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba($accent2, 0), rgba($accent2, 0.6));
+    animation: slide-from-top 1.5s ease;
+
+    @keyframes slide-from-top {
+      0% {
+        transform: translate(-50%, -100%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+    }
+  }
+
+  .links-container {
+    @include mixins.DisplayFlex(space-between, center, row, nowrap);
+    width: 40rem;
+    background-color: red;
+
+    .links-wrapper {
+      @include mixins.DisplayFlex(flex-start, center, row, nowrap);
+
+      gap: 1rem;
+      .project-link {
+        &:visited,
+        &:link {
+          color: $secondary;
+          transition: color 0.25s ease-in-out;
+        }
+        &:hover {
+          color: $accent1;
+        }
+
+        &:hover .link-icon {
+          border: 1px solid $accent1;
+        }
+      }
+
+      .link-icon {
+        width: 4rem;
+        height: 4rem;
+        padding: 0.4rem;
+        border-radius: 19px;
+        background-color: $tertiary;
+        border: 1px solid $secondary;
+        transition: border-color 0.25s ease-in-out;
+      }
+
+      .live-demo {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: 'Live Demo';
+          bottom: 35%;
+          left: 0;
+          transform: translateY(0);
+          text-align: center;
+          background-color: transparent;
+          z-index: -1;
+          line-height: 1;
+          width: 100%;
+          filter: opacity(0);
+          transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+          &::after {
+            transform: translateY(5rem);
+            filter: opacity(1);
+            z-index: 1;
+          }
+        }
+      }
+
+      .github-url {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: 'GitHub Repo';
+          bottom: 35%;
+          left: 0;
+          transform: translateY(0);
+          text-align: center;
+          background-color: transparent;
+          z-index: -1;
+          line-height: 1;
+          width: 100%;
+          filter: opacity(0);
+          transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+          &::after {
+            transform: translateY(5rem);
+            filter: opacity(1);
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.blurred--light {
+  filter: blur(1.4px);
+  cursor: not-allowed;
+}
