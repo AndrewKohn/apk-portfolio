@@ -42,8 +42,8 @@ const NavBar = ({}) => {
         onClick={() => setIsNavModalVisible(!isNavModalVisible)}
       >
         <div className="hamburger-bar" />
-        <div className="hamburger-bar middle-bar" />
-        <div className="hamburger-bar bottom-bar" />
+        <div className="hamburger-bar" />
+        <div className="hamburger-bar" />
         {isNavModalVisible ? (
           <Fragment>
             <GrClose className="close-button" />
