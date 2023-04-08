@@ -62,14 +62,103 @@
             border: 1px solid $accent1;
           }
         }
+
         .link-icon {
           width: 4rem;
           height: 4rem;
           padding: 0.4rem;
           border-radius: 19px;
-          background-color: transparent;
+          background-color: $tertiary;
           border: 1px solid $secondary;
           transition: border-color 0.25s ease-in-out;
+        }
+
+        .live-demo {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'Live Demo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+
+        .github-url {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'GitHub Repo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+
+        .nav-link {
+          position: relative;
+          // &:link {
+          //   color: $secondary;
+          // }
+
+          // &:visited {
+          //   color: $secondary;
+          // }
+
+          &::after {
+            position: absolute;
+            content: 'More Info';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
         }
       }
     }

@@ -1,11 +1,14 @@
+import { Link } from 'react-router-dom';
 import EyeFillIcon from '../../assets/svg/EyeFillIcon';
 import EyeSlashFillIcon from '../../assets/svg/EyeSlashFillIcon';
 import GitHubIcon from '../../assets/svg/GitHubIcon';
 import Card from '../UI/Card';
 import './ProjectGridItem.scss';
 import Tags from './Tags';
+import { HiInformationCircle } from 'react-icons/hi';
 
 interface Props {
+  projectId: number;
   image: any;
   altText: string;
   title: string;
@@ -16,6 +19,7 @@ interface Props {
 }
 
 const ProjectGridItem = ({
+  projectId,
   image,
   altText,
   title,
@@ -62,7 +66,11 @@ const ProjectGridItem = ({
           {/* LINKS */}
           <div className="links-wrapper">
             {liveSitePath ? (
-              <a href={liveSitePath} className="project-link" target="_blank">
+              <a
+                href={liveSitePath}
+                className={`project-link live-demo`}
+                target="_blank"
+              >
                 <EyeFillIcon className="link-icon" />
               </a>
             ) : (
@@ -70,14 +78,29 @@ const ProjectGridItem = ({
             )}
 
             {githubPath ? (
-              <a href={githubPath} className="project-link" target="_blank">
+              <a
+                href={githubPath}
+                className={`project-link github-url`}
+                target="_blank"
+              >
                 <GitHubIcon className="link-icon" />
               </a>
             ) : (
               <GitHubIcon
-                className={`link-icon blurred--light`}
                 isDisabled={true}
+                className={`link-icon blurred--light`}
               />
+            )}
+
+            {githubPath ? (
+              <Link
+                to={`/projects/${projectId}`}
+                className={`project-link nav-link`}
+              >
+                <HiInformationCircle className="link-icon " />
+              </Link>
+            ) : (
+              <HiInformationCircle className={`link-icon blurred--light`} />
             )}
           </div>
 
