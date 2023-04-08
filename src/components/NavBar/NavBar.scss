@@ -3,10 +3,25 @@
 
 .nav-bar {
   @include mixins.DisplayFlex(space-between, center, row, nowrap);
+  position: fixed;
+  top: 0;
   width: 100%;
-  background-color: $tertiary;
+  background: linear-gradient(
+    to bottom,
+    rgba($tertiary, 0.3),
+    rgba($tertiary, 0.1)
+  );
   padding: 1.2rem 0;
   z-index: 100;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2.5px);
+    z-index: -1;
+  }
 
   .nav-link--home {
     position: relative;
@@ -172,10 +187,10 @@
     }
 
     .backdrop {
-      position: absolute;
+      position: fixed;
       cursor: default;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       top: 0;
       left: 0;
       z-index: 1;
@@ -184,8 +199,7 @@
     }
 
     .modal {
-      background-color: aqua;
-      position: absolute;
+      position: fixed;
       cursor: default;
       top: 50%;
       left: 50%;
