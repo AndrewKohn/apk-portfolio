@@ -25,10 +25,13 @@
       width: 4rem;
       height: 4rem;
       color: $secondary;
-      transition: color 0.2s ease-in-out;
+      background-color: $primary;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
 
       &:hover {
         color: $accent1;
+        background-color: $tertiary;
       }
     }
   }
@@ -37,7 +40,7 @@
     transform: translate(-50%, -50%) rotate(0);
     top: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba($accent2, 0), rgba($accent2, 0.6));
+    background: linear-gradient(to top, rgba($accent1, 0), rgba($accent1, 0.6));
     animation: slide-from-top 1.5s ease;
 
     @keyframes slide-from-top {
