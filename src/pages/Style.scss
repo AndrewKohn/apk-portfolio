@@ -39,7 +39,119 @@
 // ABOUT PAGE
 .about-container {
   .content {
+    @include mixins.DisplayFlex(flex-start, center, column, nowrap);
     height: calc(100% - 21.5rem);
+
+    .text-container {
+      @include mixins.DisplayFlex(center, center, column, nowrap);
+      gap: 2rem;
+      width: 55rem;
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        width: 100%;
+      }
+
+      .about-text {
+        line-height: 1.5;
+        letter-spacing: 1.7px;
+        text-align: left;
+        width: 100%;
+
+        strong {
+          color: $accent2;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .about-wrapper {
+      @include mixins.DisplayFlex(center, center, column, nowrap);
+      position: relative;
+      margin-top: 10rem;
+
+      &:last-child {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        gap: 4rem;
+        padding-bottom: 20rem;
+
+        @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+          @include mixins.DisplayFlex(center, center, column, nowrap);
+          margin-top: 12rem;
+        }
+      }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        margin-top: 8rem;
+      }
+
+      .about-info-wrapper {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        gap: 8rem;
+
+        @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+          flex-wrap: wrap;
+        }
+
+        .avatar-container {
+          width: 30rem;
+          height: 30rem;
+
+          .avatar {
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            background-color: rgba($tertiary, 0.55);
+            border: 5px solid rgba($accent2, 1);
+          }
+        }
+      }
+
+      .link-wrapper {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        gap: 3.2rem;
+        transform: translate(-2rem, 10rem);
+
+        @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+          position: initial;
+          transform: translate(0, 0);
+          margin-top: 6rem;
+          // margin-bottom: 18rem;
+        }
+      }
+    }
+
+    .about-skills-container {
+      @include mixins.DisplayFlex(center, center, row, nowrap);
+      gap: 8rem;
+      width: 100%;
+      margin-top: 18rem;
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        @include mixins.DisplayFlex(center, center, column, nowrap);
+        margin-top: 12rem;
+      }
+
+      .about-skills {
+        .skills-wrapper {
+          @include mixins.DisplayFlex(center, center, column, nowrap);
+          margin-bottom: 0;
+
+          .skill-section-wrapper {
+            @media screen and (min-width: #{map-get($breakpoints, 'tablet-lg')}) {
+              width: 36rem;
+            }
+          }
+        }
+      }
+
+      .text-skills-wrapper {
+        @include mixins.DisplayFlex(center, center, column, nowrap);
+        gap: 4rem;
+      }
+    }
   }
 
   .about-bg {
@@ -83,73 +195,6 @@
       }
       100% {
         transform: translate(-50%, -50%) rotate(4deg);
-      }
-    }
-  }
-
-  .about-wrapper {
-    @include mixins.DisplayFlex(center, center, column, nowrap);
-    position: relative;
-
-    @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
-      margin-top: 8rem;
-    }
-
-    .about-info-wrapper {
-      @include mixins.DisplayFlex(center, center, row, nowrap);
-      gap: 8rem;
-
-      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
-        flex-wrap: wrap;
-      }
-
-      .avatar-container {
-        width: 30rem;
-        height: 30rem;
-
-        .avatar {
-          width: 30rem;
-          height: 30rem;
-          border-radius: 50%;
-          background-color: $tertiary;
-          border: 5px solid rgba($accent2, 1);
-        }
-      }
-
-      .text-container {
-        @include mixins.DisplayFlex(center, center, column, nowrap);
-        gap: 2rem;
-        width: 55rem;
-
-        @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
-          width: 100%;
-        }
-
-        .about-text {
-          line-height: 1.5;
-          letter-spacing: 1.7px;
-
-          strong {
-            color: $accent2;
-            font-weight: 600;
-          }
-        }
-      }
-    }
-
-    .link-wrapper {
-      @include mixins.DisplayFlex(center, center, row, nowrap);
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      gap: 3.2rem;
-      transform: translate(-2rem, 10rem);
-
-      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
-        position: initial;
-        transform: translate(0, 0);
-        margin-top: 6rem;
-        margin-bottom: 18rem;
       }
     }
   }
@@ -309,10 +354,11 @@
           padding: 1.4rem;
           padding-bottom: 0;
           z-index: 1;
-          border: 3px solid $accent2;
+          // border: 3px solid $accent2;
           @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
             width: 100%;
             height: 100%;
+            border-bottom: 2px solid $accent2;
           }
         }
 
@@ -321,5 +367,37 @@
         }
       }
     }
+  }
+}
+
+// 404 page
+.page-not-found-container {
+  .page-not-found-bg {
+    transform: translate(-50%, -50%) rotate(0);
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(#ff3b3f, 0), rgba(#ff3b3f, 0.6));
+    animation: slide-from-top 1.5s ease;
+
+    @keyframes slide-from-top {
+      0% {
+        transform: translate(-50%, -100%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+    }
+  }
+
+  .page-not-found-heading {
+    font-size: 8rem;
+    text-align: center;
+    line-height: 9.8rem;
+    color: $secondary;
+    text-shadow: 0 0 12px rgba($secondary, 0.5);
+  }
+
+  .page-not-found-text {
+    margin-top: 2rem;
   }
 }
