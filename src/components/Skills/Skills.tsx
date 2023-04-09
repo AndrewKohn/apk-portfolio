@@ -14,7 +14,11 @@ import TypeScriptIcon from '../../assets/svg/languages/TypeScriptIcon';
 import ViteIcon from '../../assets/svg/languages/ViteIcon';
 import './Skills.scss';
 
-const Skills = ({}) => {
+interface Props {
+  className?: string;
+}
+
+const Skills = ({ className }: Props) => {
   const frontEndSkills = [
     {
       text: 'HTML5',
@@ -79,7 +83,7 @@ const Skills = ({}) => {
   ];
 
   return (
-    <div className="skills-container">
+    <div className={`skills-container ${className}`}>
       <h3 className="skills-heading">Skills</h3>
       <div className="skills-wrapper">
         <div className="skill-section">
