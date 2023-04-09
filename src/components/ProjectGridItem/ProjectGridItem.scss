@@ -3,14 +3,13 @@
 
 .project-card {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
-  box-shadow: none;
   width: 35rem;
-  transition: background-color 0.25s ease-in-out;
 
   @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
+    border-radius: 0;
   }
 
   &:not(:hover) {
