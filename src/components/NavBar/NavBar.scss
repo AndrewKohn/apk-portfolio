@@ -8,18 +8,18 @@
   width: 100%;
   background: linear-gradient(
     to bottom,
-    rgba($tertiary, 0.3),
-    rgba($tertiary, 0.1)
+    rgba($secondary, 0.05),
+    rgba($secondary, 0.025)
   );
   padding: 1.2rem 0;
-  z-index: 100;
+  z-index: 50;
 
   &::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: calc(100% - 17px);
     height: 100%;
-    backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(1.8px);
     z-index: -1;
   }
 
@@ -61,7 +61,7 @@
     }
 
     @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
-      margin-left: 2rem;
+      margin-left: 3.2rem;
     }
   }
 
@@ -152,8 +152,20 @@
       width: 45%;
     }
 
+    &:active .hamburger-bar:nth-child(1) {
+      width: 65%;
+    }
+
+    &:active .hamburger-bar:nth-child(2) {
+      width: 35%;
+    }
+
+    &:active .hamburger-bar:nth-child(3) {
+      width: 85%;
+    }
+
     @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
-      margin-right: 2rem;
+      margin-right: 3.2rem;
     }
   }
 
@@ -180,10 +192,19 @@
       width: 2.4rem;
       height: 2.4rem;
       margin: auto 0;
+      transform: scale(1.4);
       z-index: 20;
+      color: $secondary;
+      transition: transform 0.2s ease;
+      &:hover {
+        transform: scale(2);
+      }
+      &:active {
+        transform: scale(1.7);
+      }
     }
     @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
-      margin-right: 2rem;
+      margin-right: 3.2rem;
     }
 
     .backdrop {
@@ -194,7 +215,8 @@
       top: 0;
       left: 0;
       z-index: 1;
-      background-color: rgba($secondary, 0.7);
+      background-color: rgba($tertiary, 0.55);
+      backdrop-filter: blur(1.5px);
       @include mixins.AnimateFadeIn();
     }
 
@@ -239,6 +261,7 @@
 
           &:hover {
             color: $tertiary;
+            letter-spacing: 10px;
             background-color: $accent1;
           }
         }

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import GitHubIcon from '../../assets/svg/GitHubIcon';
-import { Fragment, useState } from 'react';
-import { GrClose } from 'react-icons/gr';
+import { Fragment, useEffect, useState } from 'react';
+import { MdOutlineClose } from 'react-icons/md';
 
 const NavBar = ({}) => {
   const [isNavModalVisible, setIsNavModalVisible] = useState<boolean>(false);
@@ -12,7 +12,7 @@ const NavBar = ({}) => {
   };
 
   return (
-    <div className="nav-bar">
+    <nav className="nav-bar">
       <Link to="/" className="nav-link--home">
         AK
       </Link>
@@ -46,7 +46,7 @@ const NavBar = ({}) => {
         <div className="hamburger-bar" />
         {isNavModalVisible ? (
           <Fragment>
-            <GrClose className="close-button" />
+            <MdOutlineClose className="close-button" />
             <Fragment>
               <div className="backdrop" onClick={backdropClickHandler}></div>
               <div className="modal">
@@ -80,7 +80,7 @@ const NavBar = ({}) => {
           ''
         )}
       </button>
-    </div>
+    </nav>
   );
 };
 
