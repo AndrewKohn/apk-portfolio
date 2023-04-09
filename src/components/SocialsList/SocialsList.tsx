@@ -15,11 +15,7 @@ const SocialsList = ({ iconType: iconSize }: Props) => {
       link: 'https://www.linkedin.com/in/kohnandrew/',
       icon: <LinkedInIcon className={`icon--${iconSize}`} />,
     },
-    {
-      name: 'GitHub',
-      link: 'https://github.com/AndrewKohn/',
-      icon: <GitHubIcon className={`icon--${iconSize}`} />,
-    },
+
     {
       name: 'Twitter',
       link: 'https://twitter.com/KohnAndrew_dev',
@@ -29,6 +25,11 @@ const SocialsList = ({ iconType: iconSize }: Props) => {
       name: 'Instagram',
       link: 'https://www.instagram.com/kohnandrew_dev/',
       icon: <InstagramIcon className={`icon--${iconSize}`} />,
+    },
+    {
+      name: 'GitHub',
+      link: 'https://github.com/AndrewKohn/',
+      icon: <GitHubIcon className={`icon--${iconSize}`} />,
     },
   ];
 
