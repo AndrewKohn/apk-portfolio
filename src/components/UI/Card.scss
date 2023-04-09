@@ -5,7 +5,17 @@
   @include mixins.DisplayFlex(center, center, row, nowrap);
   gap: 4rem;
   padding: 3.2rem 2rem;
-  background-color: $tertiary;
-  box-shadow: 0 0 10px 5px rgba($tertiary, 0.25);
+  background-color: rgba($tertiary, 0.9);
+  // box-shadow: 0 0 10px 5px rgba($tertiary, 0.25);
+  box-shadow: 0 0 20px 1px rgba(255, 0, 0, 0);
   border-radius: 5px;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s ease;
+
+  &:hover {
+    box-shadow: 0 0 2px 1px $secondary;
+  }
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+    border-radius: 0 !important;
+  }
 }

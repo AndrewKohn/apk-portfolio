@@ -109,10 +109,13 @@
       color: #efefef;
       font-family: inherit;
       font-size: inherit;
+      box-shadow: 0 0 20px 1px rgba(255, 0, 0, 0);
+      transition: box-shadow 0.2s ease;
 
       &:focus {
         outline: none;
-        box-shadow: 0 0 2px 1px #efefef !important;
+        // box-shadow: 0 0 2px 1px #efefef !important;
+        box-shadow: 0 0 8px 1px rgba($secondary, 1) !important;
       }
 
       @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
@@ -135,7 +138,7 @@
   }
 
   .invalid {
-    box-shadow: 0 0 2px 2px red !important;
+    box-shadow: 0 0 20px 1px rgba(red, 0) !important;
     border: 2px solid red !important;
     transform: translateX(0);
     animation: shake 0.15s ease-in-out;
