@@ -1,4 +1,9 @@
-import { BsArrowLeftCircleFill } from 'react-icons/bs';
+import {
+  BsArrowLeftCircleFill,
+  BsClipboard2CheckFill,
+  BsFillExclamationCircleFill,
+  BsFillStarFill,
+} from 'react-icons/bs';
 import EyeFillIcon from '../assets/svg/EyeFillIcon';
 import EyeSlashFillIcon from '../assets/svg/EyeSlashFillIcon';
 import GitHubIcon from '../assets/svg/GitHubIcon';
@@ -13,7 +18,29 @@ interface Props {
 }
 
 const ProjectPage = ({ project }: Props) => {
-  console.log(project);
+  const projectPurpose = project.moreInfo.purpose.map(
+    (purpose: string, index: number) => (
+      <p key={index} className="project-info-text">
+        {purpose}
+      </p>
+    )
+  );
+
+  const projectFunctionality = project.moreInfo.functionality.map(
+    (functionality: string, index: number) => (
+      <p key={index} className="project-info-text">
+        {functionality}
+      </p>
+    )
+  );
+
+  const projectChallenge = project.moreInfo.challenge.map(
+    (challenge: string, index: number) => (
+      <p key={index} className="project-info-text">
+        {challenge}
+      </p>
+    )
+  );
 
   return (
     <div className="container project-page-container">
@@ -23,41 +50,65 @@ const ProjectPage = ({ project }: Props) => {
       <Background className="project-page-bg" />
       <h2>{project.title}</h2>
 
-      <div className="links-container">
-        <div className="links-wrapper">
-          {project.liveSitePath ? (
-            <a
-              href={project.liveSitePath}
-              className={`project-link live-demo`}
-              target="_blank"
-            >
-              <EyeFillIcon className="link-icon" />
-            </a>
-          ) : (
-            <EyeSlashFillIcon className={`link-icon blurred--light`} />
-          )}
+      <div className="content">
+        <img src={project.image} className="project-info-image" />
 
-          {project.gitHubPath ? (
-            <a
-              href={project.gitHubPath}
-              className={`project-link github-url`}
-              target="_blank"
-            >
-              <GitHubIcon className="link-icon" />
-            </a>
-          ) : (
-            <GitHubIcon
-              className={`link-icon blurred--light`}
-              isDisabled={true}
-            />
-          )}
+        <div className="links-container">
+          <div className="links-wrapper">
+            {project.liveSitePath ? (
+              <a
+                href={project.liveSitePath}
+                className={`project-link live-demo`}
+                target="_blank"
+              >
+                <EyeFillIcon className="link-icon" />
+              </a>
+            ) : (
+              <EyeSlashFillIcon className={`link-icon blurred--light`} />
+            )}
+
+            {project.gitHubPath ? (
+              <a
+                href={project.gitHubPath}
+                className={`project-link github-url`}
+                target="_blank"
+              >
+                <GitHubIcon className="link-icon" />
+              </a>
+            ) : (
+              <GitHubIcon
+                className={`link-icon blurred--light`}
+                isDisabled={true}
+              />
+            )}
+          </div>
+
+          {/* TAGS */}
+          <Tags projectTags={project.tags} />
         </div>
 
-        {/* TAGS */}
-        <Tags projectTags={project.tags} />
+        <Card classes="project-info-card">
+          <div className="project-info-heading">
+            <BsFillStarFill className="project-info-icon" />
+            <h4>Purpose</h4>
+          </div>
+          {projectPurpose}
+        </Card>
+        <Card classes="project-info-card">
+          <div className="project-info-heading">
+            <BsClipboard2CheckFill className="project-info-icon" />
+            <h4>Functionality</h4>
+          </div>
+          {projectFunctionality}
+        </Card>
+        <Card classes="project-info-card">
+          <div className="project-info-heading">
+            <BsFillExclamationCircleFill className="project-info-icon" />
+            <h4>Challenge</h4>
+          </div>
+          {projectChallenge}
+        </Card>
       </div>
-
-      <Card>{project.description}</Card>
     </div>
   );
 };

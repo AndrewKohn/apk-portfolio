@@ -53,91 +53,118 @@
     }
   }
 
-  .links-container {
-    @include mixins.DisplayFlex(space-between, center, row, nowrap);
-    width: 40rem;
-    background-color: red;
+  .content {
+    gap: 6rem;
+    margin-bottom: 20rem;
 
-    .links-wrapper {
-      @include mixins.DisplayFlex(flex-start, center, row, nowrap);
+    .project-info-image {
+      margin-top: 12rem;
+      width: 40rem;
+    }
 
-      gap: 1rem;
-      .project-link {
-        &:visited,
-        &:link {
+    .links-container {
+      @include mixins.DisplayFlex(space-between, center, row, nowrap);
+      width: 40rem;
+
+      .links-wrapper {
+        @include mixins.DisplayFlex(flex-start, center, row, nowrap);
+
+        gap: 1rem;
+        .project-link {
+          &:visited,
+          &:link {
+            color: $secondary;
+            transition: color 0.25s ease-in-out;
+          }
+          &:hover {
+            color: $accent1;
+          }
+
+          &:hover .link-icon {
+            border: 1px solid $accent1;
+          }
+        }
+
+        .link-icon {
+          width: 4rem;
+          height: 4rem;
+          padding: 0.4rem;
+          border-radius: 19px;
+          background-color: $tertiary;
+          border: 1px solid $secondary;
+          transition: border-color 0.25s ease-in-out;
+        }
+
+        .live-demo {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'Live Demo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+
+        .github-url {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'GitHub Repo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .project-info-card {
+      @include mixins.DisplayFlex(center, flex-start, column, nowrap);
+      max-width: 80rem;
+      gap: 1.2rem;
+
+      .project-info-heading {
+        @include mixins.DisplayFlex(flex-start, center, row, nowrap);
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        .project-info-icon {
           color: $secondary;
-          transition: color 0.25s ease-in-out;
-        }
-        &:hover {
-          color: $accent1;
-        }
-
-        &:hover .link-icon {
-          border: 1px solid $accent1;
-        }
-      }
-
-      .link-icon {
-        width: 4rem;
-        height: 4rem;
-        padding: 0.4rem;
-        border-radius: 19px;
-        background-color: $tertiary;
-        border: 1px solid $secondary;
-        transition: border-color 0.25s ease-in-out;
-      }
-
-      .live-demo {
-        position: relative;
-
-        &::after {
-          position: absolute;
-          content: 'Live Demo';
-          bottom: 35%;
-          left: 0;
-          transform: translateY(0);
-          text-align: center;
-          background-color: transparent;
-          z-index: -1;
-          line-height: 1;
-          width: 100%;
-          filter: opacity(0);
-          transition: all 0.2s ease-in-out;
-        }
-
-        &:hover {
-          &::after {
-            transform: translateY(5rem);
-            filter: opacity(1);
-            z-index: 1;
-          }
-        }
-      }
-
-      .github-url {
-        position: relative;
-
-        &::after {
-          position: absolute;
-          content: 'GitHub Repo';
-          bottom: 35%;
-          left: 0;
-          transform: translateY(0);
-          text-align: center;
-          background-color: transparent;
-          z-index: -1;
-          line-height: 1;
-          width: 100%;
-          filter: opacity(0);
-          transition: all 0.2s ease-in-out;
-        }
-
-        &:hover {
-          &::after {
-            transform: translateY(5rem);
-            filter: opacity(1);
-            z-index: 1;
-          }
+          width: 2rem;
+          height: 2rem;
         }
       }
     }
