@@ -47,62 +47,65 @@ const ProjectPage = ({ project }: Props) => {
       <Link to={`/projects`} className="return-button">
         <BsArrowLeftCircleFill className="return-button-icon" />
       </Link>
+
       <Background className="project-page-bg" />
       <h2>{project.title}</h2>
 
       <div className="content">
-        <img src={project.image} className="project-info-image" />
+        <Card classes="project-info-img">
+          <img src={project.image} className="project-info-image" />
 
-        <div className="links-container">
-          <div className="links-wrapper">
-            {project.liveSitePath ? (
-              <a
-                href={project.liveSitePath}
-                className={`project-link live-demo`}
-                target="_blank"
-              >
-                <EyeFillIcon className="link-icon" />
-              </a>
-            ) : (
-              <EyeSlashFillIcon className={`link-icon blurred--light`} />
-            )}
+          <div className="links-container">
+            <div className="links-wrapper">
+              {project.liveSitePath ? (
+                <a
+                  href={project.liveSitePath}
+                  className={`project-link live-demo`}
+                  target="_blank"
+                >
+                  <EyeFillIcon className="link-icon" />
+                </a>
+              ) : (
+                <EyeSlashFillIcon className={`link-icon blurred--light`} />
+              )}
 
-            {project.gitHubPath ? (
-              <a
-                href={project.gitHubPath}
-                className={`project-link github-url`}
-                target="_blank"
-              >
-                <GitHubIcon className="link-icon" />
-              </a>
-            ) : (
-              <GitHubIcon
-                className={`link-icon blurred--light`}
-                isDisabled={true}
-              />
-            )}
+              {project.gitHubPath ? (
+                <a
+                  href={project.gitHubPath}
+                  className={`project-link github-url`}
+                  target="_blank"
+                >
+                  <GitHubIcon className="link-icon" />
+                </a>
+              ) : (
+                <GitHubIcon
+                  className={`link-icon blurred--light`}
+                  isDisabled={true}
+                />
+              )}
+            </div>
+
+            {/* TAGS */}
+            <Tags projectTags={project.tags} />
           </div>
-
-          {/* TAGS */}
-          <Tags projectTags={project.tags} />
-        </div>
+        </Card>
 
         <Card classes="project-info-card">
-          <div className="project-info-heading">
+          <div className="project-info-heading heading--purpose">
             <BsFillStarFill className="project-info-icon" />
             <h4>Purpose</h4>
           </div>
           {projectPurpose}
         </Card>
         <Card classes="project-info-card">
-          <div className="project-info-heading">
+          <div className="project-info-heading heading--functionality">
             <BsClipboard2CheckFill className="project-info-icon" />
             <h4>Functionality</h4>
           </div>
           {projectFunctionality}
         </Card>
         <Card classes="project-info-card">
-          <div className="project-info-heading">
+          <div className="project-info-heading heading--challenge">
             <BsFillExclamationCircleFill className="project-info-icon" />
             <h4>Challenge</h4>
           </div>

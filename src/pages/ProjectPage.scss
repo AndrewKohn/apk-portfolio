@@ -57,14 +57,24 @@
     gap: 6rem;
     margin-bottom: 20rem;
 
-    .project-info-image {
-      margin-top: 12rem;
-      width: 40rem;
+    .project-info-img {
+      @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+      margin-top: 8rem;
+      overflow: hidden;
+      .project-info-image {
+        transform: scale(1.15);
+        transition: transform 0.5s ease;
+      }
+
+      &:not(:hover) .project-info-image {
+        transform: scale(1);
+      }
     }
 
     .links-container {
       @include mixins.DisplayFlex(space-between, center, row, nowrap);
-      width: 40rem;
+      width: 30rem;
+      margin-bottom: 1.2rem;
 
       .links-wrapper {
         @include mixins.DisplayFlex(flex-start, center, row, nowrap);
@@ -160,12 +170,32 @@
         @include mixins.DisplayFlex(flex-start, center, row, nowrap);
         gap: 2rem;
         margin-bottom: 2rem;
-
         .project-info-icon {
           color: $secondary;
           width: 2rem;
           height: 2rem;
         }
+      }
+    }
+
+    .heading--purpose {
+      color: #fcca46;
+      .project-info-icon {
+        color: #fcca46 !important;
+      }
+    }
+
+    .heading--functionality {
+      color: #a1c181;
+      .project-info-icon {
+        color: #a1c181 !important;
+      }
+    }
+
+    .heading--challenge {
+      color: #ff3b3f;
+      .project-info-icon {
+        color: #ff3b3f !important;
       }
     }
   }
