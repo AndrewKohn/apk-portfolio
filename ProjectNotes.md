@@ -20,6 +20,7 @@ Background.tsx:
 [ISSUE]
 
 - [x] font preload error in html file
+- [ ] Netlify 404 doesn't redirect to custom 404 react page
 
 NavBar.tsx:
 
