@@ -13,71 +13,24 @@
 <h2 align="center">Technology Used</h2>
 
 <div align="center">
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-      alt="html5 icon"
-      title="HTML5"
-    />
-  </code>
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-      alt="css3 icon"
-      title="CSS3"
-    />
-  </code>
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-      alt="javascript icon"
-      title="JavaScript"
-    />
-  </code>
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-      alt="typescript icon"
-      title="TypeScript"
-    />
-  </code>
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-      alt="react icon"
-      title="React"
-    />
-  </code>
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-      alt="sass icon"
-      title="Sass"
-    />
-  </code>
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-      alt="node.js icon"
-      title="Node.js"
-    />
-  </code>
-  <code>
-    <img
-      height="36px"
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg"
-      alt="jest icon"
-      title="Jest"
-    />
-  </code>
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html5 icon" title="HTML5"/> 
+  &nbsp;
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css3 icon" title="CSS3"/> 
+  &nbsp;
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript icon" title="JavaScript"/> 
+  &nbsp;
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="typescript icon" title="TypeScript"/> 
+  &nbsp;
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react icon" title="React"/> 
+  &nbsp;
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="sass icon" title="Sass"/> 
+  &nbsp;
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="node.js icon" title="Node.js"/> 
+  &nbsp;
+  <img height="36px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="jest icon" title="Jest"/> 
+  &nbsp;
 </div>
+
 
 #
 
