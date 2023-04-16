@@ -1,5 +1,5 @@
 import Background from '../components/UI/Background';
-import './style.scss';
+import './Style.scss';
 
 const PageNotFound = ({}) => {
   return (
