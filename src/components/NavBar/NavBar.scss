@@ -20,6 +20,7 @@
     width: calc(100% - 17px);
     height: 100%;
     backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
     z-index: -1;
   }
 
@@ -217,6 +218,7 @@
       z-index: 1;
       background-color: rgba($tertiary, 0.55);
       backdrop-filter: blur(1.5px);
+      -webkit-backdrop-filter: blur(1.5px);
       @include mixins.AnimateFadeIn();
     }
 
