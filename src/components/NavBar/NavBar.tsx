@@ -37,6 +37,7 @@ const NavBar = ({}) => {
         </a>
       </div>
 
+      {/* Mobile Navigation */}
       <button
         aria-label="mobile nav bar button"
         className={`hamburger-menu ${isNavModalVisible ? 'selected' : ''}`}

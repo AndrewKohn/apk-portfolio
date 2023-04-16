@@ -6,6 +6,7 @@ import Card from '../components/UI/Card';
 import './Style.scss';
 
 const Contact = ({}) => {
+  // States will adjust colors of the avatar svg's based on its validity
   const [isNameValid, setIsNameValid] = useState<boolean | undefined | null>();
   const [isEmailValid, setIsEmailValid] = useState<
     boolean | undefined | null
@@ -27,12 +28,6 @@ const Contact = ({}) => {
   ) => {
     setHasMessage(isMessagePresent);
   };
-
-  // useEffect(() => {
-  //   console.log('name', isNameValid);
-  //   console.log('email', isEmailValid);
-  //   console.log('message', hasMessage);
-  // }, [isNameValid, isEmailValid, hasMessage]);
 
   return (
     <div className="container contact-container">

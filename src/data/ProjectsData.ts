@@ -24,13 +24,18 @@ import projectImagePlaceholder from '../assets/img/ex-img.png';
 // {
 //   id: 5,
 //   image: projectImagePlaceholder,
-//   altText: 'title',
-//   title: 'title',
-//   description: '',
+//   altText: 'exampleTitle',
+//   title: 'exampleTitle',
+//   description: 'exampleText',
 //   tags: [],
 //   gitHubPath: '',
 //   liveSitePath: '',
-// },
+//   moreInfo: {
+//     purpose: ['purposeText'],
+//     functionality: ['functionalityText'],
+//     challenge: ['challengeText'],
+//   },
+// };
 
 const PROJECTS_DATA = [
   {

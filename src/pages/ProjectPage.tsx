@@ -49,6 +49,7 @@ const ProjectPage = ({ project }: Props) => {
       </Link>
 
       <Background className="project-page-bg" />
+
       <h2>{project.title}</h2>
 
       <div className="content">

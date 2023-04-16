@@ -86,6 +86,7 @@ const Skills = ({ className }: Props) => {
     <div className={`skills-container ${className}`}>
       <h3 className="skills-heading">Skills</h3>
       <div className="skills-wrapper">
+        {/* FRONT-END */}
         <div className="skill-section">
           <h4 className="skill-title">Front-End</h4>
           <div className="skill-section-wrapper">
@@ -97,6 +98,8 @@ const Skills = ({ className }: Props) => {
             ))}
           </div>
         </div>
+
+        {/* BACK-END */}
         <div className="skill-section">
           <h4 className="skill-title">Back-End</h4>
           <div className="skill-section-wrapper">
@@ -108,6 +111,8 @@ const Skills = ({ className }: Props) => {
             ))}
           </div>
         </div>
+
+        {/* TOOLS */}
         <div className="skill-section">
           <h4 className="skill-title">Tools</h4>
           <div className="skill-section-wrapper">

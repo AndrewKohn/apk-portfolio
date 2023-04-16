@@ -7,10 +7,6 @@ import PROJECTS_DATA from './data/ProjectsData';
 import ProjectPage from './pages/ProjectPage';
 import PageNotFound from './pages/PageNotFound';
 import LoadingBars from './components/UI/LoadingBars';
-// import Home from './pages/Home';
-// import About from './pages/About';
-// import Projects from './pages/Projects';
-// import Contact from './pages/Contact';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));

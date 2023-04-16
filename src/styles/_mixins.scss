@@ -8,8 +8,6 @@
   flex-wrap: $wrap;
 }
 
-// MEDIA QUERIES
-
 // COLORS
 @mixin Colors($selected-value, $user-value, $transparency: 1) {
   $selected-color: map-get($colors, $user-value);
