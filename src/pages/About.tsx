@@ -61,13 +61,13 @@ const About = ({}) => {
           </div>
           <div className="link-wrapper">
             <a href={resumeFile} target="_blank" rel="noreferrer">
-              <Button>
+              <Button ariaLabel="resume button">
                 RESUME{'    '}
                 <BsBoxArrowUpRight />
               </Button>
             </a>
             <Link to="/contact">
-              <Button>CONTACT ME</Button>
+              <Button ariaLabel="contact-page button">CONTACT ME</Button>
             </Link>
           </div>
         </div>

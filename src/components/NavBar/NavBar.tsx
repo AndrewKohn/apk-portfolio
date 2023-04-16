@@ -38,6 +38,7 @@ const NavBar = ({}) => {
       </div>
 
       <button
+        aria-label="mobile nav bar button"
         className={`hamburger-menu ${isNavModalVisible ? 'selected' : ''}`}
         onClick={() => setIsNavModalVisible(!isNavModalVisible)}
       >

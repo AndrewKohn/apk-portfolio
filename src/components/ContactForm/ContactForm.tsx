@@ -163,7 +163,11 @@ const ContactForm = ({
         />
       </div>
       <input type="hidden" name="_captcha" value="false" />
-      <Button type="submit" classes={!isFormValid ? 'disabled' : ''}>
+      <Button
+        ariaLabel="contact button"
+        type="submit"
+        classes={!isFormValid ? 'disabled' : ''}
+      >
         Send
       </Button>
     </form>
