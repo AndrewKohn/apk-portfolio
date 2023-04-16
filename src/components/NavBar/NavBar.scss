@@ -1,0 +1,290 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.nav-bar {
+  @include mixins.DisplayFlex(space-between, center, row, nowrap);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba($secondary, 0.05),
+    rgba($secondary, 0.025)
+  );
+  padding: 1.2rem 0;
+  z-index: 50;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 17px);
+    height: 100%;
+    backdrop-filter: blur(1.8px);
+    -webkit-backdrop-filter: blur(1.8px);
+    z-index: -1;
+  }
+
+  .nav-link--home {
+    position: relative;
+    font-family: 'Encode Sans';
+    font-size: 2.4rem;
+    color: $secondary;
+    letter-spacing: 2px;
+    padding: 0.4rem 1.2rem;
+    text-decoration: none;
+    margin-left: 6rem;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $accent1;
+    }
+
+    &::before {
+      content: '>';
+      margin-right: 0.4rem;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      transform: translateY(2px);
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: transparent;
+      transition: width 0.5s ease, background-color 0.5s ease;
+    }
+
+    &:hover::after {
+      width: 5.6rem;
+      background-color: $accent1;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      margin-left: 3.2rem;
+    }
+  }
+
+  .nav-links {
+    @include mixins.DisplayFlex(center, center, row, nowrap);
+    gap: 2.4rem;
+    margin-right: 6rem;
+
+    .nav-link {
+      position: relative;
+      transition: content 0.5s ease;
+      padding: 0.4rem 0;
+
+      &:link {
+        color: $secondary;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        transition: color 0.5s ease;
+      }
+
+      &:visited {
+        color: $secondary;
+      }
+
+      &:hover {
+        color: $accent1;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 0;
+        transform: translateY(2px);
+        bottom: 0;
+        display: block;
+        background: transparent;
+        transition: width 0.5s ease, background-color 0.5s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+        background-color: $accent1;
+      }
+    }
+  }
+
+  .nav-link--github {
+    color: $secondary;
+    margin-right: 1.2rem;
+    vertical-align: middle;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition: color 0.25s ease-in;
+
+    &:hover {
+      color: $accent1;
+    }
+
+    &:active {
+      color: $accent1;
+    }
+  }
+
+  .hamburger-menu {
+    @include mixins.DisplayFlex(space-between, flex-end, column, nowrap);
+    display: none;
+    width: 2.4rem;
+    height: 2rem;
+    margin-right: 6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .hamburger-bar {
+      width: 100%;
+      height: 3px;
+      border-radius: 5px;
+      background-color: $secondary;
+      transition: width 0.2s ease-in-out;
+    }
+
+    &:hover .hamburger-bar:nth-child(2) {
+      width: 45%;
+    }
+
+    &:active .hamburger-bar:nth-child(1) {
+      width: 65%;
+    }
+
+    &:active .hamburger-bar:nth-child(2) {
+      width: 35%;
+    }
+
+    &:active .hamburger-bar:nth-child(3) {
+      width: 85%;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      margin-right: 3.2rem;
+    }
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger-menu {
+      display: flex;
+    }
+  }
+
+  .selected {
+    width: 2.4rem;
+    height: 100%;
+    margin-right: 6rem;
+
+    .hamburger-bar {
+      display: none;
+    }
+
+    .close-button {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin: auto 0;
+      transform: scale(1.4);
+      z-index: 20;
+      color: $secondary;
+      transition: transform 0.2s ease;
+      &:hover {
+        transform: scale(2);
+      }
+      &:active {
+        transform: scale(1.7);
+      }
+    }
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      margin-right: 3.2rem;
+    }
+
+    .backdrop {
+      position: fixed;
+      cursor: default;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: rgba($tertiary, 0.55);
+      backdrop-filter: blur(1.5px);
+      -webkit-backdrop-filter: blur(1.5px);
+      @include mixins.AnimateFadeIn();
+    }
+
+    .modal {
+      position: fixed;
+      cursor: default;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 5px 10px 50px 5px rgba(0, 0, 0, 0.5);
+      height: 40rem;
+      width: 75%;
+      z-index: 10;
+      @include mixins.AnimateFadeIn();
+
+      .modal-links {
+        @include mixins.DisplayFlex(center, space-between, column, nowrap);
+        background-color: $primary;
+        height: 100%;
+        gap: 1px;
+
+        .nav-link {
+          @include mixins.DisplayFlex(center, center, column, nowrap);
+          position: relative;
+          transition: content 0.5s ease;
+          padding: 0.4rem 0;
+          height: 100%;
+
+          &:link {
+            color: $secondary;
+            background-color: transparent;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transition: all 0.2s ease;
+          }
+
+          &:visited {
+            color: $secondary;
+          }
+
+          &:hover {
+            color: $tertiary;
+            letter-spacing: 10px;
+            background-color: $accent1;
+          }
+        }
+
+        .nav-link--github-container {
+          background-color: transparent;
+          transition: all 0.2s ease;
+
+          .nav-link--github {
+            margin: 2rem 0;
+          }
+
+          &:hover {
+            background-color: $accent1;
+          }
+
+          &:hover .nav-link--github {
+            color: $tertiary;
+          }
+        }
+      }
+    }
+  }
+}

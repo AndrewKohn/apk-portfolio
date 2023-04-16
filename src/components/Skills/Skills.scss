@@ -1,0 +1,96 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.skills-container {
+  @include mixins.DisplayFlex(center, center, column, nowrap);
+
+  .skills-heading {
+    margin-bottom: 3.6rem;
+  }
+
+  .skills-wrapper {
+    @include mixins.DisplayFlex(center, center, row, wrap);
+    cursor: default;
+    background-color: $tertiary;
+    margin-bottom: 20rem;
+
+    .skill-section {
+      @include mixins.DisplayFlex(center, center, column, nowrap);
+      background-color: $tertiary;
+      box-shadow: 0 0 20px 1px rgba(255, 0, 0, 0);
+      z-index: 1;
+      transition: box-shadow 0.25s ease, z-index 0.25s ease;
+
+      .skill-title {
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-top: 0.8rem;
+      }
+
+      .skill-section-wrapper {
+        @include mixins.DisplayFlex(center, center, row, wrap);
+        margin-bottom: 0.8rem;
+        // gap: 2rem;
+
+        .skill-banner {
+          @include mixins.DisplayFlex(center, center, column, nowrap);
+          padding-bottom: 2rem;
+          position: relative;
+
+          .skill-icon {
+            width: 4rem;
+            height: 4rem;
+            padding: 1.2rem 3rem;
+            z-index: 5;
+            background-color: $tertiary;
+            filter: grayscale(1) blur(0.6px);
+            transition: filter 0.25s ease;
+          }
+
+          .skill-text {
+            position: absolute;
+            bottom: 0;
+            transform: translateY(-4rem);
+            font-weight: 600;
+            filter: opacity(0) blur(5px);
+            z-index: 1;
+            transition: transform 0.25s ease, filter 0.25s ease-out;
+          }
+        }
+
+        @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+          width: 40rem;
+        }
+
+        @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+          width: 36rem;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 2px 1px $secondary;
+        z-index: 5;
+      }
+
+      &:hover .skill-section-wrapper .skill-icon {
+        filter: grayscale(0) blur(0);
+      }
+
+      &:hover .skill-section-wrapper .skill-text {
+        transform: translateY(5%);
+        filter: opacity(1) blur(0);
+      }
+
+      &:hover .skill-title {
+        color: $accent1;
+        letter-spacing: 4px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:not(:hover) .skill-title {
+        letter-spacing: 2px;
+        transition: letter-spacing 0.2s ease-in-out;
+      }
+    }
+  }
+}

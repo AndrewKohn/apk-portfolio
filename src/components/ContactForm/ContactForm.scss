@@ -1,0 +1,166 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.form {
+  @include mixins.DisplayFlex(center, center, column, nowrap);
+  height: 100%;
+  width: 100%;
+  gap: 2rem;
+
+  h4 {
+    position: relative;
+    .emoji {
+      position: absolute;
+      top: 0;
+      right: 0;
+      user-select: none;
+      transform: translate(3.2rem, 0);
+      animation: bounce 1s infinite;
+
+      @keyframes bounce {
+        0% {
+          transform: translate(3.2rem, 0);
+        }
+        25% {
+          transform: translate(3.2rem, 4px);
+        }
+        50% {
+          transform: translate(3.2rem, 2px);
+        }
+        75% {
+          transform: translate(3.2rem, 4px);
+        }
+        100% {
+          transform: translate(3.2rem, 0);
+        }
+      }
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+    @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+      width: 95%;
+    }
+
+    .label {
+      position: absolute;
+      color: $secondary;
+      background-color: $tertiary;
+      top: 0;
+      left: 0;
+      transform: translate(2rem, -1.2rem);
+      letter-spacing: 1.5px;
+      z-index: 5;
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        transform: translateX(-1.6rem);
+        background: linear-gradient(
+          to right,
+          rgba($tertiary, 0),
+          rgba($tertiary, 1) 55%
+        );
+        z-index: -1;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        transform: translateX(1.6rem);
+        background: linear-gradient(
+          to right,
+          rgba($tertiary, 1) 55%,
+          rgba($tertiary, 0)
+        );
+        z-index: -1;
+      }
+    }
+
+    .label--message {
+      &::before {
+        transform: translateX(-2rem);
+        background: linear-gradient(
+          to right,
+          rgba($tertiary, 0),
+          rgba($tertiary, 1) 45%
+        );
+      }
+      &::after {
+        transform: translateX(2rem);
+      }
+    }
+
+    .input {
+      width: 40rem;
+      height: 3.2rem;
+      padding: 0.4rem;
+      background: none;
+      border: 2px solid rgba($accent2, 1);
+      color: #efefef;
+      font-family: inherit;
+      font-size: inherit;
+      box-shadow: 0 0 20px 1px rgba(255, 0, 0, 0);
+      transition: box-shadow 0.2s ease;
+
+      &:focus {
+        outline: none;
+        // box-shadow: 0 0 2px 1px #efefef !important;
+        box-shadow: 0 0 8px 1px rgba($secondary, 1) !important;
+      }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+        width: 100%;
+      }
+    }
+    .input--message {
+      min-height: 10rem;
+      padding-top: 1.2rem;
+      resize: none;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+  }
+
+  // HELPERS
+  .disabled {
+    filter: opacity(0.25);
+    pointer-events: none;
+  }
+
+  .invalid {
+    box-shadow: 0 0 20px 1px rgba(red, 0) !important;
+    border: 2px solid red !important;
+    transform: translateX(0);
+    animation: shake 0.15s ease-in-out;
+
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+      33% {
+        transform: translateX(-0.4rem);
+      }
+      66% {
+        transform: translateX(0.4rem);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  #invalid-text {
+    color: red;
+    font-style: italic;
+  }
+}

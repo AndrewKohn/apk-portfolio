@@ -1,0 +1,49 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.socials {
+  @include mixins.DisplayFlex(flex-end, center, row, nowrap);
+  list-style: none;
+  gap: 0.8rem;
+
+  .social {
+    .social-link {
+      @include mixins.DisplayFlex(center, center, row, nowrap);
+
+      .icon--sm {
+        width: 2rem;
+        height: 2rem;
+        color: $secondary;
+        margin-top: 3.2rem;
+        transition: color 0.15s ease-in-out;
+
+        &:hover {
+          color: $accent1;
+        }
+      }
+
+      .icon--bordered {
+        width: 1.4rem;
+        height: 1.4rem;
+        color: $secondary;
+        transition: all 0.25s ease;
+      }
+    }
+
+    .icon-border {
+      padding: 0.6rem;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid $secondary;
+      transition: all 0.25s ease;
+
+      &:hover {
+        border: 1px solid $accent1;
+      }
+
+      &:hover .icon--bordered {
+        color: $accent1;
+      }
+    }
+  }
+}

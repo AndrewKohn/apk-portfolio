@@ -1,0 +1,207 @@
+@use '../styles/mixins';
+@import '../styles/variables';
+
+.project-page-container {
+  @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+  @include mixins.AnimateFadeIn();
+  filter: opacity(1);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $primary;
+  position: relative;
+
+  .return-button {
+    position: absolute;
+    top: 7.2rem;
+    left: 5%;
+    transform: translate(50%, 75%);
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .return-button-icon {
+      width: 4rem;
+      height: 4rem;
+      color: $secondary;
+      background-color: $primary;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: $accent1;
+        background-color: $tertiary;
+      }
+    }
+  }
+
+  .project-page-bg {
+    transform: translate(-50%, -50%) rotate(0);
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba($accent1, 0), rgba($accent1, 0.6));
+    animation: slide-from-top 1.5s ease;
+
+    @keyframes slide-from-top {
+      0% {
+        transform: translate(-50%, -100%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+    }
+  }
+
+  .content {
+    gap: 6rem;
+    margin-bottom: 20rem;
+
+    .project-info-img {
+      @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+      margin-top: 8rem;
+      overflow: hidden;
+      .project-info-image {
+        transform: scale(1.15);
+        transition: transform 0.5s ease;
+      }
+
+      &:not(:hover) .project-info-image {
+        transform: scale(1);
+      }
+    }
+
+    .links-container {
+      @include mixins.DisplayFlex(space-between, center, row, nowrap);
+      width: 30rem;
+      margin-bottom: 1.2rem;
+
+      .links-wrapper {
+        @include mixins.DisplayFlex(flex-start, center, row, nowrap);
+
+        gap: 1rem;
+        .project-link {
+          &:visited,
+          &:link {
+            color: $secondary;
+            transition: color 0.25s ease-in-out;
+          }
+          &:hover {
+            color: $accent1;
+          }
+
+          &:hover .link-icon {
+            border: 1px solid $accent1;
+          }
+        }
+
+        .link-icon {
+          width: 4rem;
+          height: 4rem;
+          padding: 0.4rem;
+          border-radius: 19px;
+          background-color: $tertiary;
+          border: 1px solid $secondary;
+          transition: border-color 0.25s ease-in-out;
+        }
+
+        .live-demo {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'Live Demo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+
+        .github-url {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'GitHub Repo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .project-info-card {
+      @include mixins.DisplayFlex(center, flex-start, column, nowrap);
+      max-width: 80rem;
+      gap: 1.2rem;
+
+      .project-info-heading {
+        @include mixins.DisplayFlex(flex-start, center, row, nowrap);
+        gap: 2rem;
+        margin-bottom: 2rem;
+        .project-info-icon {
+          color: $secondary;
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+
+    .heading--purpose {
+      color: #fcca46;
+      .project-info-icon {
+        color: #fcca46 !important;
+      }
+    }
+
+    .heading--functionality {
+      color: #a1c181;
+      .project-info-icon {
+        color: #a1c181 !important;
+      }
+    }
+
+    .heading--challenge {
+      color: #ff3b3f;
+      .project-info-icon {
+        color: #ff3b3f !important;
+      }
+    }
+  }
+}
+
+.blurred--light {
+  filter: blur(1.4px);
+  cursor: not-allowed;
+}

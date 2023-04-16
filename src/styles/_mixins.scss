@@ -1,0 +1,33 @@
+@import './variables';
+
+@mixin DisplayFlex($justify, $align, $direction, $wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+// COLORS
+@mixin Colors($selected-value, $user-value, $transparency: 1) {
+  $selected-color: map-get($colors, $user-value);
+  @if $selected-color {
+    #{$selected-value}: rgba($selected-color, $transparency);
+  } @else {
+    @error "There is an issue with the inputs.  Double-check your $selected-color and/or $selected-value values...";
+  }
+}
+
+// ANIMATION
+@mixin AnimateFadeIn() {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}

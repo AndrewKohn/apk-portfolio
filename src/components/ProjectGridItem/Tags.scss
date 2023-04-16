@@ -1,0 +1,26 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.tags {
+  @include mixins.DisplayFlex(flex-start, center, row, wrap);
+  max-width: 8rem;
+
+  .tag {
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: -1.4rem;
+    padding: 0.4rem;
+    border-radius: 9px;
+    background-color: $tertiary;
+    box-shadow: 0 0 1px 1px inset $secondary;
+    filter: contrast(0.8);
+    z-index: 1;
+    overflow: hidden;
+    transition: filter 1s ease;
+
+    &:hover {
+      z-index: 5;
+      filter: contrast(1.25);
+    }
+  }
+}

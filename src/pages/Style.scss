@@ -1,0 +1,404 @@
+@use '../styles/mixins';
+@import '../styles/variables';
+
+.container {
+  @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+  @include mixins.AnimateFadeIn();
+  filter: opacity(1);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $primary;
+  position: relative;
+
+  .content {
+    @include mixins.DisplayFlex(center, center, column, nowrap);
+    height: auto;
+
+    @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+// HOME PAGE
+
+.home-container {
+  .content {
+    height: calc(100% - 6.7rem);
+    margin: 17.2rem auto 18rem auto;
+    gap: 15%;
+
+    @media screen and (max-width: #{map-get($breakpoints, 'desktop')}) {
+      margin-top: 20rem;
+    }
+  }
+}
+
+// ABOUT PAGE
+.about-container {
+  .content {
+    @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+    height: calc(100% - 21.5rem);
+
+    .text-container {
+      @include mixins.DisplayFlex(center, center, column, nowrap);
+      gap: 2rem;
+      width: 55rem;
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        width: 100%;
+      }
+
+      .about-text {
+        line-height: 1.5;
+        letter-spacing: 1.7px;
+        text-align: left;
+        width: 100%;
+
+        strong {
+          color: $accent2;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .about-wrapper {
+      @include mixins.DisplayFlex(center, center, column, nowrap);
+      position: relative;
+      margin-top: 10rem;
+
+      &:last-child {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        gap: 4rem;
+        padding-bottom: 20rem;
+
+        @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+          @include mixins.DisplayFlex(center, center, column, nowrap);
+          margin-top: 12rem;
+        }
+      }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        margin-top: 8rem;
+      }
+
+      .about-info-wrapper {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        gap: 8rem;
+
+        @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+          flex-wrap: wrap;
+        }
+
+        .avatar-container {
+          width: 30rem;
+          height: 30rem;
+
+          .avatar {
+            width: 30rem;
+            height: 30rem;
+            border-radius: 50%;
+            background-color: rgba($tertiary, 0.55);
+            border: 5px solid rgba($accent2, 1);
+          }
+        }
+      }
+
+      .link-wrapper {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        gap: 3.2rem;
+        transform: translate(-2rem, 10rem);
+
+        @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+          position: initial;
+          transform: translate(0, 0);
+          margin-top: 6rem;
+          // margin-bottom: 18rem;
+        }
+      }
+    }
+
+    .about-skills-container {
+      @include mixins.DisplayFlex(center, center, row, nowrap);
+      gap: 8rem;
+      width: 100%;
+      margin-top: 18rem;
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        @include mixins.DisplayFlex(center, center, column, nowrap);
+        margin-top: 12rem;
+      }
+
+      .about-skills {
+        .skills-wrapper {
+          @include mixins.DisplayFlex(center, center, column, nowrap);
+          margin-bottom: 0;
+
+          .skill-section-wrapper {
+            @media screen and (min-width: #{map-get($breakpoints, 'tablet-lg')}) {
+              width: 36rem;
+            }
+          }
+        }
+      }
+
+      .text-skills-wrapper {
+        @include mixins.DisplayFlex(center, center, column, nowrap);
+        gap: 4rem;
+      }
+    }
+  }
+
+  .about-bg {
+    transform: translate(-50%, -50%) rotate(4deg);
+    background-color: rgba($accent1, 0.2);
+    animation: slide-left 1.5s ease;
+
+    &::before {
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+    }
+
+    &::after {
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+    }
+
+    @keyframes slide-left {
+      0% {
+        transform: translate(200%, 0%) rotate(4deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(4deg);
+      }
+    }
+  }
+}
+
+// PROJECTS PAGE
+.projects-container {
+  overflow-y: auto;
+
+  .content {
+    height: auto;
+  }
+
+  .projects-bg {
+    height: 55rem;
+    width: 75%;
+    transform: translate(-50%, -50%) rotate(4deg);
+    background-color: rgba($accent1, 0.2);
+    animation: slide-down-to-left 1.5s ease;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to bottom,
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to top,
+        rgba($accent1, 0),
+        rgba($accent1, 0.2)
+      );
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(100%);
+    }
+
+    @keyframes slide-down-to-left {
+      0% {
+        transform: translate(-45%, -200%) rotate(4deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(4deg);
+      }
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 4rem;
+    margin: 12rem auto 24rem auto;
+
+    @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 12rem auto 20rem auto;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: 8rem;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      column-gap: 1rem;
+      row-gap: 6rem;
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-sm')}) {
+      margin: 2rem auto;
+    }
+  }
+}
+
+// CONTACT PAGE
+.contact-container {
+  .contact-bg {
+    height: 45%;
+    width: 15%;
+    transform: translate(-35%, -50%) rotate(-7deg);
+    background-color: rgba($accent2, 0.6);
+    animation: slide-down-to-right 1.5s ease;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to bottom,
+        rgba($accent2, 0),
+        rgba($accent2, 0.6)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(
+        to top,
+        rgba($accent2, 0),
+        rgba($accent2, 0.6)
+      );
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(100%);
+    }
+
+    @keyframes slide-down-to-right {
+      0% {
+        transform: translate(-55%, -100%) rotate(-7deg);
+      }
+      100% {
+        transform: translate(-35%, -50%) rotate(-7deg);
+      }
+    }
+  }
+
+  .content {
+    height: calc(100% - 21.5rem);
+
+    @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+      justify-content: flex-start;
+    }
+    .contact-container {
+      @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+        padding: 12rem 0 18rem 0;
+      }
+
+      #contact-card {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        background-color: $tertiary;
+
+        .contact-avatars {
+          height: 40rem;
+          width: 100%;
+          padding: 1.4rem;
+          padding-bottom: 0;
+          z-index: 1;
+          // border: 3px solid $accent2;
+          @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid $accent2;
+          }
+        }
+
+        @media screen and (max-width: #{map-get($breakpoints, 'laptop')}) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+// 404 page
+.page-not-found-container {
+  .page-not-found-bg {
+    transform: translate(-50%, -50%) rotate(0);
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(#ff3b3f, 0), rgba(#ff3b3f, 0.6));
+    animation: slide-from-top 1.5s ease;
+
+    @keyframes slide-from-top {
+      0% {
+        transform: translate(-50%, -100%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+    }
+  }
+
+  .page-not-found-heading {
+    font-size: 8rem;
+    text-align: center;
+    line-height: 9.8rem;
+    color: $secondary;
+    text-shadow: 0 0 12px rgba($secondary, 0.5);
+  }
+
+  .page-not-found-text {
+    margin-top: 2rem;
+  }
+}

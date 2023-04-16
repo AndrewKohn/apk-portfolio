@@ -1,0 +1,43 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.intro-card {
+  .heading-wrapper {
+    @include mixins.DisplayFlex(center, flex-end, column, nowrap);
+    padding: 2rem;
+    padding-right: 8rem;
+  }
+
+  .descriptions {
+    @include mixins.DisplayFlex(center, flex-start, column, nowrap);
+    list-style-type: none;
+    gap: 2.4rem;
+
+    .description {
+      @include mixins.DisplayFlex(center, center, row, nowrap);
+      .checkmark {
+        vertical-align: middle;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.8rem;
+        color: greenyellow;
+      }
+
+      strong {
+        color: $accent2;
+      }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'phone-sm')}) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+    @include mixins.DisplayFlex(center, center, column, nowrap);
+  }
+
+  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+    width: 100%;
+  }
+}

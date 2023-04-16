@@ -1,0 +1,191 @@
+@use '../../styles/mixins';
+@import '../../styles/variables';
+
+.project-card {
+  @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+  width: 35rem;
+
+  @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  &:not(:hover) {
+    background-color: rgba($tertiary, 0.7);
+  }
+
+  .project-image {
+    transform: scale(1.15);
+    transition: transform 0.5s ease;
+  }
+
+  &:not(:hover) .project-image {
+    transform: scale(1);
+  }
+
+  .project-info-container {
+    .description {
+      padding: 0 1.2rem;
+      margin-top: 2rem;
+      letter-spacing: 0.5px;
+      height: 12rem;
+      overflow-y: auto;
+    }
+
+    .bottom-row {
+      @include mixins.DisplayFlex(space-between, center, row, nowrap);
+      margin-top: 3.2rem;
+      min-height: 8rem;
+
+      @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+
+      .links-wrapper {
+        @include mixins.DisplayFlex(flex-start, center, row, nowrap);
+        gap: 1rem;
+        .project-link {
+          &:visited,
+          &:link {
+            color: $secondary;
+            transition: color 0.25s ease-in-out;
+          }
+          &:hover {
+            color: $accent1;
+          }
+
+          &:hover .link-icon {
+            border: 1px solid $accent1;
+          }
+        }
+
+        .link-icon {
+          width: 4rem;
+          height: 4rem;
+          padding: 0.4rem;
+          border-radius: 19px;
+          background-color: $tertiary;
+          border: 1px solid $secondary;
+          transition: border-color 0.25s ease-in-out;
+        }
+
+        .live-demo {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'Live Demo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+
+        .github-url {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: 'GitHub Repo';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+
+        .nav-link {
+          position: relative;
+          // &:link {
+          //   color: $secondary;
+          // }
+
+          // &:visited {
+          //   color: $secondary;
+          // }
+
+          &::after {
+            position: absolute;
+            content: 'More Info';
+            bottom: 35%;
+            left: 0;
+            transform: translateY(0);
+            text-align: center;
+            background-color: transparent;
+            z-index: -1;
+            line-height: 1;
+            width: 100%;
+            filter: opacity(0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::after {
+              transform: translateY(5rem);
+              filter: opacity(1);
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // HELPER CLASSES
+  .blurred-container {
+    // overflow: hidden;
+
+    .project-image {
+      pointer-events: none;
+    }
+  }
+
+  .blurred--heavy {
+    filter: blur(3px);
+  }
+
+  .blurred--light {
+    filter: blur(1.4px);
+    cursor: not-allowed;
+  }
+
+  .disabled-text {
+    user-select: none;
+  }
+
+  .project-info-container .disabled-text {
+    overflow-y: hidden;
+  }
+}
