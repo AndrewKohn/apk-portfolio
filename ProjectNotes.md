@@ -10,7 +10,7 @@
 
 Background.tsx:
 
-- [ ] Randomize background size, positions, and animations to remove bloat from css
+- [ ] Randomize background size, positions, and animations to remove css bloat
   - 404 & individual project pages should remain static.
 
 [BUG]
@@ -24,7 +24,11 @@ Background.tsx:
 
 NavBar.tsx:
 
-- [ ] iOS chrome browser backdrop filter compatibility
+- [x] iOS chrome browser backdrop filter compatibility
+
+Button.test.tsx:
+
+- [ ] jest reference error when trying to test for button click handler
 
 [FIXME]
 
