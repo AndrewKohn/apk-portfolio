@@ -11,6 +11,7 @@ const EyeFillIcon = ({ className }: Props) => {
       fill="currentColor"
       viewBox="0 0 16 16"
       className={className}
+      data-testid="live-demo-icon"
     >
       <title>Live Demo</title>
       <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
