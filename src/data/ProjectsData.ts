@@ -16,7 +16,7 @@ import projectImage1 from '../assets/img/payroll-sorter-image.webp';
 import projectImage2 from '../assets/img/pdf-word-converter-image.webp';
 import projectImage3 from '../assets/img/mh-weakener-bot-image.webp';
 import projectImage4 from '../assets/img/mgh-menu-image.webp';
-import projectImage5 from '../assets/img/my-coding-tracker-image.webp';
+import projectImage5 from '../assets/img/gpt-discord-chatbot.webp';
 // import projectImage6 from '../assets/img/';
 import projectImagePlaceholder from '../assets/img/ex-img.png';
 
@@ -99,9 +99,32 @@ const PROJECTS_DATA = [
       ],
     },
   },
-
   {
     id: 2,
+    image: projectImage5,
+    altText: 'OpenAI Discord Chatbot',
+    title: 'OpenAI Discord Chatbot',
+    description:
+      "A ChatGPT discord chatbot utilizing OpenAI's API with the ability to converse with multiple users within the server's channel & can respond to DM's.  To make it a bit interesting, the chatbot is role-playing as a caveman that values family-values and he also works in a call center for ChatGPT in the US.",
+    tags: [JavaScriptIcon, NodeJSIcon],
+    gitHubPath: 'https://github.com/AndrewKohn/gpt-discord-bot',
+    liveSitePath: 'https://discord.com/invite/c27D5CXkA5',
+    moreInfo: {
+      purpose: [
+        "I wanted to create a ChatGPT bot for discord for it's use when a user is away from their desktop or laptop.  It is a nice utility to have when you have a certain question on your mind and can return back to that question when you get back to your computer.",
+      ],
+      functionality: [
+        "User's can interact and chat with OpenAI's ChatGPT API.",
+        "User's can send/receive DM's.",
+        "The chatbot will maintain current conversations between multiple users.  It won't deviate from a topic due to another user influencing the chatbot.",
+      ],
+      challenge: [
+        "One issue I had was a relatively quick-fix, but it involved having the chatbot be able to read and store past conversations.  The issue was that it won't differentiate between different users, and will continue a conversation branch based on the past questions regardless of who asked them.  The fix I included into the code involved stopping the chatbot from responding if the author of the message is either not a bot itself, or if the current author of the current question is the same as the previous author of the previous question.",
+      ],
+    },
+  },
+  {
+    id: 3,
     image: projectImage3,
     altText: 'Monster Hunter Discord Bot',
     title: 'MH Weakener Bot',
@@ -129,7 +152,7 @@ const PROJECTS_DATA = [
     },
   },
   {
-    id: 3,
+    id: 4,
     image: projectImage2,
     altText: 'PDF to Word Converter App',
     title: 'PDF Word Converter',
@@ -153,7 +176,7 @@ const PROJECTS_DATA = [
     },
   },
   {
-    id: 4,
+    id: 5,
     image: projectImage4,
     altText: 'Morning Glory Homes menu site',
     title: 'MGH Menu',
@@ -176,32 +199,6 @@ const PROJECTS_DATA = [
       challenge: [
         'This project helped me understand using js to manipulate the css styling.',
         'A challenge I faced was trying to bring the idea to life of trying to update the menu with new information, but I had to figure out how to remove elements already present in the document.',
-      ],
-    },
-  },
-  {
-    id: 5,
-    image: projectImage5,
-    altText: 'My Coding Tracker App',
-    title: 'My Coding Tracker',
-    description:
-      'A timer to count the amount of time spent actively coding. It logs the time spent onto a .txt file in an easy-to-read format.',
-    tags: [JavaIcon],
-    gitHubPath: 'https://github.com/AndrewKohn/MyCodingTracker',
-    liveSitePath: '',
-    moreInfo: {
-      purpose: [
-        'This was one of my first projects that was to create a log that visually shows the amount time spent in each session of coding & programming.',
-      ],
-      functionality: [
-        'Creates a new .txt file if one is not present.',
-        'Shows the count of how many sessions happened and allows the user to make a note of what they worked on that session.',
-      ],
-      challenge: [
-        'This was one of the first few projects where I wanted to build something on my own.',
-        'I had to find a way to generate a UI frame with labels and inputs.',
-        'I was introduced with the try/catch statements that helped with manipulating the strings and writing to the .txt file.',
-        'I learned how to export to a .jar so the program can be used outside of an IDE.',
       ],
     },
   },
