@@ -15,12 +15,11 @@ const SocialsList = ({ iconType: iconSize }: Props) => {
       link: 'https://www.linkedin.com/in/kohnandrew/',
       icon: <LinkedInIcon className={`icon--${iconSize}`} />,
     },
-
-    {
-      name: 'Twitter',
-      link: 'https://twitter.com/KohnAndrew_dev',
-      icon: <TwitterIcon className={`icon--${iconSize}`} />,
-    },
+    // {
+    //   name: 'Twitter',
+    //   link: 'https://twitter.com/KohnAndrew_dev',
+    //   icon: <TwitterIcon className={`icon--${iconSize}`} />,
+    // },
     {
       name: 'Instagram',
       link: 'https://www.instagram.com/kohnandrew_dev/',
