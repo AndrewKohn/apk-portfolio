@@ -3,6 +3,7 @@
 
 .project-card {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+  @include mixins.AnimateFadeIn();
   width: 35rem;
 
   @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {

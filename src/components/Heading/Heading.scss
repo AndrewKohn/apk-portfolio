@@ -2,6 +2,12 @@
 @import '../../styles/variables';
 
 .intro-card {
+  .intro-wrapper {
+    @include mixins.DisplayFlex(center, center, row, nowrap);
+    @include mixins.AnimateFadeIn();
+    opacity: 1;
+  }
+
   .heading-wrapper {
     @include mixins.DisplayFlex(center, flex-end, column, nowrap);
     padding: 2rem;
