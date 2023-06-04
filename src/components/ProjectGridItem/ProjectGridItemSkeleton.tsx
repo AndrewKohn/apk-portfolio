@@ -10,7 +10,7 @@ const ProjectGridItemSkeleton = ({}) => {
         width="300px"
         height="200px"
         animation="wave"
-        sx={{ backgroundColor: 'rgba(227, 227, 227, 0.1)' }}
+        sx={{ backgroundColor: 'rgba(75, 75, 75, 0.1)' }}
       />
       <div className="middle-row">
         <Skeleton
@@ -18,7 +18,7 @@ const ProjectGridItemSkeleton = ({}) => {
           width="225px"
           sx={{
             fontSize: '3.2rem',
-            backgroundColor: 'rgba(227, 227, 227, 0.1)',
+            backgroundColor: 'rgba(75, 75, 75, 0.1)',
           }}
           animation="wave"
         />
@@ -27,7 +27,7 @@ const ProjectGridItemSkeleton = ({}) => {
           width="300px"
           height="140px"
           animation="wave"
-          sx={{ backgroundColor: 'rgba(227, 227, 227, 0.1)' }}
+          sx={{ backgroundColor: 'rgba(75, 75, 75, 0.1)' }}
         />
         <div className="bottom-row">
           <div className="links-wrapper">
@@ -36,21 +36,21 @@ const ProjectGridItemSkeleton = ({}) => {
               width="50px"
               height="54px"
               animation="wave"
-              sx={{ backgroundColor: 'rgba(227, 227, 227, 0.1)' }}
+              sx={{ backgroundColor: 'rgba(75, 75, 75, 0.1)' }}
             />
             <Skeleton
               variant="rounded"
               width="50px"
               height="54px"
               animation="wave"
-              sx={{ backgroundColor: 'rgba(227, 227, 227, 0.1)' }}
+              sx={{ backgroundColor: 'rgba(75, 75, 75, 0.1)' }}
             />
             <Skeleton
               variant="rounded"
               width="50px"
               height="54px"
               animation="wave"
-              sx={{ backgroundColor: 'rgba(227, 227, 227, 0.1)' }}
+              sx={{ backgroundColor: 'rgba(75, 75, 75, 0.1)' }}
             />
           </div>
           <Skeleton
@@ -58,7 +58,7 @@ const ProjectGridItemSkeleton = ({}) => {
             width="90px"
             height="50px"
             animation="wave"
-            sx={{ backgroundColor: 'rgba(227, 227, 227, 0.1)' }}
+            sx={{ backgroundColor: 'rgba(75, 75, 75, 0.1)' }}
           />
         </div>
       </div>

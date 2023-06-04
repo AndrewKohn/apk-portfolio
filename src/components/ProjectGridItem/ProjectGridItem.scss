@@ -3,7 +3,6 @@
 
 .project-card {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
-  @include mixins.AnimateFadeIn();
   width: 35rem;
 
   @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
@@ -18,6 +17,7 @@
   }
 
   .project-image {
+    @include mixins.AnimateFadeIn();
     transform: scale(1.15);
     transition: transform 0.5s ease;
   }
@@ -27,6 +27,7 @@
   }
 
   .project-info-container {
+    @include mixins.AnimateFadeIn();
     .description {
       padding: 0 1.2rem;
       margin-top: 2rem;
@@ -39,10 +40,11 @@
       @include mixins.DisplayFlex(space-between, center, row, nowrap);
       margin-top: 3.2rem;
       min-height: 8rem;
+      width: 92%;
 
       @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
         margin-left: 2rem;
-        margin-right: 2rem;
+        margin-right: 4rem;
       }
 
       .links-wrapper {

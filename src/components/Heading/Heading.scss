@@ -6,6 +6,15 @@
     @include mixins.DisplayFlex(center, center, row, nowrap);
     @include mixins.AnimateFadeIn();
     opacity: 1;
+    max-width: 89.6rem;
+
+    @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+      @include mixins.DisplayFlex(center, center, column, nowrap);
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+      width: 100%;
+    }
   }
 
   .heading-wrapper {
@@ -37,13 +46,5 @@
         font-size: 1.4rem;
       }
     }
-  }
-
-  @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
-    @include mixins.DisplayFlex(center, center, column, nowrap);
-  }
-
-  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
-    width: 100%;
   }
 }

@@ -2,9 +2,17 @@
 @import '../../styles/variables';
 
 .skeletonCard {
+  @include mixins.AnimateFadeIn();
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
   width: 35rem;
   background-color: rgba($tertiary, 0.7);
+
+  @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 50rem; // 100% doesn't extend to side edges
+    border-radius: 0;
+  }
 }
 
 .middle-row {
