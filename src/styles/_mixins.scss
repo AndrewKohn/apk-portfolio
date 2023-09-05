@@ -31,3 +31,24 @@
     filter: opacity(1);
   }
 }
+@mixin pulseEffect() {
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    filter: brightness(1);
+  }
+  35% {
+    filter: brightness(1.2);
+  }
+  50% {
+    filter: brightness(1);
+  }
+  70% {
+    filter: brightness(1.4);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
