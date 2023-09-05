@@ -7,8 +7,20 @@ import { useEffect, useState } from 'react';
 
 const Projects = ({}) => {
   const [loading, setLoading] = useState<boolean>(true);
+  const [projectStatus, setProjectStatus] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   const projectGridItems = PROJECTS_DATA.map((project, index: number) => {
+    let status;
+    if (project.id === 0 && projectStatus[0]) status = projectStatus[0];
+    // if (project.id === 0 && projectStatus[0]) status = projectStatus[1];
+    if (project.id === 2 && projectStatus[0]) status = projectStatus[2];
+    if (project.id === 3 && projectStatus[0]) status = projectStatus[3];
+
     return (
       <ProjectGridItem
         key={index}
@@ -20,6 +32,7 @@ const Projects = ({}) => {
         tags={project.tags}
         githubPath={project.gitHubPath}
         liveSitePath={project.liveSitePath}
+        status={status !== undefined ? status : undefined}
       />
     );
   });
@@ -33,6 +46,25 @@ const Projects = ({}) => {
     setTimeout(() => {
       setLoading(false);
     }, 350);
+  }, []);
+
+  async function getProjectStatus() {
+    try {
+      const status = await fetch('http://68.47.47.44:59650').then(res =>
+        res.json()
+      );
+      const arr: boolean[] = Object.values(status).map(
+        currentStatus => currentStatus === 'connected'
+      );
+
+      setProjectStatus(arr);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getProjectStatus();
   }, []);
 
   return (

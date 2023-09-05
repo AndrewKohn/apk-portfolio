@@ -6,6 +6,7 @@ import Card from '../UI/Card';
 import './ProjectGridItem.scss';
 import Tags from './Tags';
 import { HiInformationCircle } from 'react-icons/hi';
+import { Fragment, useEffect, useState } from 'react';
 
 interface Props {
   projectId: number;
@@ -16,6 +17,7 @@ interface Props {
   tags?: any;
   githubPath?: string;
   liveSitePath?: string;
+  status?: boolean;
 }
 
 const ProjectGridItem = ({
@@ -27,7 +29,9 @@ const ProjectGridItem = ({
   tags,
   githubPath,
   liveSitePath,
+  status,
 }: Props) => {
+  useEffect(() => console.log(title, projectId, status), []);
   return (
     <Card classes="project-card">
       {/* IMAGE */}
@@ -50,6 +54,25 @@ const ProjectGridItem = ({
       )}
 
       <div className="project-info-container">
+        {/* STATUS */}
+        {status !== undefined ? (
+          <div className="status">
+            {status ? (
+              <Fragment>
+                <p>ONLINE</p>
+                <div className="status-icon--online" />
+              </Fragment>
+            ) : (
+              <Fragment>
+                <p>OFFLINE</p>
+                <div className="status-icon--offline" />
+              </Fragment>
+            )}
+          </div>
+        ) : (
+          ''
+        )}
+
         {/* TITLE */}
         {tags.length !== 0 ? <h4>{title}</h4> : <h4>Coming Soon!</h4>}
 
