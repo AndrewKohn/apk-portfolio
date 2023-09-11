@@ -31,7 +31,6 @@ const ProjectGridItem = ({
   liveSitePath,
   status,
 }: Props) => {
-  useEffect(() => console.log(title, projectId, status), []);
   return (
     <Card classes="project-card">
       {/* IMAGE */}
