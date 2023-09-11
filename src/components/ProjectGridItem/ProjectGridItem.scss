@@ -20,16 +20,18 @@
   .project-image {
     @include mixins.AnimateFadeIn();
     transform: scale(1.15);
-    transition: transform 0.5s ease;
+    border-radius: 0;
+    transition: all 0.2s ease;
   }
 
   &:not(:hover) .project-image {
+    border-radius: 9px;
     transform: scale(1);
   }
 
   &:not(:hover) .status {
     background-color: rgba($tertiary, 0.3);
-    filter: opacity(0.65);
+    // filter: opacity(0.65);
     transform: translate(-3.2rem, 4rem);
     @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
       background-color: rgba($secondary, 0.1);
@@ -53,7 +55,7 @@
     color: rgba($secondary, 0.75);
     letter-spacing: 1.2px;
     filter: opacity(1);
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
 
     .status-icon--online {
       width: 0.8rem;
