@@ -10,14 +10,26 @@ import GitHubIcon from '../assets/svg/GitHubIcon';
 import Tags from '../components/ProjectGridItem/Tags';
 import Background from '../components/UI/Background';
 import './ProjectPage.scss';
+import './Style.scss';
 import { Link } from 'react-router-dom';
 import Card from '../components/UI/Card';
+import { Fragment, useEffect, useState } from 'react';
 
 interface Props {
   project: any;
+  projectStatus: boolean[];
 }
 
-const ProjectPage = ({ project }: Props) => {
+const ProjectPage = ({ project, projectStatus }: Props) => {
+  const [status, setStatus] = useState<boolean | undefined>(undefined);
+
+  useEffect(() => {
+    if (project.id === 0) setStatus(projectStatus[0]); // MGH daily sched
+    // if (project.id === 0 && projectStatus[0]) status = projectStatus[1]; // O-Notes
+    if (project.id === 2) setStatus(projectStatus[2]); // gpt chatbot
+    if (project.id === 3) setStatus(projectStatus[3]); // mh weakener bot
+  }, []);
+
   const projectPurpose = project.moreInfo.purpose.map(
     (purpose: string, index: number) => (
       <p key={index} className="project-info-text">
@@ -44,17 +56,35 @@ const ProjectPage = ({ project }: Props) => {
 
   return (
     <div className="container project-page-container">
-      <Link to={`/projects`} className="return-button">
-        <BsArrowLeftCircleFill className="return-button-icon" />
-      </Link>
-
       <Background className="project-page-bg" />
 
       <h2>{project.title}</h2>
 
       <div className="content">
+        <Link to={`/projects`} className="return-button">
+          <BsArrowLeftCircleFill className="return-button-icon" />
+        </Link>
+
         <Card classes="project-info-img">
           <img src={project.image} className="project-info-image" />
+
+          {status !== undefined ? (
+            <div className="status">
+              {status ? (
+                <Fragment>
+                  <p>ONLINE</p>
+                  <div className="status-icon--online" />
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <p>OFFLINE</p>
+                  <div className="status-icon--offline" />
+                </Fragment>
+              )}
+            </div>
+          ) : (
+            ''
+          )}
 
           <div className="links-container">
             <div className="links-wrapper">

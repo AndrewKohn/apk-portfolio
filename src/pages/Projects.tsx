@@ -5,19 +5,17 @@ import Background from '../components/UI/Background';
 import ProjectGridItemSkeleton from '../components/ProjectGridItem/ProjectGridItemSkeleton';
 import { useEffect, useState } from 'react';
 
-const Projects = ({}) => {
+interface Props {
+  projectStatus: boolean[];
+}
+
+const Projects = ({ projectStatus }: Props) => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [projectStatus, setProjectStatus] = useState<boolean[]>([
-    false,
-    false,
-    false,
-    false,
-  ]);
 
   const projectGridItems = PROJECTS_DATA.map((project, index: number) => {
     let status;
     if (project.id === 0) status = projectStatus[0]; // MGH daily sched
-    // if (project.id === 0 && projectStatus[0]) status = projectStatus[1]; // O-Notes
+    // if (project.id === 0) status = projectStatus[1]; // O-Notes
     if (project.id === 2) status = projectStatus[2]; // gpt chatbot
     if (project.id === 3) status = projectStatus[3]; // mh weakener bot
 
@@ -46,28 +44,6 @@ const Projects = ({}) => {
     setTimeout(() => {
       setLoading(false);
     }, 350);
-
-    async function getProjectStatus() {
-      try {
-        const response = await fetch('http://68.47.47.44:59650');
-        if (response.ok) {
-          const status = await response.json();
-          const arr: boolean[] = Object.values(status).map(
-            currentStatus => currentStatus === 'connected'
-          );
-
-          setProjectStatus(arr);
-        } else {
-          console.error('Failed to fetch project status:', response.status);
-          setProjectStatus([false, false, false, false]);
-        }
-      } catch (error) {
-        console.error('Failed to fetch project status:', error);
-        setProjectStatus([false, false, false, false]);
-      }
-    }
-
-    getProjectStatus();
   }, []);
 
   return (
