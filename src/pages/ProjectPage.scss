@@ -14,9 +14,9 @@
 
   .return-button {
     position: absolute;
-    top: 7.2rem;
+    top: 0;
     left: 5%;
-    transform: translate(50%, 75%);
+    transform: translate(50%, 10rem);
     background: none;
     border: none;
     cursor: pointer;
@@ -61,9 +61,67 @@
       @include mixins.DisplayFlex(flex-start, center, column, nowrap);
       margin-top: 8rem;
       overflow: hidden;
+      position: relative;
+
+      &:not(:hover) .status {
+        background-color: rgba($tertiary, 0.3);
+        // filter: opacity(0.65);
+        transform: translate(-3.2rem, 4rem);
+        @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+          background-color: rgba($secondary, 0.1);
+          transform: translate(-1.2rem, -12rem);
+        }
+      }
+
+      .status {
+        @include mixins.DisplayFlex(center, center, row, nowrap);
+        @include mixins.AnimateFadeIn(1s);
+        pointer-events: none;
+        gap: 0.8rem;
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        transform: translate(-0.8rem, 2.4rem);
+        padding: 0.2rem 0.8rem;
+        border-radius: 5px;
+        background-color: rgba($tertiary, 0.5);
+        color: rgba($secondary, 0.75);
+        letter-spacing: 1.2px;
+        filter: opacity(1);
+        transition: all 0.2s ease;
+
+        .status-icon--online {
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          border: 1px solid rgba(240, 255, 255, 0.575);
+          background-color: green;
+          filter: brightness(1);
+          @include mixins.pulseEffect();
+        }
+
+        .status-icon--offline {
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          border: 1px solid rgba(240, 255, 255, 0.575);
+          background-color: darkred;
+          filter: brightness(1);
+          @include mixins.pulseEffect();
+        }
+
+        @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+          top: unset;
+          bottom: 0;
+          background-color: rgba($secondary, 0.12);
+          transform: translate(-1.2rem, -12rem);
+        }
+      }
+
       .project-info-image {
         transform: scale(1.15);
-        transition: transform 0.5s ease;
+        transition: transform 0.2s ease;
       }
 
       &:not(:hover) .project-info-image {
