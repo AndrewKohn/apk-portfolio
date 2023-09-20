@@ -157,7 +157,7 @@
   .about-bg {
     transform: translate(-50%, -50%) rotate(4deg);
     background-color: rgba($accent1, 0.2);
-    animation: slide-left 1.5s ease;
+    animation: slide-left 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     &::before {
       content: '';
@@ -192,9 +192,11 @@
     @keyframes slide-left {
       0% {
         transform: translate(200%, 0%) rotate(4deg);
+        filter: hue-rotate(-1.6rad);
       }
       100% {
         transform: translate(-50%, -50%) rotate(4deg);
+        filter: hue-rotate(0);
       }
     }
   }
@@ -248,9 +250,11 @@
     @keyframes slide-down-to-left {
       0% {
         transform: translate(-45%, -200%) rotate(4deg);
+        filter: hue-rotate(-0.8rad);
       }
       100% {
         transform: translate(-50%, -50%) rotate(4deg);
+        filter: hue-rotate(0);
       }
     }
   }
@@ -327,9 +331,11 @@
     @keyframes slide-down-to-right {
       0% {
         transform: translate(-55%, -100%) rotate(-7deg);
+        filter: hue-rotate(-0.8rad);
       }
       100% {
         transform: translate(-35%, -50%) rotate(-7deg);
+        filter: hue-rotate(0);
       }
     }
   }
@@ -383,9 +389,11 @@
     @keyframes slide-from-top {
       0% {
         transform: translate(-50%, -100%) rotate(0);
+        filter: hue-rotate(0.8rad);
       }
       100% {
         transform: translate(-50%, -50%) rotate(0);
+        filter: hue-rotate(0);
       }
     }
   }

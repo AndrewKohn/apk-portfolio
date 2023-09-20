@@ -44,9 +44,11 @@
   @keyframes slide-right {
     0% {
       transform: translate(-200%, 0%) rotate(-4deg);
+      filter: hue-rotate(-0.8rad);
     }
     100% {
       transform: translate(-50%, -50%) rotate(-4deg);
+      filter: hue-rotate(0);
     }
   }
 }

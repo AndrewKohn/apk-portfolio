@@ -19,7 +19,7 @@
 
   .heading-wrapper {
     @include mixins.DisplayFlex(center, flex-end, column, nowrap);
-    animation: greyscaleToColor 1.6s ease-out;
+    animation: greyscaleToColor 1s ease-out;
     filter: grayscale(0) opacity(1);
     padding: 2rem;
     padding-right: 8rem;
