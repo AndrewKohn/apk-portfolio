@@ -6,14 +6,6 @@ import './Heading.scss';
 import { Skeleton } from '@mui/material';
 
 const Heading = ({}) => {
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 350);
-  }, []);
-
   return (
     <Card classes="intro-card">
       <div className="intro-wrapper">
@@ -42,7 +34,7 @@ const Heading = ({}) => {
           <li className="description">
             <CheckMark className="checkmark" />
             <p>
-              A <strong>Detailed-oriented Self-Starter</strong>
+              <strong>Results-Oriented & Self-Driven</strong>
             </p>
           </li>
         </ul>

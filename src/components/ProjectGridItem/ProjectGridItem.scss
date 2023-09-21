@@ -4,6 +4,7 @@
 .project-card {
   @include mixins.DisplayFlex(flex-start, center, column, nowrap);
   width: 35rem;
+  position: relative;
 
   @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
     padding-left: 0;
@@ -19,15 +20,86 @@
   .project-image {
     @include mixins.AnimateFadeIn();
     transform: scale(1.15);
-    transition: transform 0.5s ease;
+    border-radius: 0;
+    transition: all 0.2s ease;
   }
 
   &:not(:hover) .project-image {
+    border-radius: 9px;
     transform: scale(1);
+  }
+
+  &:not(:hover) .status {
+    background-color: rgba($tertiary, 0.3);
+    // filter: opacity(0.65);
+    transform: translate(-3.2rem, 4rem);
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      background-color: rgba($secondary, 0.1);
+      transform: translate(-1.2rem, -12rem);
+    }
+  }
+
+  .status {
+    @include mixins.DisplayFlex(center, center, row, nowrap);
+    @include mixins.AnimateFadeIn(1s);
+    pointer-events: none;
+    gap: 0.8rem;
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    transform: translate(-0.8rem, 2.4rem);
+    padding: 0.2rem 0.8rem;
+    border: 1px solid rgba($secondary, 0.75);
+    border-radius: 5px;
+    background-color: rgba($tertiary, 0.5);
+    color: rgba($secondary, 0.75);
+    letter-spacing: 1.2px;
+    filter: opacity(1);
+    transition: all 0.2s ease;
+
+    .status-icon--online {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      border: 1px solid rgba(240, 255, 255, 0.575);
+      background-color: green;
+      filter: brightness(1);
+      @include mixins.pulseEffect();
+    }
+
+    .status-icon--offline {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      border: 1px solid rgba(240, 255, 255, 0.575);
+      background-color: darkred;
+      filter: brightness(1);
+      @include mixins.pulseEffect();
+    }
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      top: unset;
+      bottom: 0;
+      background-color: rgba($secondary, 0.12);
+      transform: translate(-1.2rem, -0.8rem);
+    }
+  }
+
+  &:not(:hover) .status {
+    background-color: rgba($tertiary, 0.3);
+    // filter: opacity(0.65);
+    transform: translate(-3.2rem, 4rem);
+
+    @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+      background-color: rgba($secondary, 0.1);
+      transform: translate(-1.2rem, -0.8rem);
+    }
   }
 
   .project-info-container {
     @include mixins.AnimateFadeIn();
+
     .description {
       padding: 0 1.2rem;
       margin-top: 2rem;

@@ -5,10 +5,20 @@ import Background from '../components/UI/Background';
 import ProjectGridItemSkeleton from '../components/ProjectGridItem/ProjectGridItemSkeleton';
 import { useEffect, useState } from 'react';
 
-const Projects = ({}) => {
+interface Props {
+  projectStatus: boolean[];
+}
+
+const Projects = ({ projectStatus }: Props) => {
   const [loading, setLoading] = useState<boolean>(true);
 
   const projectGridItems = PROJECTS_DATA.map((project, index: number) => {
+    let status;
+    if (project.id === 0) status = projectStatus[0]; // MGH daily sched
+    // if (project.id === 0) status = projectStatus[1]; // O-Notes
+    if (project.id === 2) status = projectStatus[2]; // gpt chatbot
+    if (project.id === 3) status = projectStatus[3]; // mh weakener bot
+
     return (
       <ProjectGridItem
         key={index}
@@ -20,6 +30,7 @@ const Projects = ({}) => {
         tags={project.tags}
         githubPath={project.gitHubPath}
         liveSitePath={project.liveSitePath}
+        status={status !== undefined ? status : undefined}
       />
     );
   });
