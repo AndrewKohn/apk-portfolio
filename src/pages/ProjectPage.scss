@@ -67,9 +67,10 @@
         background-color: rgba($tertiary, 0.3);
         // filter: opacity(0.65);
         transform: translate(-3.2rem, 4rem);
+
         @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
           background-color: rgba($secondary, 0.1);
-          transform: translate(-1.2rem, -12rem);
+          transform: translate(-1.2rem, -0.8rem);
         }
       }
 
@@ -84,6 +85,7 @@
         right: 0;
         transform: translate(-0.8rem, 2.4rem);
         padding: 0.2rem 0.8rem;
+        border: 1px solid rgba($secondary, 0.75);
         border-radius: 5px;
         background-color: rgba($tertiary, 0.5);
         color: rgba($secondary, 0.75);
@@ -115,17 +117,22 @@
           top: unset;
           bottom: 0;
           background-color: rgba($secondary, 0.12);
-          transform: translate(-1.2rem, -12rem);
+          transform: translate(-1.2rem, -0.8rem);
         }
       }
 
       .project-info-image {
         transform: scale(1.15);
         transition: transform 0.2s ease;
+        margin-bottom: 1.2rem;
       }
 
       &:not(:hover) .project-info-image {
         transform: scale(1);
+      }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
+        width: 100vw;
       }
     }
 
