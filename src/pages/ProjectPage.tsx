@@ -17,17 +17,19 @@ import { Fragment, useEffect, useState } from 'react';
 
 interface Props {
   project: any;
-  projectStatus: boolean[];
+  projectStatus?: boolean[];
 }
 
 const ProjectPage = ({ project, projectStatus }: Props) => {
   const [status, setStatus] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    if (project.id === 0) setStatus(projectStatus[0]); // MGH daily sched
-    // if (project.id === 0 && projectStatus[0]) status = projectStatus[1]; // O-Notes
-    if (project.id === 2) setStatus(projectStatus[2]); // gpt chatbot
-    if (project.id === 3) setStatus(projectStatus[3]); // mh weakener bot
+    if (projectStatus) {
+      if (project.id === 0) setStatus(projectStatus[0]); // MGH daily sched
+      // if (project.id === 0 && projectStatus[0]) status = projectStatus[1]; // O-Notes
+      if (project.id === 2) setStatus(projectStatus[2]); // gpt chatbot
+      if (project.id === 3) setStatus(projectStatus[3]); // mh weakener bot
+    }
   }, []);
 
   const projectPurpose = project.moreInfo.purpose.map(

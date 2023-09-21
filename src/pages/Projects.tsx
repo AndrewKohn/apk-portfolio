@@ -6,7 +6,7 @@ import ProjectGridItemSkeleton from '../components/ProjectGridItem/ProjectGridIt
 import { useEffect, useState } from 'react';
 
 interface Props {
-  projectStatus: boolean[];
+  projectStatus?: boolean[];
 }
 
 const Projects = ({ projectStatus }: Props) => {
@@ -14,10 +14,12 @@ const Projects = ({ projectStatus }: Props) => {
 
   const projectGridItems = PROJECTS_DATA.map((project, index: number) => {
     let status;
-    if (project.id === 0) status = projectStatus[0]; // MGH daily sched
-    // if (project.id === 0) status = projectStatus[1]; // O-Notes
-    if (project.id === 2) status = projectStatus[2]; // gpt chatbot
-    if (project.id === 3) status = projectStatus[3]; // mh weakener bot
+    if (projectStatus) {
+      if (project.id === 0) status = projectStatus[0]; // MGH daily sched
+      // if (project.id === 0) status = projectStatus[1]; // O-Notes
+      if (project.id === 2) status = projectStatus[2]; // gpt chatbot
+      if (project.id === 3) status = projectStatus[3]; // mh weakener bot
+    }
 
     return (
       <ProjectGridItem
