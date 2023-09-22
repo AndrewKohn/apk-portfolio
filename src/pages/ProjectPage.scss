@@ -133,6 +133,12 @@
         transform: scale(1);
       }
 
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        &:not(:hover) .project-info-image {
+          transform: scale(1.15);
+        }
+      }
+
       @media screen and (max-width: #{map-get($breakpoints, 'phone-lg')}) {
         width: 100vw;
       }
@@ -145,8 +151,8 @@
 
       .links-wrapper {
         @include mixins.DisplayFlex(flex-start, center, row, nowrap);
-
         gap: 1rem;
+
         .project-link {
           &:visited,
           &:link {
@@ -159,6 +165,17 @@
 
           &:hover .link-icon {
             border: 1px solid $accent1;
+          }
+
+          @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+            &:not(:hover) {
+              &::after {
+                // color: $accent1;
+                transform: translateY(5rem);
+                filter: opacity(1);
+                z-index: 1;
+              }
+            }
           }
         }
 

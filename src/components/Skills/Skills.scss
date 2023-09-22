@@ -91,6 +91,23 @@
         letter-spacing: 2px;
         transition: letter-spacing 0.2s ease-in-out;
       }
+
+      @media screen and (max-width: #{map-get($breakpoints, 'tablet-lg')}) {
+        &:not(:hover) .skill-section-wrapper .skill-icon {
+          filter: grayscale(0) blur(0);
+        }
+
+        &:not(:hover) .skill-section-wrapper .skill-text {
+          transform: translateY(5%);
+          filter: opacity(1) blur(0);
+        }
+
+        &:not(:hover) .skill-title {
+          color: $accent1;
+          letter-spacing: 4px;
+          transition: all 0.2s ease-in-out;
+        }
+      }
     }
   }
 }
