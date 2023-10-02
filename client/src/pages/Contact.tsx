@@ -5,28 +5,43 @@ import Background from '../components/UI/Background';
 import Card from '../components/UI/Card';
 import './Style.scss';
 
+interface validationStatus {
+  isNameValid: boolean | undefined | null;
+  isEmailValid: boolean | undefined | null;
+  hasMessage: boolean | undefined | null;
+}
+
 const Contact = ({}) => {
   // States will adjust colors of the avatar svg's based on its validity
-  const [isNameValid, setIsNameValid] = useState<boolean | undefined | null>();
-  const [isEmailValid, setIsEmailValid] = useState<
-    boolean | undefined | null
-  >();
-  const [hasMessage, setHasMessage] = useState<boolean | undefined | null>();
+  const [avatarValidation, setAvatarValidation] = useState<validationStatus>({
+    isNameValid: null,
+    isEmailValid: null,
+    hasMessage: null,
+  });
 
   const validateNameForAvatar = (isNamePresent: boolean | undefined | null) => {
-    setIsNameValid(isNamePresent);
+    setAvatarValidation(prevState => ({
+      ...prevState,
+      isNameValid: isNamePresent,
+    }));
   };
 
   const validateEmailForAvatar = (
     isEmailPresent: boolean | undefined | null
   ) => {
-    setIsEmailValid(isEmailPresent);
+    setAvatarValidation(prevState => ({
+      ...prevState,
+      isEmailValid: isEmailPresent,
+    }));
   };
 
   const validateMessageForAvatar = (
     isMessagePresent: boolean | undefined | null
   ) => {
-    setHasMessage(isMessagePresent);
+    setAvatarValidation(prevState => ({
+      ...prevState,
+      hasMessage: isMessagePresent,
+    }));
   };
 
   return (
@@ -40,9 +55,7 @@ const Contact = ({}) => {
           <Card idSelector="contact-card">
             <ContactAvatars
               className="contact-avatars"
-              isNameValid={isNameValid}
-              isEmailValid={isEmailValid}
-              hasMessage={hasMessage}
+              avatarValidation={avatarValidation}
             />
             <ContactForm
               validateNameForAvatar={validateNameForAvatar}

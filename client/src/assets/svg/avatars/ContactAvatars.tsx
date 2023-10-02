@@ -1,18 +1,17 @@
 import './ContactAvatars.scss';
 
-interface Props {
-  className: string;
+interface validationStatus {
   isNameValid: boolean | undefined | null;
   isEmailValid: boolean | undefined | null;
   hasMessage: boolean | undefined | null;
 }
 
-const ContactAvatars = ({
-  className,
-  isNameValid,
-  isEmailValid,
-  hasMessage,
-}: Props) => {
+interface Props {
+  className: string;
+  avatarValidation: validationStatus;
+}
+
+const ContactAvatars = ({ className, avatarValidation }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -37,12 +36,16 @@ const ContactAvatars = ({
       <path
         d="M278.78484,134.01856v-2c-23.08527,0-43.24463-18.85779-48.60437-45.12573l8.69812,2.23767c-4.20703-3.98584-8.45721-10.65851-11.09375-16.11194-1.55719,5.85443-4.46582,13.21167-7.84137,17.92249l8.22992-3.89856c5.47247,27.32849,26.49829,46.97607,50.61145,46.97607Z"
         fill={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? '#fe8a01'
             : '#47b8e0'
         }
         className={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? 'valid-input'
             : ''
         }
@@ -50,12 +53,16 @@ const ContactAvatars = ({
       <path
         d="M270.05257,57.47993c0,2.20557-1.79443,4-4,4h-52c-2.20557,0-4-1.79443-4-4s1.79443-4,4-4h52c2.20557,0,4,1.79443,4,4Z"
         fill={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? '#fe8a01'
             : '#47b8e0'
         }
         className={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? 'valid-input'
             : ''
         }
@@ -173,13 +180,17 @@ const ContactAvatars = ({
       <g>
         <path
           d="M254.06191,176.94701l-8.22992-3.89856c3.37555,4.71082,6.28418,12.06805,7.84137,17.92249,2.63654-5.45343,6.88672-12.1261,11.09375-16.11194l-8.69812,2.23767c5.35974-26.26794,25.5191-45.12573,48.60437-45.12573v-2c-24.11316,0-45.13898,19.64758-50.61145,46.97607Z"
-          fill={isEmailValid === false ? '#f00' : '#fe8a01'}
-          className={isEmailValid === false ? 'invalid-input' : ''}
+          fill={avatarValidation.isEmailValid === false ? '#f00' : '#fe8a01'}
+          className={
+            avatarValidation.isEmailValid === false ? 'invalid-input' : ''
+          }
         />
         <path
           d="M291.94109,216.97094h-52c-2.20557,0-4-1.79443-4-4s1.79443-4,4-4h52c2.20557,0,4,1.79443,4,4s-1.79443,4-4,4Z"
-          fill={hasMessage === false ? '#f00' : '#fe8a01'}
-          className={hasMessage === false ? 'invalid-input' : ''}
+          fill={avatarValidation.hasMessage === false ? '#f00' : '#fe8a01'}
+          className={
+            avatarValidation.hasMessage === false ? 'invalid-input' : ''
+          }
         />
       </g>
       <circle
@@ -188,12 +199,16 @@ const ContactAvatars = ({
         r="15.65737"
         transform="translate(114.00804 399.31512) rotate(-80.78253)"
         fill={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? '#fe8a01'
             : '#47b8e0'
         }
         className={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? 'valid-input'
             : ''
         }
@@ -203,12 +218,16 @@ const ContactAvatars = ({
         cy="9.65737"
         r="9.65737"
         fill={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? '#fe8a01'
             : '#47b8e0'
         }
         className={
-          isNameValid === true && isEmailValid === true && hasMessage === true
+          avatarValidation.isNameValid === true &&
+          avatarValidation.isEmailValid === true &&
+          avatarValidation.hasMessage === true
             ? 'valid-input'
             : ''
         }
@@ -217,8 +236,10 @@ const ContactAvatars = ({
         cx="319.67334"
         cy="176.65737"
         r="9.65737"
-        fill={isNameValid === false ? '#f00' : '#fe8a01'}
-        className={isNameValid === false ? 'invalid-input' : ''}
+        fill={avatarValidation.isNameValid === false ? '#f00' : '#fe8a01'}
+        className={
+          avatarValidation.isNameValid === false ? 'invalid-input' : ''
+        }
       />
     </svg>
   );
