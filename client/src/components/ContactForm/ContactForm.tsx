@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
+import { AiFillCheckCircle } from 'react-icons/ai';
+import { BsEnvelope } from 'react-icons/bs';
 import Button from '../UI/Button';
+import LoadingBars from '../UI/LoadingBars';
 import './ContactForm.scss';
 
 interface Props {
@@ -10,166 +13,263 @@ interface Props {
   ) => void;
 }
 
+interface inputObject {
+  nameInput: string;
+  emailInput: string;
+  message: string;
+}
+
+interface submissionStatus {
+  isLoading: boolean;
+  isSent: boolean;
+}
+
+interface validationStatus {
+  isNameValid: boolean | undefined | null;
+  isEmailValid: boolean | undefined | null;
+  hasMessage: boolean | undefined | null;
+  isFormValid: boolean;
+}
+
 const ContactForm = ({
   validateNameForAvatar,
   validateEmailForAvatar,
   validateMessageForAvatar,
 }: Props) => {
-  const [nameInput, setNameInput] = useState<string>('');
-  const [isNameValid, setIsNameValid] = useState<boolean | undefined | null>();
-  const [emailInput, setEmailInput] = useState<string>('');
-  const [isEmailValid, setIsEmailValid] = useState<
-    boolean | undefined | null
-  >();
-  const [message, setMessage] = useState<string>('');
-  const [hasMessage, setHasMessage] = useState<boolean | undefined | null>();
-  const [isFormValid, setIsFormValid] = useState<boolean>(false);
+  const [userInputs, setUserInputs] = useState<inputObject>({
+    nameInput: '',
+    emailInput: '',
+    message: '',
+  });
+  const [validation, setValidation] = useState<validationStatus>({
+    isNameValid: null,
+    isEmailValid: null,
+    hasMessage: null,
+    isFormValid: false,
+  });
+  const [submission, setSubmission] = useState<submissionStatus>({
+    isLoading: false,
+    isSent: false,
+  });
 
   // NAME
   const nameChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNameInput(e.target.value);
+    setUserInputs(prevState => ({
+      ...prevState,
+      nameInput: e.target.value,
+    }));
   };
 
   const validateNameHandler = (
     e: React.FocusEvent<HTMLInputElement, Element>
   ) => {
-    setIsNameValid(e.target.value.trim().length > 0);
+    setValidation(prevState => ({
+      ...prevState,
+      isNameValid: e.target.value.trim().length > 0,
+    }));
   };
 
   // EMAIL
   const emailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmailInput(e.target.value);
+    setUserInputs(prevState => ({
+      ...prevState,
+      emailInput: e.target.value,
+    }));
   };
 
   const validateEmailHandler = (
     e: React.FocusEvent<HTMLInputElement, Element>
   ) => {
-    setIsEmailValid(
-      e.target.value.includes('@') &&
+    setValidation(prevState => ({
+      ...prevState,
+      isEmailValid:
+        e.target.value.includes('@') &&
         e.target.value.includes('.') &&
-        emailInput.length > 5
-    );
+        e.target.value.length > 5,
+    }));
   };
 
   // MESSAGE
   const textAreaChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
+    setUserInputs(prevState => ({
+      ...prevState,
+      message: e.target.value,
+    }));
   };
 
   const validateTextAreaHandler = (
     e: React.FocusEvent<HTMLTextAreaElement, Element>
   ) => {
-    setHasMessage(e.target.value.trim().length > 0);
+    setValidation(prevState => ({
+      ...prevState,
+      hasMessage: e.target.value.trim().length > 0,
+    }));
   };
 
   // Validate all inputs in order to activate send button
   useEffect(() => {
-    setIsFormValid(
-      nameInput.trim().length > 0 &&
-        emailInput.includes('@') &&
-        emailInput.includes('.') &&
-        emailInput.length > 5 &&
-        message.trim().length > 0
-    );
-  }, [nameInput, emailInput, message]);
+    if (
+      validation.isNameValid &&
+      validation.isEmailValid &&
+      validation.hasMessage
+    ) {
+      setValidation(prevState => ({
+        ...prevState,
+        isFormValid: true,
+      }));
+    } else {
+      setValidation(prevState => ({
+        ...prevState,
+        isFormValid: false,
+      }));
+    }
+  }, [validation.isNameValid, validation.isEmailValid, validation.hasMessage]);
 
   // Form Submission
-  const formSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const formSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmission(prevState => ({ ...prevState, isLoading: true }));
+
+    // TODO: AWS for backend deployment
+    try {
+      const response = await fetch('http://localhost:5000/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userInputs }),
+      });
+
+      if (response.ok) {
+        setSubmission({ isSent: true, isLoading: false });
+        setUserInputs({
+          nameInput: '',
+          emailInput: '',
+          message: '',
+        });
+        alert('Email sent successfully!');
+      } else {
+        setSubmission(prevState => ({ ...prevState, isLoading: false }));
+        console.log(response);
+        console.error('Failed to send message!');
+        console.error(`Email: ${userInputs.emailInput}`);
+        console.error(`Name: ${userInputs.nameInput}`);
+        console.error(`Message: ${userInputs.message}`);
+      }
+    } catch (err) {
+      setSubmission(prevState => ({ ...prevState, isLoading: false }));
+      console.log(err);
+    }
   };
 
   // AVATAR
   useEffect(() => {
-    validateNameForAvatar(isNameValid);
-    validateEmailForAvatar(isEmailValid);
-    validateMessageForAvatar(hasMessage);
-  }, [isNameValid, isEmailValid, hasMessage]);
+    validateNameForAvatar(validation.isNameValid);
+    validateEmailForAvatar(validation.isEmailValid);
+    validateMessageForAvatar(validation.hasMessage);
+  }, [validation.isNameValid, validation.isEmailValid, validation.hasMessage]);
 
   return (
-    <form
-      action="https://formsubmit.co/contact@kohnandrew.com"
-      method="POST"
-      className="form"
-      // onSubmit={e => formSubmitHandler(e)}
-    >
-      <h4>
-        Send me a message!
-        <span className="emoji">👇</span>
-      </h4>
+    <form className="form" onSubmit={e => formSubmitHandler(e)}>
+      <div className={`form ${submission.isSent ? 'form--fade-out' : ''}`}>
+        <h4>
+          Send me a message!
+          <span className="emoji">👇</span>
+        </h4>
 
-      {/* NAME */}
-      <div className="input-wrapper">
-        <label
-          htmlFor="name"
-          className="label"
-          id={`${isNameValid === false ? 'invalid-text' : ''}`}
+        {/* NAME */}
+        <div className="input-wrapper">
+          <label
+            htmlFor="name"
+            className="label"
+            id={`${validation.isNameValid === false ? 'invalid-text' : ''}`}
+          >
+            Name
+          </label>
+          <input
+            required
+            type="text"
+            id="name"
+            name="name"
+            className={`input ${
+              validation.isNameValid === false ? 'invalid' : ''
+            }`}
+            onChange={e => nameChangeHandler(e)}
+            onBlur={e => validateNameHandler(e)}
+            value={userInputs.nameInput}
+          />
+        </div>
+
+        {/* EMAIL */}
+        <div className="input-wrapper">
+          <label
+            htmlFor="email"
+            className="label"
+            id={`${validation.isEmailValid === false ? 'invalid-text' : ''}`}
+          >
+            Email
+          </label>
+          <input
+            required
+            type="text"
+            id="email"
+            name="email"
+            placeholder={
+              validation.isEmailValid === false
+                ? 'Please enter a valid email...'
+                : ''
+            }
+            className={`input input--email ${
+              validation.isEmailValid === false ? 'invalid' : ''
+            }`}
+            onChange={e => emailChangeHandler(e)}
+            onBlur={e => validateEmailHandler(e)}
+            value={userInputs.emailInput}
+          />
+        </div>
+
+        {/* MESSAGE */}
+        <div className="input-wrapper">
+          <label
+            htmlFor="message"
+            className="label label--message"
+            id={`${validation.hasMessage === false ? 'invalid-text' : ''}`}
+          >
+            Message
+          </label>
+          <textarea
+            required
+            id="message"
+            name="message"
+            className={`input input--message ${
+              validation.hasMessage === false ? 'invalid' : ''
+            }`}
+            onChange={e => textAreaChangeHandler(e)}
+            onBlur={e => validateTextAreaHandler(e)}
+            value={userInputs.message}
+          />
+        </div>
+        {submission.isLoading ? <LoadingBars /> : ''}
+        <Button
+          ariaLabel="contact button"
+          type="submit"
+          classes={!validation.isFormValid ? 'disabled' : ''}
         >
-          Name
-        </label>
-        <input
-          required
-          type="text"
-          id="name"
-          name="name"
-          className={`input ${isNameValid === false ? 'invalid' : ''}`}
-          onChange={e => nameChangeHandler(e)}
-          onBlur={e => validateNameHandler(e)}
-        />
+          Send
+        </Button>
       </div>
 
-      {/* EMAIL */}
-      <div className="input-wrapper">
-        <label
-          htmlFor="email"
-          className="label"
-          id={`${isEmailValid === false ? 'invalid-text' : ''}`}
-        >
-          Email
-        </label>
-        <input
-          required
-          type="text"
-          id="email"
-          name="email"
-          placeholder={
-            isEmailValid === false ? 'Please enter a valid email...' : ''
-          }
-          className={`input input--email ${
-            isEmailValid === false ? 'invalid' : ''
-          }`}
-          onChange={e => emailChangeHandler(e)}
-          onBlur={e => validateEmailHandler(e)}
-        />
-      </div>
-
-      {/* MESSAGE */}
-      <div className="input-wrapper">
-        <label
-          htmlFor="message"
-          className="label label--message"
-          id={`${hasMessage === false ? 'invalid-text' : ''}`}
-        >
-          Message
-        </label>
-        <textarea
-          required
-          id="message"
-          name="message"
-          className={`input input--message ${
-            hasMessage === false ? 'invalid' : ''
-          }`}
-          onChange={e => textAreaChangeHandler(e)}
-          onBlur={e => validateTextAreaHandler(e)}
-        />
-      </div>
-      <input type="hidden" name="_captcha" value="false" />
-      <Button
-        ariaLabel="contact button"
-        type="submit"
-        classes={!isFormValid ? 'disabled' : ''}
-      >
-        Send
-      </Button>
+      {submission.isSent ? (
+        <div className="submission-successful-wrapper">
+          <BsEnvelope className="envelope-icon" />
+          <div className="checkmark-container">
+            <AiFillCheckCircle className="checkmark-icon" />
+            <div className="checkmark-pos" />
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
     </form>
   );
 };
