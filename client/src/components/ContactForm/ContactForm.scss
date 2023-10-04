@@ -3,6 +3,7 @@
 
 .form {
   @include mixins.DisplayFlex(center, center, column, nowrap);
+  position: relative;
   height: 100%;
   width: 100%;
   gap: 2rem;
@@ -162,5 +163,141 @@
   #invalid-text {
     color: red;
     font-style: italic;
+  }
+}
+
+.form--fade-out {
+  pointer-events: none;
+  filter: opacity(0);
+  animation: fade-out-element 1s ease;
+}
+
+.submission-successful-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8rem;
+  height: 8rem;
+  transform: translate(-50%, -50%);
+
+  &::after {
+    position: absolute;
+    content: 'MESSAGE SENT!';
+    white-space: nowrap;
+    color: greenyellow;
+    font-size: 2rem;
+    letter-spacing: 1.2px;
+    font-style: italic;
+    bottom: 0;
+    left: 0;
+    transform: translate(-25%, 3.2rem);
+    animation: submission-slide-down 1.5s linear;
+
+    @keyframes submission-slide-down {
+      0% {
+        transform: translate(-25%, -3.2rem);
+        filter: opacity(0);
+      }
+      60% {
+        filter: opacity(0);
+      }
+      100% {
+        transform: translate(-25%, 3.2rem);
+        filter: opacity(1);
+      }
+    }
+  }
+
+  .envelope-icon {
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    color: $secondary;
+    background-color: $tertiary;
+    z-index: 10;
+    animation: withstand-anim 0.5s ease-out 0.55s;
+
+    @keyframes withstand-anim {
+      0% {
+        transform: translate(0);
+      }
+      20% {
+        transform: translate(-2rem, -2rem) rotate(-60deg) scale(0.8, 0.9);
+      }
+      50% {
+        transform: translate(0);
+      }
+      65% {
+        transform: translate(0, -0.4rem) rotate(-10deg) scale(1, 1);
+      }
+      80% {
+        transform: translate(0);
+      }
+      90% {
+        transform: translate(0, -0.4rem) rotate(-5deg);
+      }
+      100% {
+        transform: translate(0);
+      }
+    }
+  }
+
+  .checkmark-container {
+    @include mixins.DisplayFlex(center, center, row, nowrap);
+    position: absolute;
+    transform: translate(5.2rem, 4.4rem) rotate(0);
+    filter: opacity(1);
+    z-index: 10;
+    animation: rotate-container 0.6s linear;
+
+    @keyframes rotate-container {
+      0% {
+        transform: translate(20rem, 20rem) rotate(-180deg);
+        filter: opacity(0);
+      }
+      10% {
+        filter: opacity(0);
+      }
+      80% {
+        filter: opacity(1);
+      }
+      100% {
+        transform: translate(5.2rem, 4.4rem) rotate(0);
+        filter: opacity(1);
+      }
+    }
+
+    .checkmark-pos {
+      width: 15rem;
+      height: 1rem;
+    }
+
+    .checkmark-icon {
+      width: 4rem;
+      height: 4rem;
+      color: greenyellow;
+      background-color: $tertiary;
+      box-shadow: 0 0 4px 1px $tertiary;
+      border-radius: 50%;
+      transform: rotate(0);
+
+      @keyframes rotate-checkmark {
+        0% {
+          transform: rotate(-180deg);
+        }
+        100% {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade-out-element {
+  0% {
+    filter: opacity(1);
+  }
+  100% {
+    filter: opacity(0);
   }
 }

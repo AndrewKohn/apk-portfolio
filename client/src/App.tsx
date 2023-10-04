@@ -13,7 +13,7 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Projects = lazy(() => import('./pages/Projects'));
 
-const App = ({}) => {
+const App = ({ }) => {
   // const [projectStatus, setProjectStatus] = useState<boolean[]>([
   //   false,
   //   false,
@@ -68,7 +68,7 @@ const App = ({}) => {
           <Route
             path="/projects"
             element={<Projects />}
-            // element={<Projects projectStatus={projectStatus} />}
+          // element={<Projects projectStatus={projectStatus} />}
           />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
