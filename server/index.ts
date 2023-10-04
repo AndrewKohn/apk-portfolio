@@ -20,6 +20,7 @@ const getSubject = (name: string, email: string) => {
   return `${name} <${email}>: ${date}, ${day}, ${time}`;
 };
 
+app.options('/post', cors());
 app.post('/post', async (req: Request, res: Response) => {
   const inputs = await req.body.userInputs;
   console.log(inputs);
