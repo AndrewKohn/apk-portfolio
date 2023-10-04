@@ -132,13 +132,16 @@ const ContactForm = ({
 
     // TODO: AWS for backend deployment
     try {
-      const response = await fetch('http://localhost:5000/post', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userInputs }),
-      });
+      const response = await fetch(
+        'https://nameless-scrubland-27606-f38e606cfa40.herokuapp.com/post',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userInputs }),
+        }
+      );
 
       if (response.ok) {
         setSubmission({ isSent: true, isLoading: false });
