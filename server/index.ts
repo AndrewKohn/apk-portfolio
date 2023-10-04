@@ -14,7 +14,7 @@ const PASSWORD = process.env.PASSWORD;
 const getSubject = (name: string, email: string) => {
   const dateArray = new Date().toString().split(' ');
   const day = dateArray[0].toUpperCase();
-  const date = dateArray.slice(1, 4);
+  const date = dateArray.slice(1, 4).join(' ');
   const time = dateArray[4];
 
   return `${name} <${email}>: ${date}, ${day}, ${time}`;
