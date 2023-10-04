@@ -132,7 +132,7 @@ const ContactForm = ({
 
     try {
       const response = await fetch(
-        'https://nameless-scrubland-27606-f38e606cfa40.herokuapp.com/post',
+        'https://apk-cta-backend-058507e6699f.herokuapp.com/post',
         {
           method: 'POST',
           headers: {
