@@ -12,12 +12,14 @@ const FROM_EMAIL = process.env.FROM_EMAIL;
 const PASSWORD = process.env.PASSWORD;
 
 const getSubject = (name: string, email: string) => {
-  const dateArray = new Date().toString().split(' ');
-  const day = dateArray[0].toUpperCase();
-  const date = dateArray.slice(1, 4).join(' ');
-  const time = dateArray[4];
-
-  return `${name} <${email}>: ${date}, ${day}, ${time}`;
+  const dateArray = new Date()
+    .toLocaleString('en-US', { timeZone: 'America/Chicago' })
+    .toString()
+    .split(' ');
+  const date = dateArray[0].split(',')[0];
+  const time = dateArray.splice(1, 2).join(' ');
+  console.log(date);
+  return `${name} <${email}>: ${date}, ${time}`;
 };
 
 app.options('/post', cors());
