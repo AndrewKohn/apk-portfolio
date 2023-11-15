@@ -2,7 +2,7 @@
 
 <h3 align="center">Andrew Kohn</h3>
 
-![Portfolio Site image](src/assets/img/portfolio-readme-img.png)
+![Portfolio Site image](./client/src/assets/img/portfolio-readme-img.png)
 
 <div align="center">
   <a href="https://kohnandrew.com/" target="_blank">Portfolio Link</a>
