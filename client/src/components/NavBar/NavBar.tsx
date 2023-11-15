@@ -14,7 +14,7 @@ const NavBar = ({ location }: Props) => {
   const backdropClickHandler = () => {
     setIsNavModalVisible(!isNavModalVisible);
   };
-  console.log(location);
+
   return (
     <nav className="nav-bar">
       <Link to="/" className="nav-link--home">
