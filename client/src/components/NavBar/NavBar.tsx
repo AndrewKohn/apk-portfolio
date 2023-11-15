@@ -4,13 +4,17 @@ import GitHubIcon from '../../assets/svg/GitHubIcon';
 import { Fragment, useEffect, useState } from 'react';
 import { MdOutlineClose } from 'react-icons/md';
 
-const NavBar = ({}) => {
+interface Props {
+  location: string;
+}
+
+const NavBar = ({ location }: Props) => {
   const [isNavModalVisible, setIsNavModalVisible] = useState<boolean>(false);
 
   const backdropClickHandler = () => {
     setIsNavModalVisible(!isNavModalVisible);
   };
-
+  console.log(location);
   return (
     <nav className="nav-bar">
       <Link to="/" className="nav-link--home">
@@ -18,13 +22,30 @@ const NavBar = ({}) => {
       </Link>
 
       <div className="nav-links">
-        <Link to="/about" className="nav-link">
+        <Link
+          to="/"
+          className={`${location === '/' ? 'current-page' : 'nav-link'}`}
+        >
+          HOME
+        </Link>
+        <Link
+          to="/about"
+          className={`${location === '/about' ? 'current-page' : 'nav-link'}`}
+        >
           ABOUT
         </Link>
-        <Link to="/projects" className="nav-link">
+        <Link
+          to="/projects"
+          className={`${
+            location === '/projects' ? 'current-page' : 'nav-link'
+          }`}
+        >
           PROJECTS
         </Link>
-        <Link to="/contact" className="nav-link">
+        <Link
+          to="/contact"
+          className={`${location === '/contact' ? 'current-page' : 'nav-link'}`}
+        >
           CONTACT
         </Link>
         <a
@@ -53,16 +74,36 @@ const NavBar = ({}) => {
               <div className="backdrop" onClick={backdropClickHandler}></div>
               <div className="modal">
                 <div className="modal-links">
-                  <Link to="/" className="nav-link">
+                  <Link
+                    to="/"
+                    className={`nav-link ${
+                      location === '/' ? 'current-page--mobile' : ''
+                    }`}
+                  >
                     HOME
                   </Link>
-                  <Link to="/about" className="nav-link">
+                  <Link
+                    to="/about"
+                    className={`nav-link ${
+                      location === '/about' ? 'current-page--mobile' : ''
+                    }`}
+                  >
                     ABOUT
                   </Link>
-                  <Link to="/projects" className="nav-link">
+                  <Link
+                    to="/projects"
+                    className={`nav-link ${
+                      location === '/projects' ? 'current-page--mobile' : ''
+                    }`}
+                  >
                     PROJECTS
                   </Link>
-                  <Link to="/contact" className="nav-link">
+                  <Link
+                    to="/contact"
+                    className={`nav-link ${
+                      location === '/contact' ? 'current-page--mobile' : ''
+                    }`}
+                  >
                     CONTACT
                   </Link>
                   <a

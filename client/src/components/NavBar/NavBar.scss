@@ -34,6 +34,7 @@
     text-decoration: none;
     margin-left: 6rem;
     transition: color 0.5s ease;
+    animation: nav-slide-down 1.2s ease-out;
 
     &:hover {
       color: $accent1;
@@ -68,8 +69,9 @@
 
   .nav-links {
     @include mixins.DisplayFlex(center, center, row, nowrap);
-    gap: 2.4rem;
+    gap: 3.2rem;
     margin-right: 6rem;
+    animation: nav-slide-down 1.2s ease-out;
 
     .nav-link {
       position: relative;
@@ -89,9 +91,9 @@
         color: $secondary;
       }
 
-      &:hover {
-        color: $accent1;
-      }
+      // &:hover {
+      //   color: $accent1;
+      // }
 
       &::after {
         position: absolute;
@@ -115,6 +117,7 @@
   .nav-link--github {
     color: $secondary;
     margin-right: 1.2rem;
+    margin-left: 1.8rem;
     vertical-align: middle;
     width: 3.2rem;
     height: 3.2rem;
@@ -170,7 +173,7 @@
     }
   }
 
-  @media screen and (max-width: #{map-get($breakpoints, 'tablet-sm')}) {
+  @media screen and (max-width: calc(8rem + #{map-get($breakpoints, 'tablet-sm')})) {
     .nav-links {
       display: none;
     }
@@ -284,7 +287,72 @@
             color: $tertiary;
           }
         }
+
+        .current-page--mobile {
+          pointer-events: none;
+
+          &:link {
+            color: $accent1;
+            background-color: transparent;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transition: all 0.2s ease;
+          }
+
+          &:visited {
+            color: $accent1;
+          }
+
+          // &:hover {
+          //   color: $tertiary;
+          //   letter-spacing: 10px;
+          //   background-color: $accent1;
+          // }
+        }
       }
     }
+  }
+}
+
+.current-page {
+  position: relative;
+  transition: content 0.5s ease;
+  padding: 0.4rem 0;
+  pointer-events: none;
+
+  &:link {
+    color: $accent1;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: color 0.5s ease;
+  }
+
+  &:visited {
+    color: $accent1;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    transform: translateY(2px);
+    bottom: 0;
+    display: block;
+    background: $accent1;
+    transition: width 0.5s ease, background-color 0.5s ease;
+  }
+}
+
+@keyframes nav-slide-down {
+  0% {
+    transform: translateY(-20rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
