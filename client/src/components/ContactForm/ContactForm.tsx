@@ -98,7 +98,7 @@ const ContactForm = ({
   };
 
   const validateTextAreaHandler = (
-    e: React.FocusEvent<HTMLTextAreaElement, Element>
+    e: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     setValidation(prevState => ({
       ...prevState,
@@ -246,7 +246,10 @@ const ContactForm = ({
             className={`input input--message ${
               validation.hasMessage === false ? 'invalid' : ''
             }`}
-            onChange={e => textAreaChangeHandler(e)}
+            onChange={e => {
+              textAreaChangeHandler(e);
+              validateTextAreaHandler(e);
+            }}
             onBlur={e => validateTextAreaHandler(e)}
             value={userInputs.message}
           />
@@ -255,7 +258,7 @@ const ContactForm = ({
         <Button
           ariaLabel="contact button"
           type="submit"
-          classes={!validation.isFormValid ? 'disabled' : ''}
+          classes={`submit-btn ${!validation.isFormValid ? 'disabled' : ''}`}
         >
           Send
         </Button>

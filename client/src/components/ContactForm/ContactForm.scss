@@ -53,6 +53,7 @@
       transform: translate(2rem, -1.2rem);
       letter-spacing: 1.5px;
       z-index: 5;
+      transition: all 0.2s ease;
 
       &::before {
         position: absolute;
@@ -111,7 +112,7 @@
       font-family: inherit;
       font-size: inherit;
       box-shadow: 0 0 20px 1px rgba(255, 0, 0, 0);
-      transition: box-shadow 0.2s ease;
+      transition: all 0.2s ease;
 
       &:focus {
         outline: none;
@@ -162,7 +163,8 @@
 
   #invalid-text {
     color: red;
-    font-style: italic;
+    // font-style: italic;
+    letter-spacing: 2px;
   }
 }
 
@@ -299,5 +301,14 @@
   }
   100% {
     filter: opacity(0);
+  }
+}
+
+.submit-btn {
+  &:hover {
+    color: rgba($secondary, 0.85);
+  }
+  &:active {
+    color: rgba($secondary, 1);
   }
 }
