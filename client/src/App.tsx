@@ -1,6 +1,6 @@
 import './App.scss';
 import { Suspense, lazy, useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import PROJECTS_DATA from './data/ProjectsData';
@@ -13,7 +13,8 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Projects = lazy(() => import('./pages/Projects'));
 
-const App = ({ }) => {
+const App = ({}) => {
+  const location = useLocation();
   // const [projectStatus, setProjectStatus] = useState<boolean[]>([
   //   false,
   //   false,
@@ -60,7 +61,7 @@ const App = ({ }) => {
 
   return (
     <main>
-      <NavBar />
+      <NavBar location={location.pathname} />
       <Suspense fallback={<LoadingBars />}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -68,7 +69,7 @@ const App = ({ }) => {
           <Route
             path="/projects"
             element={<Projects />}
-          // element={<Projects projectStatus={projectStatus} />}
+            // element={<Projects projectStatus={projectStatus} />}
           />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
