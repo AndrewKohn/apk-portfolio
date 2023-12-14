@@ -14,11 +14,11 @@ import TailwindIcon from '../assets/svg/languages/TailwindIcon';
 // Project Images
 import projectImage1 from '../assets/img/payroll-sorter-image.webp';
 import projectImage2 from '../assets/img/pdf-word-converter-image.webp';
-import projectImage3 from '../assets/img/mh-weakener-bot-image.webp';
+import projectImage3 from '../assets/img/mh-weakener-bot-image.gif';
 import projectImage4 from '../assets/img/mgh-menu-image.webp';
-import projectImage5 from '../assets/img/gpt-discord-chatbot.webp';
+import projectImage5 from '../assets/img/gpt-discord-chatbot.png';
 // import projectImage6 from '../assets/img/';
-import projectImagePlaceholder from '../assets/img/ex-img.png';
+import projectImagePlaceholder from '../assets/img/mgh-schedule.gif';
 
 // EXAMPLE DATA
 // {
