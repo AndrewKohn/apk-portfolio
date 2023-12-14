@@ -61,6 +61,7 @@
 
     .project-info-img {
       @include mixins.DisplayFlex(flex-start, center, column, nowrap);
+      width: 35rem;
       margin-top: 8rem;
       overflow: hidden;
       position: relative;
@@ -124,6 +125,8 @@
       }
 
       .project-info-image {
+        width: 100%;
+        aspect-ratio: 3 / 2;
         transform: scale(1.15);
         transition: transform 0.2s ease;
         margin-bottom: 1.2rem;

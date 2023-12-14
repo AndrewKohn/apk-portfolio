@@ -19,6 +19,8 @@
 
   .project-image {
     @include mixins.AnimateFadeIn();
+    width: 100%;
+    aspect-ratio: 3 / 2;
     transform: scale(1.15);
     border-radius: 0;
     transition: all 0.2s ease;
